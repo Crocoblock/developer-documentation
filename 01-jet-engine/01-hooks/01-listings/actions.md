@@ -2,10 +2,11 @@
 
 ## jet-engine/listings/renderers/registered
 
-Спрацьовіє після реєстрації всіх рендер-класів (класи які відповідають за кросс-редакторний рендер елементів ДжетЕнжин). На цей хук можна реєструвати власні рендер-класи. Також через цей хук можна переписати дефолтні рендер-класи і наприклад рендерити Dynamic Field у всіх білдерах через власний клас.
+Triggers after registration of all render classes (classes responsible for cross-editor rendering of JetEngine elements). This hook can be used to register custom render classes. Also, using this hook, you can override default render classes and, for example, render the Dynamic Field in all builders using your own class.
+
 
 **Args:**
-- `$listings_manager` - Екземпляр класу менедджера лістингів. Містить метод register_render_class для реєстрації власного рендеру.
+- `$listings_manager` - Instance of the listings manager class. Contains the register_render_class method for registering your own render.
 
 **Location:**
 /includes/listings/manager.php
@@ -26,11 +27,11 @@ add_action( 'jet-engine/listings/renderers/registered', function( $listing_manag
 
 ## jet-engine/templates/created
 
-Спрацьовує після створення нового Listing Item. Може вкироситовуватись для додавання власних мета полів для лістинг айтему при створенні
+Triggers after creating a new Listing Item. It can be used to add custom meta fields for the listing item when created.
 
 **Args:**
-- `$template_id` - ID щойно створеного лістинг айтему
-- `$post_data` - масив з даними лістинг айтем. За структурую аналогчний масиву параметрів для створення-оновлення поста - https://developer.wordpress.org/reference/functions/wp_insert_post/#parameters
+- `$template_id` - ID of the newly created listing item.
+- `$post_data` - Array with data of the listing item. Its structure is similar to the parameters array for creating or updating a post - https://developer.wordpress.org/reference/functions/wp_insert_post/#parameters
 
 **Location:**
 /includes/listings/admin-screen.php
@@ -54,11 +55,11 @@ add_action( 'jet-engine/templates/created', function( $template_id = 0, $post_da
 
 ## jet-engine/templates/created/{$view_type}
 
-Екшн працює аналогіно попередньому. Єдинна відмінність - динамічна частина $view_type. Ізолює екшн для конкретного біладера під який створювався лістинг айтем. Цей хук краще використовувати у випадках коли вам треба вкионади певні дії тільки для певного білдера, а не глобально для лістинг айтема.
+This action works similarly to the previous one. The only difference is the $view_type dynamic part . It isolates the action for a specific builder under which the listing item was created. This hook is best used when you need to perform certain actions only for a specific builder, rather than globally for the listing item.
 
 **Args:**
-- `$template_id` - ID щойно створеного лістинг айтему
-- `$post_data` - масив з даними лістинг айтем. За структурую аналогчний масиву параметрів для створення-оновлення поста - https://developer.wordpress.org/reference/functions/wp_insert_post/#parameters
+- `$template_id` - ID of the newly created listing item.
+- `$post_data` - Array with data of the listing item. Its structure is similar to the parameters array for creating or updating a post - https://developer.wordpress.org/reference/functions/wp_insert_post/#parameters
 
 **Location:**
 /includes/listings/admin-screen.php
@@ -76,10 +77,10 @@ add_action( 'jet-engine/templates/created/bricks', function( $template_id ) {
 
 ## jet-engine/ajax-handlers/referrer/request
 
-Спрацьовує при Аякс запитах, пов'язаних з лістингом. Load more, lazy load і т.п. Хук спрацьовує після того як засетились глобальні змінні але до того як в глобальну змінну $\_REQUEST додались налаштування лістингу.
+Triggers on AJAX requests related to listings, such as Load more, Lazy load, etc. The hook fires after global variables have been set but before listing settings are added to the global $_REQUEST variable.
 
 **Args:**
-Немає
+None
 
 **Location:**
 /includes/listings/ajax-handlers.php
@@ -103,11 +104,11 @@ add_action( 'jet-engine/ajax-handlers/referrer/request', function() {
 
 ## jet-engine/ajax-handlers/before-do-ajax
 
-Спрацьовує при Аякс запитах, пов'язаних з лістингом. Load more, lazy load і т.п. Хук спрацьовує після того як засетились глобальні змінні та після того як в глобальну змінну $\_REQUEST додались налаштування лістингу. Може використовуватись для додавання кастомних лістинг екшенів.
+Triggers on AJAX requests related to listings, such as Load More, Lazy load, etc. The hook fires after global variables have been set and after listing settings are added to the global $_REQUEST variable. It can be used to add custom listing actions.
 
 **Args:**
-* `$ajax_handlers` - Jet_Engine_Listings_Ajax_Handlers - об'єкт манеджеру аякс ріквестів
-* `$request` - array - зміст глоабльной змінної $\_REQUEST після додавання в неї налаштувань лістингу
+* `$ajax_handlers` - Jet_Engine_Listings_Ajax_Handlers - the object manager of AJAX requests.
+* `$request` - array - the content of the global $_REQUEST variable after adding listing settings to it.
 
 **Location:**
 /includes/listings/ajax-handlers.php
@@ -144,11 +145,11 @@ add_action( 'jet-engine/ajax-handlers/before-do-ajax', function() {
 
 ## jet-engine/ajax-handlers/before-call-handler
 
-Спрацьовує при Аякс запитах, пов'язаних з лістингом. Load more, lazy load і т.п. Хук спрацьовує безпосередньо перед викликом якогось з дефолтних колбеків - listing_load_more або get_listing.
+Triggers on AJAX requests related to listings, such as Load More, lazy load, etc. The hook fires just before calling one of the default callbacks - listing_load_more or get_listing.
 
 **Args:**
-* `$ajax_handlers` - Jet_Engine_Listings_Ajax_Handlers - об'єкт манеджеру аякс ріквестів
-* `$request` - array - зміст глоабльной змінної $\_REQUEST після додавання в неї налаштувань лістингу
+* `$ajax_handlers` - Jet_Engine_Listings_Ajax_Handlers - the object manager of AJAX requests.
+* `$request` - array - the content of the global $_REQUEST variable after adding listing settings to it
 
 **Location:**
 /includes/listings/ajax-handlers.php
@@ -176,10 +177,10 @@ add_action( 'jet-engine/ajax-handlers/before-call-handler', function() {
 
 ## jet-engine/listings/ajax/load-more
 
-Спрацьовує перед отриманням контенту для load more колбека. Дуже специфічний хук. Краще не вкиористовувати без крайньої необхідності.
+Triggers before getting content for the load more callback. Very specific hook. Better not to use it unless absolutely necessary.
 
 **Args:**
-немає
+None
 
 **Location:**
 /includes/listings/ajax-handlers.php
@@ -189,14 +190,14 @@ JetEngine listing AJAX request
 
 **Example:**
 
-Краще не використовувати без крайньої необхідності і замінити якимось з хуків `jet-engine/ajax-handlers/before-call-handler`, `jet-engine/ajax-handlers/before-do-ajax`, `jet-engine/ajax-handlers/referrer/request`
+Better not to use it unless absolutely necessary and replace with one of the hooks `jet-engine/ajax-handlers/before-call-handler`, `jet-engine/ajax-handlers/before-do-ajax`, `jet-engine/ajax-handlers/referrer/request`
 
 ## jet-engine/callbacks/register
 
-Спрацьовує в момент реєстрації колбеків (додати лінку на статтю про колбеки). Призначений для реєстрації кастомних колбеків через оптимізований АПІ, без вкиористання додаткових хуків.
+Triggers at the time of registering callbacks. Designed for registering custom callbacks through an optimized API, without using additional hooks.
 
 **Args:**
-* `$callbacks_manager` - Jet_Engine_Listings_Callbacks - об'єкт манеджеру колбеків
+* `$callbacks_manager` - Jet_Engine_Listings_Callbacks - the object manager of callbacks
 
 **Location:**
 /includes/listings/callbacks.php
@@ -233,11 +234,11 @@ add_action( 'jet-engine/callbacks/register', function( $callbacks_manager ) {
 
 ## jet-engine/listings/data/set-current-object
 
-Спрацьовує після того як лістинг сетить поточний `$current_object`. У випадку ДжетЕнжин загалом та лістингів зокрема, `$current_object` це аналог глобального об'єкту `$post` у ВП. Тільки у випадку `$post` це завжди об'єкт WP_Post, у випадку лістингу це буде поточний айтем лістингу. Поза лістингом зазвичай `$current_object` співпадає з глобальним об'єктом `$post`. Цей об'єкт достпний зовні через метод `jet_engine()->listings->data->get_current_object()`.
+Triggers after setting the current $current_object for the listing. In the case of JetEngine in general, and listings in particular, $current_object is similar to the global $post object in WP. But in the case of $post, it is always an object of WP_Post, while in the case of a listing, it will be the current listing item. Outside the listing, $current_object usually coincides with the global $post object. This object is available externally via the method `jet_engine()->listings->data->get_current_object()`.
 
 **Args:**
-* `$current_object` - об'єкт який щойно було встановлено як `$current_object`
-* `$data` - той самий об'ект що і jet_engine()->listings->data
+* `$current_object` - the object that was just set as `$current_object`
+* `$data` - the same object as jet_engine()->listings->data
 
 **Location:**
 /includes/listings/data.php
@@ -262,10 +263,10 @@ add_action( 'jet-engine/listings/data/set-current-object', function( $object ) {
 
 ## jet-engine/listings/data/reset-current-object
 
-Спрацьовує перед тем як `$current_object` буде ресетнуто. Докладніше про `$current_object` [тут](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginelistingsdataset-current-object)
+Triggers before `$current_object` will be reset. More details about `$current_object` here: (/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginelistingsdataset-current-object)
 
 **Args:**
-* `$data` - той самий об'ект що і jet_engine()->listings->data
+* `$data` - the same object as jet_engine()->listings->data
 
 **Location:**
 /includes/listings/data.php
@@ -289,3 +290,5 @@ add_action( 'jet-engine/listings/data/reset-current-object', function() {
 	}
 } );
 ```
+
+
