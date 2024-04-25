@@ -2,13 +2,13 @@
 
 ## jet-engine/listings/allowed-context-list
 
-Дозволяє зареєструвати власний контекст (об'єкт який буде використано як поточний при отриманні данних). Цей фльтр тільки додає контекст до всіх списків доступних контекстів у всіх місцях де вони використовуються. Далі потрібно повернути об'єкт який відповідає даному контексту через фільтр <a href="/01-jet-engine/01-hooks/01-listings/filters.md#jet-enginelistingsdataobject-by-context">'jet-engine/listings/data/object-by-context/{$context}'</a>.
+Allows registering a custom context (an object that will be used as the current one when retrieving data). This filter only adds the context to all lists of available contexts wherever they are used. Next, you need to return an object that corresponds to this context through the filter <a href="/01-jet-engine/01-hooks/01-listings/filters.md#jet-enginelistingsdataobject-by-context">'jet-engine/listings/data/object-by-context/{$context}'</a>.
 
-Докладніше в розділі <a href="/01-jet-engine/02-common-use-cases/01-context/">jet-engine/usage-cases/context</a>
+For more details, see the section <a href="/01-jet-engine/02-common-use-cases/01-context/">jet-engine/usage-cases/context</a>.
 
 **Args:**
 
-* `$context_list` - Доступні контексти
+* `$context_list` - Available contexts
 
 **Location:** /includes/listings/manager.php
 
@@ -25,11 +25,11 @@ add_filter( 'jet-engine/listings/allowed-context-list', function( $context_list 
 
 ## jet-engine/listings/dynamic-link/fields
 
-Дозволяє додати власні опції для контролу Сорс віджету Dynamic Link, незалежно від білдера
+Allows adding custom options for controlling the Source of the Dynamic Link widget, regardless of the builder.
 
 **Args:**
 
-* `$groups` - Доступні поля сгруповані по типам
+* `$groups` - Available fields grouped by type
 
 **Location:** /includes/listings/manager.php
 
@@ -68,11 +68,11 @@ add_filter( 'jet-engine/listings/dynamic-link/fields', function( $groups ) {
 
 ## jet-engine/listing/repeater-sources
 
-Дозволяє додати підтримку власних сорсів для репітер полів (для dynamic Repeater віджету та лістингів з сорсом Репітер). Далі потрібно додати відповідну обробку (дописати в кейси повноцінний приклад)
+Allows adding support for custom sources for repeater fields (for the dynamic Repeater widget and listings with the Repeater source). You then need to add the appropriate processing.
 
 **Args:**
 
-* `$sources` - Доступні сорси
+* `$sources` - Available sources
 
 **Location:** /includes/listings/manager.php
 
@@ -92,11 +92,11 @@ add_filter( 'jet-engine/listing/repeater-sources', function( $sources ) {
 
 ## jet-engine/listing/grid/widget-hide-options
 
-Дозволяє додати опції за яких поточний віджет Лістинг Гріда не буде рендеритись. До появи Dynamic Visibility використовувалось як спрощений аналог цієї функциональності. Зараз втратив акутальність
+Allows adding options under which the current Listing Grid widget will not be rendered. Before the implementation of Dynamic Visibility feature, it was used as a simplified analog of this functionality. It is now outdated.
 
 **Args:**
 
-* `$options` - Доступні опції
+* `$options` - Available options
 
 **Location:** /includes/listings/manager.php
 
@@ -104,11 +104,11 @@ add_filter( 'jet-engine/listing/repeater-sources', function( $sources ) {
 
 ## jet-engine/listings/taxonomies-for-options
 
-Дозволяє додати нові такосномії для віджету dynamic terms. За замовчанням там иводяться лише публічні таксономії, через цей хук можна додати приватні якщо потрібно.
+Allows adding new taxonomies for the dynamic terms widget. By default, only public taxonomies are fetched there, but through this hook, you can add private taxonomies if needed.
 
 **Args:**
 
-* `$taxonomies` - array - Список таксономій у форматі slug => label
+* `$taxonomies` - array - List of taxonomies in the slug => label format
 
 **Location:** /includes/listings/manager.php
 
@@ -132,11 +132,11 @@ add_filter( 'jet-engine/listings/taxonomies-for-options', function( $taxonomies 
 
 ## jet-engine/templates/create/data
 
-Дозволяє змінювати дані лістинг айтему до створення. За структурую аналогчний масиву параметрів для створення-оновлення поста - https://developer.wordpress.org/reference/functions/wp_insert_post/#parameters
+Allows modifying the data of a listing item before creation. The structure is similar to the array of parameters for creating/updating a post - https://developer.wordpress.org/reference/functions/wp_insert_post/#parameters
 
 **Args:**
 
-* `$post_data` - array - Дані для створення лістинг айтему. Докладніше опис всіх можливих параметрів в офіційній документації для функції wp_insert_post - https://developer.wordpress.org/reference/functions/wp_insert_post/#parameters
+* `$post_data` - array - Data for creating a listing item. A detailed description of all possible parameters can be found in the official documentation for the wp_insert_post function - https://developer.wordpress.org/reference/functions/wp_insert_post/#parameters 
 
 **Location:**
 /includes/listings/admin-screen.php
@@ -178,12 +178,12 @@ add_filter( 'jet-engine/templates/create/data', function() {
 
 ## jet-engine/templates/edit-url/{$view_type}
 
-Дозволяє змінювати УРЛ сторінки редагування лістинг айтему в залежності від білдера яким побудовано поточний лістинг айтем. $view_type - динамічна частина фільтра яка як раз і передає назву відповідного білдера. Фільтр спрацьовує при автоматичному редіректі на щойно створений лістинг айтем.
+Allows changing the URL of the listing item editing page depending on the builder used to build the current listing item. $view_type is the dynamic part of the filter that passes the name of the corresponding builder. The filter is triggered during the automatic redirect to the newly created listing item.
 
 **Args:**
 
-* `$redirect` - string - УРЛ сторінки редагування лістинг айтема. Кожний колбек повинен завжди повертати цей УРЛ незалежно від задачі яку виконує сам колбек.
-* `$template_id` - integer - ID лістинг айтему який буде редагуватися по УРЛ в $redirect
+* `$redirect` - string - The URL of the listing item editing page. Each callback should always return this URL regardless of the task it performs.
+* `$template_id` - integer - The ID of the listing item to be edited in the URL in $redirect
 
 **Location:**
 /includes/listings/admin-screen.php
@@ -201,13 +201,13 @@ add_filter( 'jet-engine/templates/edit-url/bricks', function( $redirect = '', $t
 
 ## jet-engine/templates/admin-columns/type/{$source}
 
-Дозволяє виводити кастомну інформацію в стовбчику Source в таблиці зі списком лістинг айтемів в адмінці в залежності від сорса лістинга. $source - динамічна частина назви фільтру, потрібна щоб застосовувати ваш колбек тільки для сорсу який вам потрібен.
+Allows displaying custom information in the Source column in the table of listing items in the admin area, depending on the listing source. $source is the dynamic part of the filter name, used to apply your callback only to the source you need.
 
 **Args:**
 
-* `$result` - string - за замовчанням '--'. Конетнт який потрібно показати у стовбчику для відповіного сорсу.
-* `$settings` - array - масив з налаштуваннями лістингу.
-* `$template_id` - integer - ID лістинг айтему.
+* `$result` - string - by default '--'. The content to display in the column for the corresponding source.
+* `$settings` - array - listing settings.
+* `$template_id` - integer - ID of the listing item.
 
 **Location:**
 /includes/listings/admin-screen.php
@@ -239,13 +239,13 @@ add_filter( 'jet-engine/templates/admin-columns/type/custom_content_type', funct
 
 ## jet-engine/ajax/get_listing/response
 
-Дозволяє змінювати результат виконання AJAX колбеку get_listing до відправки результатів на фронт.
+Allows changing the result of the AJAX callback get_listing before sending the results to the frontend.
 
 **Args:**
 
-* `$response` - array - За замовчнням містить лише ключ 'html' в якому зберігається результат вкионання колбеку. Можна додавати свої ключі які буде передано на фронт у JSON форматі.
-* `$widget_settings` - array - масив з налаштуваннями лістингу.
-* `$query` - array - аргументи квері лістингу.
+* `$response` - array - By default, contains only the 'html' key, which stores the result of the callback execution. You can add your keys that will be passed to the frontend in JSON format.
+* `$widget_settings` - array - The settings of the listing.
+* `$query` - array - The listing query arguments.
 
 **Location:**
 /includes/listings/ajax-handlers.php
@@ -303,13 +303,13 @@ add_filter( 'jet-engine/ajax/get_listing/response', funciton( $response, $widget
 
 ## jet-engine/listings/ajax/settings-by-id/{$listing_type}
 
-Дозволяє змінювати налаштування лістингу в залужності від типу білдера в якому рендериться даний лістинг. $listing_type - динамічна частина яка передає назву білдера яким побудовано сторінку на який використовується даний лістинг, а відповідно і тип самого елементу лістинга. В самому ядрі Енжина використовується щоб знайти потрібний віджет за його $element_id (2й аргумент фільтра) на сторінці $post_id (3й аргумент)
+Allows changing the settings of the listing depending on the builder type used to render this listing. $listing_type is the dynamic part that passes the name of the builder used to build the page where this listing is used, and, accordingly, the type of the listing element itself. In the JetEngine core, it is used to find the necessary widget by its $element_id (the 2nd argument of the filter) on the page with $post_id (the 3rd argument).
 
 **Args:**
 
-* `$settings` - array - налаштування елемента лістингу відповідно до білдера.
-* `$element_id` - string - ІД елемента. Мається на увазі саме внутрішній ІД у лозіці білдера яким побудовано дану сторінку і віповідно даний віджет.
-* `$post_id` - integer - ІД сторінки на якій відображається лістинг і з якої був аякс запит на його рендер.
+* `$settings` - array - The settings of the listing item according to the builder.
+* `$element_id` - string - The element's ID. It refers to the internal ID in the logic of the builder used to build this page and, accordingly, this widget.
+* `$post_id` - integer - The ID of the page where the listing is displayed and from which the AJAX request for its rendering was made.
 
 **Location:**
 /includes/listings/ajax-handlers.php
@@ -344,11 +344,11 @@ add_filter( 'jet-engine/listings/ajax/settings-by-id/bricks', ( $settings = [], 
 
 ## jet-engine/listings/allowed-callbacks
 
-Дозволяє змінювати та додавати нові колбеки до списку дозволених колбеків Енжина. На даний момент краще використовувати уніфікований АПІ для додавання нових колбеків через екшн [jet-engine/callbacks/register](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginecallbacksregister)
+Allows changing and adding new callbacks to the list of allowed Engine callbacks. Currently, it is better to use the unified API for adding new callbacks through the action [jet-engine/callbacks/register](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginecallbacksregister)
 
 **Args:**
 
-* `$callbacks` - array - список доступних колбеків.
+* `$callbacks` - array - The list of available callbacks.
 
 **Location:**
 /includes/listings/callbacks.php
@@ -358,15 +358,15 @@ Global
 
 **Example:**
 
-На даний момент краще використовувати уніфікований АПІ для додавання нових колбеків через екшн [jet-engine/callbacks/register](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginecallbacksregister)
+As of now, it is better to use the unified API for adding new callbacks through the action [jet-engine/callbacks/register](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginecallbacksregister)
 
 ## jet-engine/listings/allowed-callbacks-args
 
-Дозволяє змінювати та додавати нові аргументи для існуючіх колбеків Енжина. За цим списком аргументи колбеків будуть реєструватись як контроли для відповідних інтерфейсів. На даний момент краще використовувати уніфікований АПІ для додавання нових колбеків через екшн [jet-engine/callbacks/register](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginecallbacksregister)
+Allows you to modify and add new arguments for existing JetEngine callbacks. These arguments will be registered as controls for corresponding interfaces. Currently, it is better to use the unified API to add new callbacks via the action [jet-engine/callbacks/register](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginecallbacksregister)
 
 **Args:**
 
-* `$callbacks_args` - array - список всіх доступних аргументів для всіх колбеків.
+* `$callbacks_args` - array - List of all available arguments for all callbacks.
 
 **Location:**
 /includes/listings/callbacks.php
@@ -376,15 +376,15 @@ Global
 
 **Example:**
 
-На даний момент краще використовувати уніфікований АПІ для додавання нових колбеків через екшн [jet-engine/callbacks/register](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginecallbacksregister)
+Currently, it is better to use the unified API to add new callbacks via the action [jet-engine/callbacks/register](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginecallbacksregister)
 
 ## jet-engine/listing/dynamic-field/callback-args
 
-Дозволяє застосувати кастомні аргументи для поточного колбеку. На даний момент краще використовувати уніфікований АПІ для додавання нових колбеків через екшн [jet-engine/callbacks/register](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginecallbacksregister)
+Allows you to apply custom arguments for the current callback. Currently, it is better to use the unified API to add new callbacks via the action [jet-engine/callbacks/register](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginecallbacksregister)
 
 **Args:**
 
-* `$args` - array - Список аргументів які передаються в колбек. 1й аргумент - завжди поточне значення до якого застосовується колбек. Далі аргменти треба додавати до масиву у тому порядку як на їх очікує колбек.
+* `$args` - array - List of arguments passed to the callback. The first argument is always the current value to which the callback is applied. Further arguments should be added to the array in the order expected by the callback.
 
 **Location:**
 /includes/listings/callbacks.php
@@ -394,15 +394,15 @@ Global
 
 **Example:**
 
-На даний момент краще використовувати уніфікований АПІ для додавання нових колбеків через екшн [jet-engine/callbacks/register](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginecallbacksregister)
+Currently, it is better to use the unified API to add new callbacks via the action [jet-engine/callbacks/register](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginecallbacksregister)
 
 ## jet-engine/data/listing-type
 
-Дозволяє встановлювати власний тип рендеру лістингу (яким біледром рендеряться елементи поточного лістингу). В даному випадку мається на увазі що можна встановити власну назву типу рендеру лістинга в залежності від збереженої для даного лістингу, обробка встановленого типу здійснються через хук `jet-engine/listing/content/{$type}`
+Allows you to set a custom type for rendering the listing (the builder for rendering the current listing items). In this case, you can set a custom name for the listing rendering type based on what is saved for the current listing, and the processing of the set type is done through the hook `jet-engine/listing/content/{$type}`
 
 **Args:**
 
-* `$listing_type` - string - Дефолтний тип, збережений у метаполі `_listing_type` поточного лістинга.
+* `$listing_type` - string - The default type saved in the `_listing_type` meta field of the current listing.
 
 **Location:**
 /includes/listings/data.php
@@ -431,11 +431,11 @@ if ( ! jet_engine()->has_elementor() ) {
 
 ## jet-engine/listing/data/object-fields-groups
 
-Доступні групи даних які потрапляють у список полів Object field, там де ці поля зустрічаються (наприклад віджет Dynamic Field). Через цей хук треба додавати власні назви полів об‘єктів, які потім автоматично будуть отримуватися з поточного об‘єкту
+Available data groups that are included in the Object field list where these fields are encountered (for example, in the Dynamic Field widget). You should use this hook to add custom names of object fields, which will then be automatically retrieved from the current object.
 
 **Args:**
 
-* `$groups` - array - Дефолтний список полів.
+* `$groups` - array - Defaul list of fields.
 
 **Location:**
 /includes/listings/data.php
@@ -494,11 +494,11 @@ add_filter( 'jet-engine/data/listing-type', function( $groups ) {
 
 ## jet-engine/listing/data/post-fields
 
-Дозволяє змінювати набір доступних полів о‘бєкту поста для використання в опціях. Цей фільтр тільки додає нові поля як опції, додавати їх безпосердньо в об‘єкт поста треба власноруч.
+Allows you to modify the set of available fields for the post object for use in options. This filter only adds new fields as options; you need to add them directly to the post object manually.
 
 **Args:**
 
-* `$fields` - array - Дефолтний список полів.
+* `$fields` - array - Default list of fields.
 
 **Location:**
 /includes/listings/data.php
@@ -521,11 +521,11 @@ add_filter( 'jet-engine/listing/data/post-fields', function( $fields ) {
 
 ## jet-engine/listing/data/term-fields
 
-Дозволяє змінювати набір доступних полів о‘бєкту терма таксономії для використання в опціях. Цей фільтр тільки додає нові поля як опції, додавати їх безпосердньо в об‘єкт терма треба власноруч.
+Allows you to modify the set of available fields for the term taxonomy object for use in options. This filter only adds new fields as options; you need to add them directly to the term object manually.
 
 **Args:**
 
-* `$fields` - array - Дефолтний список полів.
+* `$fields` - array - Default list of fields.
 
 **Location:**
 /includes/listings/data.php
@@ -547,11 +547,11 @@ add_filter( 'jet-engine/listing/data/term-fields', function( $fields ) {
 
 ## jet-engine/listing/data/user-fields
 
-Дозволяє змінювати набір доступних полів о‘бєкту юзера для використання в опціях. Цей фільтр тільки додає нові поля як опції, додавати їх безпосердньо в об‘єкт юзера треба власноруч.
+Allows you to modify the set of available fields for the user object to use in options. This filter only adds new fields as options; you need to add them directly to the user object manually.
 
 **Args:**
 
-* `$fields` - array - Дефолтний список полів.
+* `$fields` - array - Default list of fields.
 
 **Location:**
 /includes/listings/data.php
@@ -573,13 +573,13 @@ add_filter( 'jet-engine/listing/data/term-fields', function( $fields ) {
 
 ## jet-engine/listing/data/custom-listing
 
-Дозволяє змінювати парметри лістингу в момент виклику setup_default_listing(). Це відбувається коли плагін намагається отримати данні лістингу на стандартних архівних сторінках ВП. Фільтр використовується для сумісності з тем білдерами (JetThemeCore та elementorPro)
+Allows you to change the parameters of the listing when setup_default_listing() is called. This happens when the plugin tries to get the listing data on standard WP archive pages. The filter is used for compatibility with theme builders (JetThemeCore and ElementorPro).
 
 **Args:**
 
-* `$listing` - array|false - Данні лістингу.
+* `$listing` - array|false - Listing data.
 * `$data_manager` - Jet_Engine_Listings_Data.
-* `$default_object` - object - Поточний дефолтний об'єкт.
+* `$default_object` - object - Current default object.
 
 **Location:**
 /includes/listings/data.php
@@ -639,11 +639,11 @@ add_filter( 'jet-engine/listing/data/custom-listing',  function( $listing, $data
 
 ## jet-engine/listings/data/queried-user
 
-Дозволяє задати власного queried юзера. Queried юзер, це юзер сторінку якого ми переглядаємо в даний момент. Наприклад на сторінці архів по автору queried юзер це автор, архів якого ми зараз переглядаємо. Якщо не можна визначити queried юзер, то повернеться поточний юзер. Може використовуватись зі сторонніми мембершіп плагінами для того щоб визначити публічну сторінку юзера
+Allows you to set a custom queried user. Queried user is the user whose page we are currently viewing. For example, on an author archive page, the queried user is the author whose archive we are currently viewing. If the queried user cannot be determined, the current user will be returned. Can be used with third-party membership plugins to determine the public user page.
 
 **Args:**
 
-* `$queried_user` - WP_User|false - queried юзер.
+* `$queried_user` - WP_User|false - Queried user.
 
 **Location:**
 /includes/listings/data.php
@@ -680,11 +680,11 @@ add_filter( 'jet-engine/listings/data/queried-user',  function( $queried_user ) 
 
 ## jet-engine/listings/data/current-author
 
-Використовується в функції get_current_author_object(). Ця функція намагається отримати об'єкт з даними автора поточного контенту. Відповідно фільтр дозволяє змінити/задати автора контенту (поста, сторінки, архівної сторінки і т.п.)
+Used in the function get_current_author_object(). This function attempts to get the object with data of the author of the current content. Therefore, the filter allows you to change/set the author of the content (post, page, archive page, etc.).
 
 **Args:**
 
-* `$author` - WP_User|false - queried юзер.
+* `$author` - WP_User|false - queried user.
 
 **Location:**
 /includes/listings/data.php
@@ -694,12 +694,12 @@ Global
 
 ## jet-engine/listing/current-object-title
 
-Використовується в для кастомних об'єктів з даними і дозволяє задати те що буде назвою поточного об'єкту. Напримкла для поста - це тайтл поста, тоді як для кастомного об'єкту плагін не може чітко визначити що буде назвою
+Used for custom data objects and allows you to set what will be the title of the current object. For example, for a post, it is the post title, while for a custom object, the plugin cannot clearly determine what will be the title.
 
 **Args:**
 
-* `$title` - string - назва.
-* `$object` - object - об'єкт.
+* `$title` - string - Name.
+* `$object` - object - Object.
 
 **Location:**
 /includes/listings/data.php
@@ -728,14 +728,14 @@ add_filter( 'jet-engine/listing/current-object-title', function( $title, $object
 
 ## jet-engine/listing/custom-post-id
 
-Використвується у методі jet_engine()->listings->data->get_current_object_id() для отримання ID поточного об'єкта. У випадку зі стандартними об'єктами - пост, юзер, терм і т.п. - ми точно знаємо який проперті об'єкта зберігає його ІД. У випалку з кастомними - ні. Але метод get_current_object_id використовуються у багатьох місцях для точного визначення ІД об'єкта. І завдяки даному фільтру ми можемо визначати цей ІД для кастомних об'єктів.
+Used in the jet_engine()->listings->data->get_current_object_id() method to retrieve the ID of the current object. For standard objects like posts, users, terms, etc., we know exactly which property of the object holds its ID. However, for custom objects, this is not always the case. But the get_current_object_id method is used in many places to accurately determine the object's ID. Thanks to this filter, we can determine this ID for custom objects.
 
-Цей хук спрацьовує у випадках, коли jet_engine()->listings->data->get_current_object_id() зіткнувся з об'єктом, обробка якого не прописана в цьому методі напряму. Це будь-який об'єкт крім WP_Post, WP_User, WP_Term, WP_Comment, Jet_Engine_Queried_Repeater_Item
+This hook is triggered in cases where jet_engine()->listings->data->get_current_object_id() encounters an object whose processing is not directly specified in this method. This is any object except for WP_Post, WP_User, WP_Term, WP_Comment, Jet_Engine_Queried_Repeater_Item.
 
 **Args:**
 
-* `$post_id` - int|false - дефолтний ІД з функції get_the_ID().
-* `$object` - object - об'єкт для якого ми отримуємо ІД.
+* `$post_id` - int|false - The default ID from the get_the_ID() function.
+* `$object` - object - The object for which we are retrieving the ID.
 
 **Location:**
 /includes/listings/data.php
@@ -759,12 +759,12 @@ add_filter( 'jet-engine/listing/custom-post-id', function( $id, $object ) {
 
 ## jet-engine/listing/current-object-id
 
-Цей хук, як і попреденій використвується у методі jet_engine()->listings->data->get_current_object_id() для отримання ID поточного об'єкта. Єдина відмінність - цей хук спрацьовує при будь-якому зверенні до jet_engine()->listings->data->get_current_object_id() і за допомогою нього можна змінити фінальний результат який повертає цей метод, незалежно від об'єкта для якого ми отримуємо ІД.
+This hook, like the previous one, is used in the jet_engine()->listings->data->get_current_object_id() method to retrieve the ID of the current object. The only difference is that this hook is triggered whenever jet_engine()->listings->data->get_current_object_id() is called, and it allows you to change the final result returned by this method, regardless of the object for which we are getting the ID.
 
 **Args:**
 
-* `$obj_id` - int|false - дефолтний ІД який вдалося отримати методу jet_engine()->listings->data->get_current_object_id().
-* `$object` - object - об'єкт для якого ми отримуємо ІД.
+* `$obj_id` - int|false - The default ID obtained by the jet_engine()->listings->data->get_current_object_id() method.
+* `$object` - object - The object for which we are retrieving the ID.
 
 **Location:**
 /includes/listings/data.php
@@ -788,12 +788,12 @@ add_filter( 'jet-engine/listing/current-object-id', function( $id, $object ) {
 
 ## jet-engine/listings/data/default-object
 
-Дозволяє змінити поточний дефолтний об'єкт. Це акту цьогоально для нестандартних кейсів використання сторінок у ВП. Наприклад, у випадку профайл білдера - для ВП дефолтний поточний об'єкт це сторінка профайл білдера, але нам замість потрібен юзер, якого зараз виводить профайл білдер.
+Allows you to change the current default object. This is useful for non-standard use cases of using pages in WordPress. For example, in the case of a profile builder, for WordPress, the default current object is the profile builder page, but we need a user the profile builder is currently displaying instead, not the page. 
 
 **Args:**
 
-* `$object` - object - дефолтний об'єкт, який JetEngine зміг вирахувати автоматично.
-* `$jet_engine_data` - object - екземпляр класу Jet_Engine_Listings_Data, він аналогчіний тому, що зберігається в jet_engine()->listings->data, тому замість 2го аргумнету можна використовувати jet_engine()->listings->data.
+* `$object` - object - The default object that JetEngine was able to track automatically.
+* `$jet_engine_data` - object - An instance of the Jet_Engine_Listings_Data class, similar to what is stored in jet_engine()->listings->data, so instead of the second argument, you can use jet_engine()->listings->data.
 
 **Location:**
 /includes/listings/data.php
@@ -822,20 +822,20 @@ add_filter( 'jet-engine/listings/data/default-object', function( $default_object
 
 ## jet-engine/listings/data/object-by-context/{$context}
 
-Використовується для заміни поточного об'єкта на новий, отриманий загдно динамічній частині хука - `{$context}`. Ця функціональність корисна для спрощення роботи з разними об'єктами в середині одного лістинга чи поста. Без контектсу необхідно було б використовувати вкладений лістинг. У випадку з контекстом можна просто використовувати динамічні віджети зі зміненим контекстом.
+Used to replace the current object with a new one, obtained according to the dynamic part of the hook - {$context}. This functionality is useful for simplifying work with different objects within the same listing or post. Without context, you would have to use nested listings. With context, you can simply use dynamic widgets with a changed context.
 
 Докладніше в розділі <a href="/01-jet-engine/02-common-use-cases/01-context/">jet-engine/usage-cases/context</a>
 
 **Args:**
 
-* `$context_list` - Доступні контексти
+* `$context_list` - Available contexts
 
 **Location:** /includes/listings/manager.php
 
 **Access:** Global
 
 **Example**
-В розділі <a href="/01-jet-engine/02-common-use-cases/01-context/">jet-engine/usage-cases/context</a>
+In the <a href="/01-jet-engine/02-common-use-cases/01-context/">jet-engine/usage-cases/context</a> section
 
 ## jet-engine/listings/data/object-vars
 
@@ -867,11 +867,10 @@ add_filter( 'jet-engine/listings/data/default-object', function( $default_object
 
 ## jet-engine/listing/grid/lazy-load/post-id
 
-Цей фільтр дозволяє змінити ID темплейта, де використовується лейзі-лоад лістінг, для правильного отримання налаштувань віджета при аякс запиті.
-Фільтр використовується для сумісності з темплейтами тім білдерів (JetThemeCore та ElementorPro)
+This filter allows you to change the template ID where lazy-load listing is used, for correctly obtaining widget settings during an AJAX request. The filter is used for compatibility with theme builders' templates (JetThemeCore and ElementorPro).
 
 **Args:**
-* `$post_id` - int - ID темплейта, де використовується лейзі-лоад лістінг.
+* `$post_id` - int - The ID of the template where lazy-load listing is used.
 
 **Location:**
 includes/components/listings/render/listing-grid.php
@@ -910,11 +909,11 @@ add_filter( 'jet-engine/listing/grid/lazy-load/post-id', function( $post_id ) {
 
 ## jet-engine/listings/frontend/custom-listing-url
 
-Цей фільтр дозволяє повернути кастомний УРЛ для лістинг айтему. Використувується в кобінації з додаванням нового сорсу для УРЛів лістигнг айтемів. Доклданіше про цей кейс <a href="/01-jet-engine/02-common-use-cases/05-register-custom-link-source-for-the-listing">тут</a>
+This filter allows you to return a custom URL for a listing item. Used in combination with adding a new source for listing item URLs. More about this case <a href="/01-jet-engine/02-common-use-cases/05-register-custom-link-source-for-the-listing">here</a>.
 
 **Args:**
-* `$url` - string - По замовчанню порожня строка. Якщо замість неє повернути своє значення - воно буде використане як УРЛ поточного лістинг айтема.
-* `$settings` - array - масив з налаштуваннями лістинг айтема. В цьому масиві під ключем `listing_link_source`  зберігається назва поточного сорсу для УРЛ
+* `$url` - string - By default, an empty string. If you return your value instead of an empty string, it will be used as the URL for the current listing item.
+* `$settings` - array - An array with the settings of the listing item. The listing_link_source key in this array stores the name of the current source for URLs.
 
 **Location:**
 includes/components/listings/frontend.php
