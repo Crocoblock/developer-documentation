@@ -2,12 +2,12 @@
 
 ## jet-engine/post-types/admin-filters/custom-filter/{$type}
 
-Дозволяє рендерити кастомний Адмін фільтр по динамічній частині фільтра `$type`, що відповідає типу фільтра https://tppr.me/P94lK.
+Allows rendering a custom Admin filter for the dynamic part of the filter `$type`, corresponding to the filter type https://tppr.me/P94lK.
 
 **Args:**
-- `$filter` - array - налаштування фільтра
-- `$index` - int - індекс фільтра
-- `$admin_filters` - Jet_Engine_CPT_Admin_Filters - менеджер адмін фільтрів
+- `$filter` - array - The filter settings.
+- `$index` - int - The filter index.
+- `$admin_filters` - Jet_Engine_CPT_Admin_Filters - The admin filter manager. 
 
 **Location:**
 [includes/components/post-types/admin-filters.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/admin-filters.php)
@@ -68,10 +68,10 @@ add_action( 'jet-engine/post-types/admin-filters/custom-filter/related_items', f
 
 ## jet-engine/post-types/deleted-post-type
 
-Виконується після того, як видаляється кастомний пост-тип.
+Executes after a custom post type is deleted.
 
 **Args:**
-- `$post_type` - string - слаг пост-типа, який видаляється
+- `$post_type` - string - The slug of the post type being deleted. 
 
 **Location:**
 [includes/components/post-types/rest-api/delete-post-type.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/rest-api/delete-post-type.php)
@@ -89,11 +89,11 @@ add_action( 'jet-engine/post-types/deleted-post-type', function( $post_type ) {
 
 ## jet-engine/post-types/updated-post-type-slug
 
-Виконується після того, як змінюється слаг кастомного пост-типу.
+Executes after the slug of a custom post type is updated.
 
 **Args:**
-- `$new_slug` - string - новий слаг
-- `$old_slug` - string - старий слаг
+- `$new_slug` - string - The new slug. 
+- `$old_slug` - string - The old slug. 
 
 **Location:**
 [includes/components/post-types/rest-api/edit-post-type.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/rest-api/edit-post-type.php)
@@ -111,8 +111,8 @@ add_action( 'jet-engine/post-types/updated-post-type-slug', function( $new_slug,
 
 ## jet-engine/post-type/edit/before-enqueue-assets
 
-Виконується перед тим, як будуть підключені основні скрипти для Edit Post Type сторінки.
-Використовується для підключення скриптів кастомних Vue компонентів.
+Executes before the main scripts are enqueued for the Edit Post Type page.
+Used for enqueuing scripts of custom Vue components.
 
 **Location:**
 [includes/components/post-types/pages/edit.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/pages/edit.php)
@@ -140,8 +140,8 @@ add_action( 'jet-engine/post-type/edit/before-enqueue-assets', function() {
 
 ## jet-engine/post-types/meta-fields
 
-Виконується після рендеру Advanced Settings секції на Edit Post Type сторінці https://tppr.me/uVAdf
-Використовується для рендеру `jet-meta-fields` Vue компонента.
+Executes after rendering the Advanced Settings section on the Edit Post Type page https://tppr.me/uVAdf
+Used for rendering the `jet-meta-fields` Vue component.
 
 **Location:**
 [includes/components/post-types/templates/edit.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/templates/edit.php)
@@ -159,7 +159,7 @@ add_action( 'jet-engine/post-types/meta-fields', function() {
 
 ## jet-engine/post-types/admin-filters/custom-controls
 
-Використовується для рендеру кастомних Vue компонентів в репітер айтемі `jet-engine-admin-filters` компонента.
+Used for rendering custom Vue components in the repeater item of the `jet-engine-admin-filters` component.
 
 **Location:**
 [includes/components/post-types/templates/filters.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/templates/filters.php)
