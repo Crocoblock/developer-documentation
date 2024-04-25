@@ -2,13 +2,13 @@
 
 ## jet-engine/admin-filters/apply-filter/{$type}
 
-Дозволяє змінювати квері для адмін фільтрів по динамичній частині хука `$type`, що відповідає типу фільтра https://tppr.me/P94lK.
+Allows changing the query for admin filters for the dynamic part of the hook `$type`, corresponding to the filter type https://tppr.me/P94lK.
 
 **Args:**
 - `$query` - WP_Query
-- `$filter` - array - налаштування фільтра
-- `$value` - mixed - значення фільтра
-- `$admin_filters` - Jet_Engine_CPT_Admin_Filters - менеджер адмін фільтрів
+- `$filter` - array - Filter settings. 
+- `$value` - mixed - Filter value. 
+- `$admin_filters` - Jet_Engine_CPT_Admin_Filters - Admin filters manager. 
 
 **Location:**
 [includes/components/post-types/admin-filters.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/admin-filters.php)
@@ -68,12 +68,12 @@ add_filter( 'jet-engine/admin-filters/apply-filter/related_items', function ( $q
 
 ## jet-engine/admin-filters/filter-value
 
-Дозволяє змінювати значення варіанта фільтра під час рендеру самого фільтра. 
+Allows changing the filter option value during the filter rendering. 
 
 **Args:**
-- `$value` - mixed - значення варіанта фільтра
-- `$filter` - array - налаштування фільтра
-- `$admin_filters` - Jet_Engine_CPT_Admin_Filters - менеджер адмін фільтрів
+- `$value` - mixed - The filter option value.
+- `$filter` - array - The filter settings. 
+- `$admin_filters` - Jet_Engine_CPT_Admin_Filters - Admin filters manager. 
 
 **Location:**
 [includes/components/post-types/admin-filters.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/admin-filters.php)
@@ -92,12 +92,12 @@ add_filter( 'jet-engine/admin-filters/filter-value', function ( $value, $filter,
 
 ## jet-engine/admin-filters/filter-label
 
-Дозволяє змінювати лейбл варіанта фільтра під час рендеру самого фільтра.
+Allows changing the filter option label during the filter rendering.
 
 **Args:**
-- `$label` - mixed - значення варіанта фільтра
-- `$filter` - array - налаштування фільтра
-- `$admin_filters` - Jet_Engine_CPT_Admin_Filters - менеджер адмін фільтрів
+- `$label` - mixed - Filter option label.
+- `$filter` - array - Filter settings. 
+- `$admin_filters` - Jet_Engine_CPT_Admin_Filters - Admin filters manager. 
 
 **Location:**
 [includes/components/post-types/admin-filters.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/admin-filters.php)
@@ -116,19 +116,19 @@ add_filter( 'jet-engine/admin-filters/filter-label', function ( $label, $filter,
 
 ## jet-engine/post-type/predifined-columns-cb-for-js
 
-Дозволяє реєструвати нові колбеки для Адмін колонок https://tppr.me/mNTDN.
+Allows registering new callbacks for Admin columns https://tppr.me/mNTDN.
 
 **Args:**
-- `$callbacks` - array - список колбеків в форматі `array( $callback => $callback_args, ... )`
-    - `$callback` - string - ім'я колбека
-    - `$callback_args` - array - аргументи колбека
-        - `$description` - string - короткий опис колбека
-        - `args` - array|false - аргумети( поля ) колбека в форматі `array( $arg_name => $arg_settings, ... )`
-            - `$arg_name` - string - слаг аргумента
-            - `$arg_settings` - array - налаштування аргумента
-                - `label` - string - ім'я аргумента
-                - `description` - string - короткий опис аргумента
-                - `value` - string - значення аргумента
+- `$callbacks` - array - The list of callbacks in the format `array( $callback => $callback_args, ... )`
+    - `$callback` - string - Callback name. 
+    - `$callback_args` - array - Callback arguments. 
+        - `$description` - string - A short description of callback. 
+        - `args` - array|false - callback arguments (fields) in the format `array( $arg_name => $arg_settings, ... )`
+            - `$arg_name` - string - Argument slug. 
+            - `$arg_settings` - array - Argument settings. 
+                - `label` - string - Argument name. 
+                - `description` - string - Argument short description. 
+                - `value` - string - Argument value. 
 
 **Location:**
 [includes/components/post-types/pages/edit.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/pages/edit.php)
@@ -162,10 +162,10 @@ add_filter( 'jet-engine/post-type/predifined-columns-cb-for-js', function ( $cal
 
 ## jet-engine/cpt/excluded-built-in-types
 
-Дозволяє змінювати список виключених вбудованих пост-типів, які не можна редагувати в Post Types UI https://tppr.me/ETA6M.
+Allows changing the list of excluded built-in post types that cannot be edited in Post Types UI https://tppr.me/ETA6M.
 
 **Args:**
-- `$post_types` - array - список виключених пост-типів
+- `$post_types` - array - The list of excluded post types.
 
 **Location:**
 [includes/components/post-types/pages/list.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/pages/list.php)
@@ -184,10 +184,10 @@ add_filter( 'jet-engine/cpt/excluded-built-in-types', function ( $post_types ) {
 
 ## jet-engine/post-types/admin-filters-types
 
-Дозволяє реєструвати нові типи Адмін фільтрів https://tppr.me/YYBs6.
+Allows registering new types of Admin filters https://tppr.me/YYBs6. 
 
 **Args:**
-- `$types` - array - список типів Адмін фільтрів в форматі `array( 'value' => '', 'label' => '' )`
+- `$types` - array -  List of Admin filter types in the format `array( 'value' => '', 'label' => '' )`
 
 **Location:**
 [includes/components/post-types/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/manager.php)
@@ -209,11 +209,11 @@ add_filter( 'jet-engine/post-types/admin-filters-types', function ( $types ) {
 
 ## jet-engine/{$object_type}/{$object}/meta-fields
 
-Дозволяє реєструвати додаткові мета поля по динамічним частинам фільтра `$object_type`(post-type, taxonomy, user) та
-`$object`(post, page, category, post_tag, ...), які будуть використовуватися через метод `get_meta_fields_for_object`
+Allows registering additional meta fields for dynamic parts of the filter `$object_type`(post-type, taxonomy, user) and
+`$object`(post, page, category, post_tag, ...), which will be used through the `get_meta_fields_for_object` method.
 
 **Args:**
-- `$fields` - array - список мета полів
+- `$fields` - array - The list of meta fields. 
 
 **Location:**
 [includes/components/post-types/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/manager.php)
