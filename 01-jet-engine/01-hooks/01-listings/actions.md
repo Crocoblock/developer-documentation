@@ -55,7 +55,7 @@ add_action( 'jet-engine/templates/created', function( $template_id = 0, $post_da
 
 ## jet-engine/templates/created/{$view_type}
 
-This action works similarly to the previous one. The only difference is the $view_type dynamic part . It isolates the action for a specific builder under which the listing item was created. This hook is best used when you need to perform certain actions only for a specific builder, rather than globally for the listing item.
+This action works similarly to the previous one. The only difference is the $view_type dynamic part. It isolates the action for a specific builder under which the listing item was created. This hook is best used when you need to perform certain actions only for a specific builder, rather than globally for the listing item.
 
 **Args:**
 - `$template_id` - ID of the newly created listing item.
@@ -190,7 +190,7 @@ JetEngine listing AJAX request
 
 **Example:**
 
-Better not to use it unless absolutely necessary and replace with one of the hooks `jet-engine/ajax-handlers/before-call-handler`, `jet-engine/ajax-handlers/before-do-ajax`, `jet-engine/ajax-handlers/referrer/request`
+Better not to use it unless absolutely necessary and replace it with one of the hooks `jet-engine/ajax-handlers/before-call-handler`, `jet-engine/ajax-handlers/before-do-ajax`, `jet-engine/ajax-handlers/referrer/request`
 
 ## jet-engine/callbacks/register
 
@@ -263,7 +263,7 @@ add_action( 'jet-engine/listings/data/set-current-object', function( $object ) {
 
 ## jet-engine/listings/data/reset-current-object
 
-Triggers before `$current_object` will be reset. More details about `$current_object` [here:](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginelistingsdataset-current-object)
+Triggers before `$current_object` will be reset. More details about `$current_object` [here.](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginelistingsdataset-current-object)
 
 **Args:**
 * `$data` - the same object as jet_engine()->listings->data
