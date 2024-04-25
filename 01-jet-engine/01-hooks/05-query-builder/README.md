@@ -1,6 +1,6 @@
 # JetEngine Query Builder related hooks
 
-Хуки які пов'язнаі з базовою функциональністю Query Builder і з типами квері які додані з самого компонента. Якщо новий тип квері додається з якогось плагіна чи стороннього модуля - документацію по хукам для цього типу квері слід шукати у документації відповідного плагіна або модуля
+Hooks related to the basic functionality of the Query Builder and the query types added from the component itself. If a new query type is added from a plugin or third-party module, documentation on hooks for this query type should be sought in the documentation of the respective plugin or module.
 
 * **<a href="/01-jet-engine/01-hooks/05-query-builder/actions.md">Actions</a>**
 * **<a href="/01-jet-engine/01-hooks/05-query-builder/filters.md">Filters</a>**
