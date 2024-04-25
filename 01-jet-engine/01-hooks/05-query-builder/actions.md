@@ -2,10 +2,10 @@
 
 ## jet-engine/query-builder/queries/register
 
-Хук для реєстрації кастомних квері. Цей хук призначений сам для додавання нового типу квері а не конкретной квері. Конкретна квері даного типу потім створюється через інтерфейс Jet Engine -> Query Builder
+Hook for registering custom queries. This hook is designed for adding a new query type, not a specific query. The specific query of this type is then created through the Jet Engine interface -> Query Builder.
 
 **Args:**
-- `$manager` - Class Query_Factory в якому є метод register_query(), через який і відбувається реєстрація нового типу квері.
+- `$manager` - The Query_Factory class which has the `register_query()` method, through which the registration of a new query type takes place.
 
 **Location:**
 includes/components/query-builder/query-factory.php
@@ -29,10 +29,10 @@ add_action( 'jet-engine/query-builder/queries/register', function( $manager ) {
 
 ## jet-engine/query-builder/query-editor/register
 
-Хук для реєстрації компоненту який відповідає за інтерфейс едітора кастомної квері.
+Hook for registering the component responsible for the custom query editor interface.
 
 **Args:**
-- `$manager` - Екземпляр класу що керує едітором та містить метод register_type() для реєстрації новог компоненту
+- `$manager` - An instance of the class that manages the editor and contains the `register_type()` method for registering a new component.
 
 **Location:**
 includes/components/query-builder/query-factory.php
