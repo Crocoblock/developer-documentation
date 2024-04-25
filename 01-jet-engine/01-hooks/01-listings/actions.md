@@ -263,7 +263,7 @@ add_action( 'jet-engine/listings/data/set-current-object', function( $object ) {
 
 ## jet-engine/listings/data/reset-current-object
 
-Triggers before `$current_object` will be reset. More details about `$current_object` here: (/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginelistingsdataset-current-object)
+Triggers before `$current_object` will be reset. More details about `$current_object` [here:](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginelistingsdataset-current-object)
 
 **Args:**
 * `$data` - the same object as jet_engine()->listings->data
