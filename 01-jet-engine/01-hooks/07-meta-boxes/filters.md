@@ -2,10 +2,9 @@
 
 ## jet-engine/meta-boxes/sources
 
-Дозволяє змінювати список сорсів для мета-бокс компонента.
-
+Allows changing the list of sources for the meta box component.
 **Args:**
-- `$sources` - список сорсів для мета-бокс компонента в форматі `array( 'value' => 'post', 'label' => 'Post' )`
+- `$sources` - list of sources for the meta box component in the format `array( 'value' => 'post', 'label' => 'Post' )`
 
 **Location:**
 [includes/components/meta-boxes/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/manager.php)
@@ -29,11 +28,11 @@ add_filter( 'jet-engine/meta-boxes/sources', function( $sources ) {
 
 ## jet-engine/meta-boxes/raw-fields
 
-Дозволяє змінювати масив полів мета-бокса, перед тим як вони будуть оброблені.
+Allows changing the array of meta box fields before they are processed.
 
 **Args:**
-- `$fields` - array - Масив полів
-- `$meta_boxes` - Jet_Engine_Meta_Boxes - Об'єкт мета-бокс менеджера
+- `$fields` - array - Array of fields.
+- `$meta_boxes` - Jet_Engine_Meta_Boxes - Meta box manager object.
 
 **Location:**<br>
 [includes/components/meta-boxes/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/manager.php) <br>
@@ -62,12 +61,12 @@ add_filter( 'jet-engine/meta-boxes/raw-fields', function( $fields, $meta_boxes )
 
 ## jet-engine/meta-boxes/fields-for-select/name
 
-Дозволяє змінити формат значення опції списка полів для селекта. Типово це `Name/ID` поля.
+Allows changing the format of the field's Name/ID value for the select field. Typically, it is the Name/ID of the field.
 
 **Args:**
-- `$name` - string - `Name/ID` поля
-- `$field` - array - Масив аргументів поля
-- `$object_name` - string - Ім'я об'єкта до якого відноситься поле ( post, page, category, ... )
+- `$name` - string - `Name/ID` of the field.
+- `$field` - array - The field's arguments array.
+- `$object_name` - string - The name of the object to which the field belongs (post, page, category, ...).
 
 **Location:**
 [includes/components/meta-boxes/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/manager.php)
@@ -85,10 +84,10 @@ add_filter( 'jet-engine/meta-boxes/fields-for-select/name', function( $name, $fi
 
 ## jet-engine/meta-fields/config
 
-Дозволяє змінювати масив локалізованих даних, які використовуються в js на сторінці редагування мета-бокса.
+Allows changing the array of localized data used in JavaScript on the meta box edit page.
 
 **Args:**
-- `$config` - array - Масив локалізованих даних.
+- `$config` - array - The array of localized data.
 
 **Location:**
 [includes/components/meta-boxes/pages/edit.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/pages/edit.php)
@@ -112,12 +111,12 @@ add_filter( 'jet-engine/meta-fields/config', function( $config ) {
 
 ## jet-engine/meta-fields/{$field_type}/args
 
-Дозволяє підготувати масив аргументів нового поля для подальшого використання в інтерфейс білдері по динамічній частині фільтра `$field_type`, що відповідає типу поля. 
+Allows preparing an array of arguments for a new field to be used later in the builder interface based on the dynamic part of the  `$field_type filter`, which corresponds to the field type.
 
 **Args:**
-- `$args` - array - Результуючі аргументи поля
-- `$field` - array - Первинні агрументи поля
-- `$meta_instance` - Jet_Engine_CPT_Meta - Об'єкт менеджера для CPT мети
+- `$args` - array - The resulting field arguments.
+- `$field` - array - The initial field arguments.
+- `$meta_instance` - Jet_Engine_CPT_Meta - The CPT meta manager object.
 
 **Location:**
 [includes/components/meta-boxes/post.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/post.php)
@@ -143,12 +142,12 @@ add_filter( 'jet-engine/meta-fields/map/args', function( $args, $field, $meta_in
 
 ## jet-engine/meta-fields/field/args
 
-Дозволяє змінити масив аргументів поля для подальшого використання в інтерфейс білдері.
+Allows changing the array of field arguments for later use in the builder interface.
 
 **Args:**
-- `$args` - array - Результуючі аргументи поля
-- `$field` - array - Первинні агрументи поля
-- `$meta_instance` - Jet_Engine_CPT_Meta - Об'єкт менеджера для CPT мети
+- `$args` - array - The resulting field arguments.
+- `$field` - array - The initial field arguments.
+- `$meta_instance` - Jet_Engine_CPT_Meta - The CPT meta manager object.
 
 **Location:**
 [includes/components/meta-boxes/post.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/post.php)
@@ -171,12 +170,12 @@ add_filter( 'jet-engine/meta-fields/field/args', function( $args, $field, $meta_
 
 ## jet-engine/meta-fields/repeater/{$field_type}/args
 
-Дозволяє підготувати масив аргументів нового поля для репітера для подальшого використання в інтерфейс білдері по динамічній частині фільтра `$field_type`, що відповідає типу поля.
+Allows preparing an array of arguments for a new field for the repeater for later use in the builder interface based on the dynamic part of the `$field_type filter`, which corresponds to the field type.
 
 **Args:**
-- `$args` - array - Результуючі аргументи поля
-- `$field` - array - Первинні агрументи поля
-- `$meta_instance` - Jet_Engine_CPT_Meta - Об'єкт менеджера для CPT мети
+- `$args` - array - The resulting field arguments.
+- `$field` - array - The initial field arguments.
+- `$meta_instance` - Jet_Engine_CPT_Meta - The CPT meta manager object.
 
 **Location:**
 [includes/components/meta-boxes/post.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/post.php)
@@ -202,12 +201,12 @@ add_filter( 'jet-engine/meta-fields/repeater/map/args', function( $args, $field,
 
 ## jet-engine/meta-fields/repeater/field/args
 
-Дозволяє змінити масив аргументів поля для репітера для подальшого використання в інтерфейс білдері.
+Allows changing the array of field arguments for the repeater for later use in the builder interface.
 
 **Args:**
-- `$args` - array - Результуючі аргументи поля
-- `$field` - array - Первинні агрументи поля
-- `$meta_instance` - Jet_Engine_CPT_Meta - Об'єкт менеджера для CPT мети
+- `$args` - array - The resulting field arguments.
+- `$field` - array - The initial field arguments
+- `$meta_instance` - Jet_Engine_CPT_Meta - The CPT meta manager object.
 
 **Location:**
 [includes/components/meta-boxes/post.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/post.php)
@@ -230,12 +229,12 @@ add_filter( 'jet-engine/meta-fields/repeater/field/args', function( $args, $fiel
 
 ## jet-engine/meta-fields/field-options
 
-Дозволяє фільтрувати масив опцій для чекбокс, радіо, селект полів перед тим, як вони будуть оброблені для подальшого використання в інтерфейс білдері.
+Allows filtering the options array for checkbox, radio, select fields before they are processed for later use in the builder interface.
 
 **Args:**
-- `$options` - array - Масив опцій в форматі `array( 'key' => '', 'value' => '', 'is_checked' => false )`
-- `$field` - array - Агрументи поля
-- `$meta_instance` - Jet_Engine_CPT_Meta - Об'єкт менеджера для CPT мети
+- `$options` - array - The options array in the  `array( 'key' => '', 'value' => '', 'is_checked' => false )` format.
+- `$field` - array - The field arguments.
+- `$meta_instance` - Jet_Engine_CPT_Meta - The CPT meta manager object.
 
 **Location:**
 [includes/components/meta-boxes/post.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/post.php)
@@ -264,11 +263,11 @@ add_filter( 'jet-engine/meta-fields/field-options', function( $options, $field, 
 
 ## jet-engine/user-meta/current-user-id
 
-Дозволяє фільтрувати User ID на user-edit, profile сторінках для подальшого отримання значення мета полів користувача.
+Allows filtering the User ID on user-edit, profile pages for later retrieval of user meta field values.
 
 **Args:**
 - `$user_id` - int | false - User ID
-- `$meta_instance` - Jet_Engine_CPT_User_Meta - Об'єкт менеджера User мети
+- `$meta_instance` - Jet_Engine_CPT_User_Meta - The User meta manager object.
 
 **Location:**
 [includes/components/meta-boxes/user.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/user.php)
@@ -293,14 +292,14 @@ add_filter( 'jet-engine/user-meta/current-user-id', function ( $user_id ) {
 
 ## jet-engine/user-meta/pre-get-meta/{$key}
 
-Дозволяє повернути значення мети користувача перед тим, як вона буде отримана з бази по динамічній частині фільтра `$key`, що відповідає ключу поля. 
+Allows returning the user meta value before it is fetched from the database based on the dynamic part of the `$key` filter, which corresponds to the field key.
 
 **Args:**
-- `$pre_value` - bool - Типово: false.
-- `$user_id` - int - User ID
-- `$key` - string - Ключ поля
-- `$default` - mixed - Типове значення поля
-- `$field` - array - Аргументи поля
+- `$pre_value` - bool - Default: false.
+- `$user_id` - int - User ID.
+- `$key` - string - The field key.
+- `$default` - mixed - Default field value. 
+- `$field` - array - Field arguments.
 
 **Location:**
 [includes/components/meta-boxes/user.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/user.php)
@@ -334,12 +333,12 @@ add_filter( 'jet-engine/user-meta/pre-get-meta/my-custom-number-field', function
 
 ## jet-engine/user-meta/preprocess/{$key}
 
-Дозволяє написати іншу логіку для збереження значення поля користувача. Динамічна частина фільтра `$key` відповідає ключу поля.
+Allows writing custom logic for saving user field values. The dynamic part of the `$key` filter corresponds to the field key.
 
 **Args:**
-- `$pre_processed` - bool - Типово: false.
+- `$pre_processed` - bool - Default: false.
 - `$user_id` - int - User ID.
-- `$meta_instance` - Jet_Engine_CPT_User_Meta - Об'єкт менеджера User мети.
+- `$meta_instance` - Jet_Engine_CPT_User_Meta - The User meta manager object.
 
 **Location:**
 [includes/components/meta-boxes/user.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/user.php)
@@ -366,12 +365,12 @@ add_filter( 'jet-engine/user-meta/preprocess/my-custom-field', function ( $pre_p
 
 ## cx_user_meta/date
 
-Дозволяє фільтрувати значення дати для показу в меті користувача.
+Allows filtering the date value for display in user meta.
 
 **Args:**
-- `$date` - string - Дата у відповідному форматі
-- `$time` - string | int - Таймстемп час
-- `$format` - string - Формат дати
+- `$date` - string - The date in the corresponding format.
+- `$time` - string | int - Timestamp time.
+- `$format` - string - Date format. 
 
 **Location:**
 [includes/components/meta-boxes/user.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/user.php)
@@ -389,11 +388,11 @@ add_filter( 'cx_user_meta/date', function ( $date, $time, $format ) {
 
 ## cx_user_meta/strtotime
 
-Дозволяє змінити метод конвертації дати в таймстемп час для подальшого збереження в меті користувача.
+Allows changing the method of converting a date to a time timestamp for later saving in user meta.
 
 **Args:**
-- `$time` - int - Таймстемп час
-- `$date` - string - Дата
+- `$time` - int - Timestamp time.
+- `$date` - string - Date.
 
 **Location:**
 [includes/components/meta-boxes/user.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/user.php)
@@ -412,12 +411,12 @@ add_filter( 'cx_user_meta/strtotime', function ( $time, $date ) {
 
 ## jet-engine/meta-boxes/conditions/get-ajax-screen/{$source}
 
-Дозволяє додати імена скрінів для нових сорсів по динамічній частині фільтра `$source`, що відповідає новому сорсу.
+Allows adding screen names for new sources based on the dynamic part of the `$source` filter, corresponding to the new source.
 
 **Args:**
-- `$screen` - string | array - Імена скрінів. Типово: null
-- `$args` - array - Аргументи кондішена
-- `$manager` - Jet_Engine_Meta_Boxes_Conditions - Кондішен менеджер
+- `$screen` - string | array - The screen names. Default: null.
+- `$args` - array - The condition arguments.
+- `$manager` - Jet_Engine_Meta_Boxes_Conditions - The conditions manager.
 
 **Location:**
 [includes/components/meta-boxes/conditions-manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/conditions-manager.php)
@@ -435,11 +434,11 @@ add_filter( 'jet-engine/meta-boxes/conditions/get-ajax-screen/custom-source', fu
 
 ## jet-engine/meta-boxes/conditions/post-has-terms/check-terms
 
-Дозволяє фільтрувати масив ідентифікаторів термів для перевірки в кондішені `Post Has Terms`.
+Allows filtering the array of term IDs for checking in the `Post Has Terms` condition.
 
 **Args:**
-- `$terms_to_check` - array - Масив ідентифікаторів термів для перевірки
-- `$tax_to_check` - string - Слаг таксономії
+- `$terms_to_check` - array - The array of term IDs to check.
+- `$tax_to_check` - string - Taxonomy slug. 
 
 **Location:**
 [includes/components/meta-boxes/conditions/post-has-terms.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/conditions/post-has-terms.php)
@@ -459,11 +458,11 @@ add_filter( 'jet-engine/meta-boxes/conditions/post-has-terms/check-terms', funct
 
 ## jet-engine/meta-boxes/rest-api/fields/field-type
 
-Дозволяє фільтрувати тип поля для Rest API.
+Allows filtering the field type for the Rest API.
 
 **Args:**
-- `$type` - string - Тип поля
-- `$field` - array - Аргументи поля
+- `$type` - string - Field type.
+- `$field` - array - Field arguments. 
 
 **Location:**
 [includes/components/meta-boxes/rest-api/fields/post-meta.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/rest-api/fields/post-meta.php)
@@ -486,12 +485,12 @@ add_filter( 'jet-engine/meta-boxes/rest-api/fields/field-type', function ( $type
 
 ## jet-engine/meta-boxes/rest-api/fields/schema
 
-Дозволяє фільтрувати схему поля для Rest API.
+Allows filtering the field schema for the Rest API.
 
 **Args:**
-- `$schema` - mixed - Тип поля
-- `$type` - string - Тип поля
-- `$field` - array - Аргументи поля
+- `$schema` - mixed - The field type.
+- `$type` - string - The field type.
+- `$field` - array - The field arguments.
 
 **Location:**<br>
 [includes/components/meta-boxes/rest-api/fields/post-meta.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/rest-api/fields/post-meta.php) <br>
