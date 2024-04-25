@@ -2,10 +2,10 @@
 
 ## jet-engine/meta-boxes/register-instances
 
-Спрацьовує перед тим як будуть реєструватися мета-бокси. На цей хук можна реєструвати кастомні мета-бокси.
+This hook fires before meta boxes are registered. Custom meta boxes can be registered on this hook.
 
 **Args:**
-- `$meta_manager` - Jet_Engine_Meta_Boxes - Мета бокс менеджер
+- `$meta_manager` - Jet_Engine_Meta_Boxes - Meta box manager. 
 
 **Location:**
 [includes/components/meta-boxes/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/manager.php)
@@ -40,12 +40,11 @@ add_action( 'jet-engine/meta-boxes/register-instances', function ( $meta_manager
 
 ## jet-engine/meta-boxes/register-custom-source/{$object_type}
 
-На цей хук можна реєструвати мета-бокси для кастомного сорса по динамічній частині хука `$object_type`.
-Сам сорс потрібно реєструвати через фільтр `jet-engine/meta-boxes/sources`
+This hook allows registering meta boxes for a custom source based on the dynamic part of the `$object_type` hook. The source itself should be registered through the `jet-engine/meta-boxes/sources` filter.
 
 **Args:**
-- `$meta_box` - array - Аргументи мета-бокса
-- `$meta_manager` - Jet_Engine_Meta_Boxes - Мета бокс менеджер
+- `$meta_box` - array - Meta box arguments. 
+- `$meta_manager` - Jet_Engine_Meta_Boxes - Meta box manager. 
 
 **Location:**
 [includes/components/meta-boxes/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/manager.php)
@@ -73,11 +72,11 @@ add_action( 'jet-engine/meta-boxes/register-custom-source/wcfm', function( $meta
 
 ## jet-engine/meta-boxes/save-custom-value
 
-Спрацьовує перед тим як буде збережено в налаштуваннях мета-бокса кастомне значення для чекбокс/радіо полів.
+This hook fires before custom values for checkbox/radio fields in meta boxes are saved in settings.
 
 **Args:**
-- `$field` - string - Ім'я / слаг поля
-- `$field_args` - array - Аргументи поля
+- `$field` - string - Field name/slug.
+- `$field_args` - array - Field arguments.
 
 **Location:**<br>
 [includes/components/meta-boxes/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/manager.php) <br>
@@ -147,7 +146,7 @@ add_action( 'jet-engine/meta-boxes/save-custom-value', function ( $field, $field
 
 ## jet-engine/meta-boxes/source-custom-controls
 
-Дозволяє додавати кастомні контроли до vue темплейта `edit.php` в `General Settings` секцію.
+Allows adding custom controls to the Vue template `edit.php` in the `General Settings` section.
 
 **Args:**
 
@@ -174,7 +173,7 @@ add_action( 'jet-engine/meta-boxes/source-custom-controls', function () {
 
 ## jet-engine/meta-boxes/condition-controls
 
-Дозволяє додавати кастомні контроли до vue темплейта `edit.php` в `Visibility Conditions` секцію.
+Allows adding custom controls to the Vue template `edit.php` in the `Visibility Conditions` section.
 
 **Args:**
 
@@ -201,7 +200,7 @@ add_action( 'jet-engine/meta-boxes/condition-controls', function () {
 
 ## jet-engine/meta-boxes/templates/fields/controls
 
-Дозволяє додавати кастомні контроли для додаткових налаштувань мета-полів в vue темплейті `fields.php`.
+Allows adding custom controls for additional meta field settings to the `fields.php` Vue template. 
 
 **Args:**
 
@@ -245,7 +244,7 @@ add_action( 'jet-engine/meta-boxes/templates/fields/controls', function () {
 
 ## jet-engine/meta-boxes/templates/fields/repeater/controls
 
-Дозволяє додавати кастомні контроли для додаткових налаштувань мета-полів репітера в vue темплейті `fields.php`.
+Allows adding custom controls for additional meta field repeater settings in the `fields.php` Vue template. 
 
 **Args:**
 
@@ -284,10 +283,10 @@ add_action( 'jet-engine/meta-boxes/templates/fields/repeater/controls', function
 
 ## jet-engine/meta-boxes/conditions/register
 
-Спрацьовує після реєстрації всіх кондішен-класів. На цей хук можна реєструвати власні кондішен-класи.
+This hook fires after all condition classes are registered. You can register your own condition classes on this hook.
 
 **Args:**
-- `$condition_manager` - Jet_Engine_Meta_Boxes_Conditions - Кондішен менеджер
+- `$condition_manager` - Jet_Engine_Meta_Boxes_Conditions - The condition manager. 
 
 **Location:**
 [includes/components/meta-boxes/conditions-manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/conditions-manager.php)
@@ -305,11 +304,11 @@ add_action( 'jet-engine/meta-boxes/conditions/register', function( $condition_ma
 
 ## jet-engine/user-meta/before-save/
 
-Спрацьовує перед тим, як мета користувача буде збережена.
+The hook fires before the user's meta will be saved. 
 
 **Args:**
 - `$user_id` - int - User ID.
-- `$meta_instance` - Jet_Engine_CPT_User_Meta - Об'єкт менеджера User мети.
+- `$meta_instance` - Jet_Engine_CPT_User_Meta - Object manager of user meta. 
 
 **Location:**
 [includes/components/meta-boxes/user.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/user.php)
@@ -327,7 +326,7 @@ add_action( 'jet-engine/user-meta/before-save/', function ( $user_id, $meta_inst
 
 ## jet-engine/user-meta/before-delete/{$key}
 
-Спрацьовує перед тим, як певний ключ `$key` мети користувача буде видалено.
+This hook fires before a specific key `$key` of user meta will be deleted.
 
 **Args:**
 - `$user_id` - int - User ID.
@@ -350,13 +349,13 @@ add_action( 'jet-engine/user-meta/before-delete/custom_field', function ( $user_
 
 ## jet-engine/user-meta/before-save/{$key}
 
-Спрацьовує перед тим, як певний ключ `$key` мети користувача буде збережено.
+Fires before the particular user meta key `$key` will be saved.
 
 **Args:**
 - `$user_id` - int - User ID.
-- `$value` - mixed - Значення мета поля.
-- `$key` - string - Ключ поля.
-- `$meta_instance` - Jet_Engine_CPT_User_Meta - Об'єкт менеджера User мети.
+- `$value` - mixed - Meta field value.
+- `$key` - string - Field key.
+- `$meta_instance` - Jet_Engine_CPT_User_Meta - User meta manager object.
 
 **Location:**
 [includes/components/meta-boxes/user.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/user.php)
@@ -374,11 +373,11 @@ add_action( 'jet-engine/user-meta/before-save/custom_field', function ( $user_id
 
 ## jet-engine/user-meta/after-save
 
-Спрацьовує після того, як мета користувача була збережена.
+The hook fires after the user meta was saved. 
 
 **Args:**
 - `$user_id` - int - User ID.
-- `$meta_instance` - Jet_Engine_CPT_User_Meta - Об'єкт менеджера User мети.
+- `$meta_instance` - Jet_Engine_CPT_User_Meta - User meta manager object.
 
 **Location:**
 [includes/components/meta-boxes/user.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/user.php)
