@@ -2,10 +2,10 @@
 
 ## jet-engine/relations/raw-relations
 
-Дозволяє фільтрувати масив створених релейшенів та їх аргументів, перед тим, як вони будуть реєструватися.
+Allows filtering the array of created relations and their arguments before they are registered.
 
 **Args:**
-- `$relations` - array - Список створених релейшенів.
+- `$relations` - array - List of created relations.
 
 **Location:**
 [includes/components/relations/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/manager.php)
@@ -24,10 +24,10 @@ add_filter( 'jet-engine/relations/raw-relations', function( $relations ) {
 
 ## jet-engine/relations/registered-relation
 
-Дозволяє реєструвати сторонні легасі релейшени.
+Allows registering third-party legacy relations.
 
 **Args:**
-- `$relations` - array - Список сторонніх легасі релейшенів.
+- `$relations` - array - List of third-party legacy relations.
 
 **Location:**
 [includes/components/relations/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/manager.php) <br>
@@ -62,13 +62,13 @@ add_filter( 'jet-engine/relations/registered-relation', function( $relations ) {
 
 ## jet-engine/relations/column-content/{$key}
 
-Дозволяє фільтрувати контент кастомної колонки в таблиці релейшенів https://prnt.sc/JzM1WuAWpFp9 по динамічній частині фільтра `$key`.
+Allows filtering the content of a custom column in the relations table https://prnt.sc/JzM1WuAWpFp9 based on the dynamic part of the `$key` filter.
 
 **Args:**
-- `$content` - string - Контент колонки.
-- `$item_id` - integer - ID релейтед айтема ( Post ID, Term ID, ... ).
-- `$type` - string - Тип айтема ( post-type, taxonomy, ... ).
-- `$relation` - object - Релейшен об'єкт.
+- `$content` - string - Column content.
+- `$item_id` - integer - ID of the related item (Post ID, Term ID, ...).
+- `$type` - string - Type of the item (post-type, taxonomy, ...).
+- `$relation` - object - Relation object.
 
 **Location:**
 [includes/components/relations/ajax-handlers.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/ajax-handlers.php)
@@ -87,11 +87,11 @@ add_filter( 'jet-engine/relations/column-content/custom-column', function( $cont
 
 ## jet-engine/relations/meta/image-alt/
 
-Дозволяє змінити алтернативний текст для релейшен мета картинки, яка виводиться через Dynamic Image.
+Allows changing the alternative text for the relation meta image displayed via Dynamic Image.
 
 **Args:**
-- `$alt` - boolean | string - Алтернативний текст картинки.
-- `$current_object` - object - Поточний об'єкт.
+- `$alt` - boolean | string - Image ALT text.
+- `$current_object` - object - Current object.
 
 **Location:**
 [includes/components/relations/listing.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/listing.php)
@@ -110,15 +110,15 @@ add_filter( 'jet-engine/relations/meta/image-alt/', function( $alt, $current_obj
 
 ## jet-engine/relations/db/cache-key
 
-Дозволяє змінити механізм формування унікального кеш ключа для запиту релейшенів.
+Allows changing the mechanism of forming a unique cache key for relations query.
 
 **Args:**
-- `$cache_key` - string - Кеш ключ.
-- `$args` - array - Аргументи запиту.
-- `$limit` - integer - Ліміт запиту.
-- `$offset` - integer - Офсет запиту.
-- `$order` - array - Ордер запиту.
-- `$rel` - string - Релейшен для аргументів запиту. `AND` або `OR`.
+- `$cache_key` - string - Cache key.
+- `$args` - array - Query arguments.
+- `$limit` - integer - Query limit.
+- `$offset` - integer - Query offset.
+- `$order` - array - Query order.
+- `$rel` - string - Relation for query arguments. `AND` or `OR`.
 
 **Location:**
 [includes/components/relations/storage/db.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/storage/db.php)
@@ -137,10 +137,10 @@ add_filter( 'jet-engine/relations/db/cache-key', function( $cache_key, $args, $l
 
 ## jet-engine/relations/get_related_posts
 
-Legacy. Дозволяє змінити список релейтед постів.
+Legacy. Allows changing the list of related posts.
 
 **Args:**
-- `$ids` - array | string - Список ID релейтед постів.
+- `$ids` - array | string - List of related post IDs.
 
 **Location:**
 [includes/components/relations/legacy/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/legacy/manager.php)
@@ -166,10 +166,10 @@ add_filter( 'jet-engine/relations/get_related_posts', function( $ids ) {
 
 ## jet-engine/relations/types/mix
 
-Дозволяє реєструвати нові об'єкти для Mix типу.
+Allows registering new objects for the Mix type.
 
 **Args:**
-- `$objects` - array - Список об'єктів в форматі
+- `$objects` - array - List of objects in the following format:
   ```php
   array( 
     'value' => 'users', 
@@ -201,12 +201,12 @@ add_filter( 'jet-engine/relations/types/mix', function ( $objects ) {
 
 ## jet-engine/relations/types/mix/check-cap/{$object_name}
 
-Дозволяє встановити чи мaє поточний користувач права змінити або видалити цей об'єкт в релейшенах.
+Allows determining whether the current user has the rights to edit or delete this object in relations.
 
 **Args:**
 - `$result` - bool - Default: false.
-- `$cap` - string - Капабіліті, може бути `edit` або `delete`.
-- `$item_id` - int|string - ID об'єкта.
+- `$cap` - string - Capability, can be `edit` або `delete`.
+- `$item_id` - int|string - ID of the object.
 
 **Location:**
 [includes/components/relations/types/mix.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/mix.php)
