@@ -2,10 +2,10 @@
 
 ## jet-engine/maps-listings/autocomplete-url-args/google
 
-Дозволяє змінювати параметри запиту під час використання автокомпліту Google провайдера
+Allows changing the request parameters when using the Google provider autocomplete.
 
 **Args:**
-- `$args` - масив параметрів запиту у форматі 'Назва параметру' => 'значення'. [Список доступних параметрів](https://developers.google.com/maps/documentation/places/web-service/autocomplete#optional-parameters)  
+- `$args` - an array of request parameters in the format 'Parameter Name' => 'value'. [List of available parameters](https://developers.google.com/maps/documentation/places/web-service/autocomplete#optional-parameters)  
 
 **Location:**
 includes/modules/maps-listings/inc/geocode-providers/google.php
