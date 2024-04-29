@@ -2,10 +2,10 @@
 
 ## jet-engine/taxonomies/deleted-taxonomy
 
-Виконується після того, як видаляється кастомна таксономія.
+Executed after a custom taxonomy is deleted.
 
 **Args:**
-- `$taxonomy` - string - слаг таксономії, яка видаляється
+- `$taxonomy` - string - The slug of the deleted taxonomy.
 
 **Location:**
 [includes/components/taxonomies/rest-api/delete-taxonomy.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/taxonomies/rest-api/delete-taxonomy.php)
@@ -23,11 +23,11 @@ add_action( 'jet-engine/taxonomies/deleted-taxonomy', function( $taxonomy ) {
 
 ## jet-engine/taxonomies/updated-taxonomy-slug
 
-Виконується після того, як змінюється слаг кастомної кастономії.
+Executed after the slug of a custom taxonomy is updated.
 
 **Args:**
-- `$new_slug` - string - новий слаг
-- `$old_slug` - string - старий слаг
+- `$new_slug` - string - new slag
+- `$old_slug` - string - old slug
 
 **Location:**
 [includes/components/taxonomies/rest-api/edit-taxonomy.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/taxonomies/rest-api/edit-taxonomy.php)
@@ -45,8 +45,8 @@ add_action( 'jet-engine/taxonomies/updated-taxonomy-slug', function( $new_slug, 
 
 ## jet-engine/taxonomies/edit/before-enqueue-assets
 
-Виконується перед тим, як будуть підключені основні скрипти для Edit Taxonomy сторінки.
-Використовується для підключення скриптів кастомних Vue компонентів.
+Executed before the main scripts are enqueued for the Edit Taxonomy page.
+Used for enqueuing scripts of custom Vue components.
 
 **Location:**
 [includes/components/taxonomies/pages/edit.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/taxonomies/pages/edit.php)
@@ -74,8 +74,8 @@ add_action( 'jet-engine/taxonomies/edit/before-enqueue-assets', function() {
 
 ## jet-engine/taxonomies/meta-fields
 
-Виконується після рендеру Advanced Settings секції на Edit Taxonomy сторінці https://tppr.me/Hpead
-Використовується для рендеру `jet-meta-fields` Vue компонента.
+Executed after rendering the Advanced Settings section on the Edit Taxonomy page https://tppr.me/Hpead
+Used for rendering the `jet-meta-fields` Vue component.
 
 **Location:**
 [includes/components/taxonomies/templates/edit.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/taxonomies/templates/edit.php)
