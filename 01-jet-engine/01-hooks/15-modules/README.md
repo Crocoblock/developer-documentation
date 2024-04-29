@@ -1,6 +1,6 @@
 # JetEngine. Modules hooks
 
-Хуки які пов'язані з базовою функциональністю моудлів. А також хуки з окремих модулів
+Hooks related to the basic functionality of the modules. And also, hooks of the particular modules. 
 
 * **<a href="/01-jet-engine/01-hooks/15-modules/actions.md">Base Modules Actions</a>**
 * **<a href="/01-jet-engine/01-hooks/15-modules/filters.md">Base Modules Filters</a>**
