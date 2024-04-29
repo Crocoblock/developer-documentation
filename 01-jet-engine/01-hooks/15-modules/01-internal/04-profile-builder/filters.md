@@ -2,10 +2,10 @@
 
 ## jet-engine/profile-builder/settings/template-sources
 
-Дозволяє реєструвати нові СПТ для використання в якості темплейтів для Профайл сторінок
+Allows registering new CPTs for use as templates for Profile pages.
 
 **Args:**
-- `$sources` - Список сорсів у форматі cpt-slug => CPT Label. CPT Label буде використано щоб додатково помітити Пости з цього СПТ в результатах пошуку. cpt-slug буде безпосередньо використовуватись для пошуку.
+- `$sources` - List of sources in the format `cpt-slug => CPT Label`. The CPT Label will be used to further identify posts from this CPT in search results. cpt-slug will be used directly for searching.
 
 **Location:**
 /includes/modules/profile-builder/inc/settings.php
@@ -24,7 +24,7 @@ add_filter( 'jet-engine/profile-builder/settings/template-sources', function( $s
 
 ## jet-engine/profile-builder/create-template/{$template_source}
 
-Дозволяє додати обробку створення темплейтів для профайл білдера для кастомних сорсів, зареєстрованих через `jet-engine/profile-builder/settings/template-sources` фільтр. Динамічна частина - `{$template_source}` має співпадати зі слагом вашого сорса і використовується щоб розділити обробку різних сорсів. Колбек обов'язково має повертати результату у такому форматі: 
+Allows adding processing for creating templates for the profile builder for custom sources registered through the `jet-engine/profile-builder/settings/template-sources filter`. The dynamic part `{$template_source}` must match the slug of your source and is used to separate the processing of different sources. The callback must return the result in the following format:
 ```php
 return [
 	'template_url' => $url, // URL of edit page for created template.
@@ -33,9 +33,9 @@ return [
 ```
 
 **Args:**
-- `$result` - Змінна в яку треба зберегти результат та повернути.
-- `$template_name` - Назва нового темпелйта, яку вказав юзер в інтерфейсі
-- `$template_view` - Додатковий параметр з listing view, який обрав юзер, має сенс тільки для сорсу Listing.
+- `$result` - Variable to save the result and return.
+- `$template_name` -  The name of the new template entered by the user in the interface.
+- `$template_view` - Additional parameter with the listing view selected by the user, only relevant for the Listing source.
 
 **Location:**
 /includes/modules/profile-builder/inc/settings.php
@@ -84,14 +84,14 @@ add_filter( 'jet-engine/profile-builder/create-template/elementor_library', func
 
 ## jet-engine/profile-builder/subpage-url
 
-Дозволяє змінити або додати якісь паарметри до УРЛ під-сторінок профайл білдера.
+Allows changing or adding parameters to the URL of subpages in the profile builder.
 
 **Args:**
-- `$url` - default URL
-- `$slug` - subpage slug
-- `$page` - page type - account or user
-- `$page_data` - additional arguments of current subpage
-- `$settings_instance` - instance of Settings class
+- `$url` - Default URL.
+- `$slug` - Subpage slug.
+- `$page` - page type - The user's account. 
+- `$page_data` - Additional arguments of the current subpage.
+- `$settings_instance` - Instance of the Settings class.
 
 **Location:**
 /includes/modules/profile-builder/inc/settings.php
@@ -116,11 +116,11 @@ More advanced example - https://gist.github.com/Crocoblock/7669eb507cb3742836bbe
 
 ## jet-engine/profile-builder/rewrite-rules
 
-Дозволяє додати свої варіанти правил для обробки УРЛ. Дозволяю видозмінювати структуру УРЛів Профайл Білдера. Якщо вам треба повністю змінити формат цих УРЛів, даний фільтр потрібно викоритстовувати у парі з `jet-engine/profile-builder/subpage-url`, щоб змінити не тільки оброку УРЛів, а і їх генерацію (більш детальний приклад за посиланям нижче)
+Allows adding custom rewrite rules for the URLs processing. This allows modifying the structure of Profile Builder URLs. If you need to completely change the format of these URLs, use this filter in conjunction with `jet-engine/profile-builder/subpage-url` to change not only the URL processing but also their generation (more detailed example at the link below).
 
 **Args:**
-- `$rewrite_rules` - дефолтний список rewrite rules для профайл біллдера
-- `$rewrite_instance` - екземпляр класу Rewrite
+- `$rewrite_rules` - Default list of rewrite rules for the profile builder.
+- `$rewrite_instance` - Instance of the Rewrite class.
 
 **Location:**
 /includes/modules/profile-builder/inc/rewrite.php
@@ -134,11 +134,11 @@ https://gist.github.com/Crocoblock/7669eb507cb3742836bbec67fc908eef#file-custom-
 
 ## jet-engine/profile-builder/render/profile-menu-items
 
-Фільтр дозволяє змінювати/додавати/прибирати пункти з меню профайл білдера, яке генерується для відображення на фронт-енді. Наприклад сам профайл білдер використовує цей фільтр для розділення структури меня за ролями юзерів, якщо це налаштвоано.
+This filter allows changing/adding/removing items from the profile builder menu, generated for display on the frontend. For example, the profile builder itself uses this filter to separate the menu structure by user roles if configured to do so.
 
 **Args:**
-- `$items` - array - Пункти меню профайл білдера для використання на фронт-енді
-- `$args` - array - Додаткові аргументи, отримані з віджета, який має рендерити дане меню на фронт-енді.
+- `$items` - array - Profile builder menu items for use on the frontend.
+- `$args` - array - Additional arguments received from the widget that is rendering this menu on the frontend.
 
 **Location:**
 /includes/modules/profile-builder/inc/menu.php
@@ -169,12 +169,12 @@ add_filter( 'jet-engine/profile-builder/render/profile-menu-items', function( $i
 
 ## jet-engine/profile-builder/render/profile-menu-item
 
-Фільтр дозволяє змінити ХТМЛ згенерованого пункта меню.
+This filter allows changing the HTML of the generated menu item.
 
 **Args:**
-- `$item_html` - string - ХТМЛ розмтіка поточного пункта меню, яку сформував сам Профайл Білдер
-- `$item` - array - Пункти меню профайл білдера для використання на фронт-енді
-- `$args` - array - Додаткові аргументи, отримані з віджета, який має рендерити дане меню на фронт-енді.
+- `$item_html` - string - The HTML markup of the current menu item generated by the Profile Builder.
+- `$item` - array - Profile builder menu items for use on the frontend.
+- `$args` - array - Additional arguments received from the widget that is rendering this menu on the frontend.
 
 **Location:**
 /includes/modules/profile-builder/inc/menu.php
@@ -195,10 +195,10 @@ add_filter( 'jet-engine/profile-builder/render/profile-menu-item', function( $it
 
 ## jet-engine/profile-builder/query/pre-get-queried-user
 
-Фільтр дозволяє
+The filter allows
 
 **Args:**
-- `$user` - null - За замовчанням значення порожнє, якщо замість нього повернути свій об'єкт юзера, його буде використано замість дефолтного.
+- `$user` - null - By default, the value is empty. If you return your own user object, it will be used instead of the default.
 
 **Location:**
 /includes/modules/profile-builder/inc/query.php
@@ -221,10 +221,10 @@ add_filter( 'jet-engine/profile-builder/query/pre-get-queried-user', function( $
 
 ## jet-engine/profile-builder/template-id
 
-Фільтр дозволяє змінити ІД темплейта профайл білдера безпосередньо перед його рендером. Може використовуватись наприклад для перекладів, щоб замінити дефолтний ІД перекладеним.
+This filter allows changing the ID of the profile builder template directly before it is rendered. It can be used, for example, for translations, to replace the default ID with a translated one.
 
 **Args:**
-- `$template_id` - int - ІД темплейта отримане з профайл білдера.
+- `$template_id` - int - The ID of the template received from the profile builder.
 
 **Location:**
 /includes/modules/profile-builder/inc/frontend.php
@@ -252,13 +252,13 @@ add_filter( 'jet-engine/profile-builder/template-id', function( $template_id ) {
 
 ## jet-engine/profile-builder/template/content
 
-Дозволяє рендерити контент 
+Allows rendering content
 
 **Args:**
-- `$content` - string - Дефолтний контент.
-- `$template_id` - int - ІД темплейта отримане з профайл білдера.
-- `$frontend_instance` - object - екземпляр класу Frontend.
-- `$template` - WP_Post - повний об'єкт поточного темплейту.
+- `$content` - string - Default content.
+- `$template_id` - int - The ID of the template received from the profile builder.
+- `$frontend_instance` - object - Instance of the Frontend class.
+- `$template` - WP_Post - Full object of the current template.
 
 **Location:**
 /includes/modules/profile-builder/inc/frontend.php
@@ -287,10 +287,10 @@ add_filter( 'jet-engine/profile-builder/template/content', function( $content, $
 
 ## jet-engine/profile-builder/not-logged-redirect-query-args
 
-Фільтр дозволяє додати аргументи для УРЛ на який буде здійснено редірект назалогінених юзерів.
+This filter allows adding arguments to the URL to which non-logged-in users will be redirected.
 
 **Args:**
-- `$query_args` - array - список аргументів які будуть додані до УРЛ.
+- `$query_args` - array - The list of arguments to be added to the URL.
 
 **Location:**
 /includes/modules/profile-builder/inc/access.php
@@ -309,11 +309,11 @@ add_filter( 'jet-engine/profile-builder/not-logged-redirect-query-args', functio
 
 ## jet-engine/profile-builder/check-user-access
 
-Фільтр дозволяє додати додаткові перевірки - чи має юзер доступ до даної сторінки профайл білдера.
+This filter allows adding additional checks - whether the user has access to the current profile page.
 
 **Args:**
-- `$has_access` - bool - список контекстів для профайл сторінок.
-- `$profile_builder` - object - об'єкт з єкземпляром профайл білдер модуля.
+- `$has_access` - bool - list of contexts for profile pages.
+- `$profile_builder` - object - object with an instance of the profile builder 
 
 **Location:**
 /includes/modules/profile-builder/inc/access.php
@@ -336,10 +336,10 @@ add_filter( 'jet-engine/profile-builder/check-user-access', function( $result ) 
 
 ## jet-engine/profile-builder/not-accessible-redireсt-query-args
 
-Фільтр дозволяє додати аргументи до УРЛ на який буде перенаправлено юзера у випадку, якщо він не має доступа до поточної сторінки профайла
+This filter allows adding arguments to the URL to which the user will be redirected if they do not have access to the current profile page.
 
 **Args:**
-- `$query_args` - array - список аргументів які будуть додані до УРЛ.
+- `$query_args` - array - The list of arguments to be added to the URL.
 
 **Location:**
 /includes/modules/profile-builder/inc/access.php
