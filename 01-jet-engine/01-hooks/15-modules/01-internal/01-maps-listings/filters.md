@@ -22,3 +22,27 @@ add_filter( 'jet-engine/maps-listings/autocomplete-url-args/google', function( $
 	return $args;
 } );
 ```
+
+## jet-engine/maps-listings/autocomplete-url-args/openstreetmap
+
+Allows changing the request parameters when using the OpenStreetMap provider autocomplete
+
+**Args:**
+
+- `$args` - an array of request parameters in the format 'Parameter Name' => 'value'. [List of available parameters] (https://nominatim.org/release-docs/develop/api/Search/#parameters)
+
+**Location:**
+includes/modules/maps-listings/inc/geocode-providers/openstreetmap.php
+
+**Access:**
+Global
+
+**Example:**
+
+```php
+add_filter( 'jet-engine/maps-listings/autocomplete-url-args/openstreetmap', function($args){
+	$args['countrycodes'] = 'de'; // comma-separated list of country codes
+
+	return $args;
+} );
+```
