@@ -2,10 +2,10 @@
 
 ## jet-engine/template-path
 
-Дозволяє переписувати шлях до темплейтів, які можна перезаписівати в середині теми. Фактично не використовується
+Allows rewriting the path to templates that can be overridden within the theme. Not actually used.
 
 **Args:**
-- `$template_path` - дефолтна папка в яку терба класти темплейти Енжина в темі, якщо ви хочете переписати ці темплейти
+- `$template_path` - The default folder where you should place JetEngine templates in the theme if you want to override these templates.
 
 **Location:**
 /jet-engine.php
@@ -23,10 +23,10 @@ add_filter( 'jet-engine/template-path', function( $path ) {
 
 ## jet-engine/accessibility/contrast-ui
 
-Дозволяє підключити додатковий ЦСС файл, який робить ЮІ Енжина більш контрастним. Практично не використовується
+Allows to include an additional CSS file that adds more contrast to the JetEngine UI. Not actually used.
 
 **Args:**
-- `true/false` - Підключати або ні додатковий ЦСС. По дефолту false
+- `true/false` - Whether to include the additional CSS or not. Default is false.
 
 **Location:**
 /includes/core/accessibility.php
@@ -42,11 +42,11 @@ add_action( 'jet-engine/accessibility/contrast-ui', '__return_true' );
 
 ## jet-engine/listings/icon-html-format
 
-Дозволяє фільтрувати ХТМЛ формат іконки, яку повертає функція jet_engine_icon_html() На данний момент ця функція використовується як колбек в тих компонентах де можна фільтрувати результат за допомогою колбеку
+Allows filtering the HTML format of the icon returned by the `jet_engine_icon_html()` function. Currently, this function is used as a callback in those components where the result can be filtered using a callback.
 
 **Args:**
-- `$format` - Формат фінальної ХТМЛ розмітки іконки. По дефолту - `<i class="fa %s"></i>`
-- `$value` - сама іконка в тому вигляді як вона приходить аргументом у функцію
+- `$format` - The format of the final HTML markup of the icon. Default is `<i class="fa %s"></i>`
+- `$value` - The icon itself as it comes as an argument to the function.
 
 **Location:**
 /includes/core/functions.php
@@ -64,11 +64,11 @@ add_action( 'jet-engine/listings/icon-html-format', function( $format, $icon ) {
 
 ## jet-engine/listings/icon-html-format
 
-Дозволяє фільтрувати ХТМЛ формат іконки, яку повертає функція jet_engine_icon_html() На данний момент ця функція використовується як колбек в тих компонентах де можна фільтрувати результат за допомогою колбеку
+Allows filtering the HTML format of the icon returned by the `jet_engine_icon_html()` function. Currently, this function is used as a callback in those components where the result can be filtered using a callback.
 
 **Args:**
-- `$format` - Формат фінальної ХТМЛ розмітки іконки. По дефолту - `<i class="fa %s"></i>`
-- `$value` - сама іконка в тому вигляді як вона приходить аргументом у функцію
+- `$format` - The format of the final HTML markup of the icon. Default is `<i class="fa %s"></i>`
+- `$value` - The icon itself as it comes as an argument to the function.
 
 **Location:**
 /includes/core/functions.php
@@ -86,10 +86,10 @@ add_action( 'jet-engine/listings/icon-html-format', function( $format, $icon ) {
 
 ## jet-engine/compatibility/translate-string
 
-Фільтр дозволяє реєструвати адмінські текста для можливого подальшого перекладу за допомогою сторонніх плагінів ( WPML, Polylang ).
+Filter allows registering admin texts for possible further translation using third-party plugins (WPML, Polylang).
 
 **Args:**
-- `$text` - string - Текст, який потрібно перекласти
+- `$text` - string - The text to be translated.
 
 **Location:**
 
