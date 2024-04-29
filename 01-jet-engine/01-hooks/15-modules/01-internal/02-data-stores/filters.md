@@ -2,10 +2,10 @@
 
 #jet-engine/blocks-views/data-store-button/attributes
 
-Дозволяє реєструвати додаткові атрибути для `Data Store Button` блока
+Allows registering additional attributes for the `Data Store Button` block.
 
 **Args:**
-- `$attributes` - array - Масив атрибутів блока
+- `$attributes` - array - An array of block attributes.
 
 **Location:**
 [includes/modules/data-stores/inc/block-types/button.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/block-types/button.php)
@@ -28,11 +28,11 @@ add_filter( 'jet-engine/blocks-views/data-store-button/attributes', function( $a
 
 #jet-engine/data-stores/store-post-id
 
-Дозволяє фільтрувати ID поточного об'єкта, який буде доданий в дата стор.
+Allows filtering the ID of the current object that will be added to the data store.
 
 **Args:**
-- `$post_id` - int - ID поточного об'єкта.
-- `$store_instance` - Jet_Engine\Modules\Data_Stores\Stores\Factory - Інстанс дата стора
+- `$post_id` - int - The ID of the current object.
+- `$store_instance` - Jet_Engine\Modules\Data_Stores\Stores\Factory - The data store instance.
 
 **Location:** <br>
 [includes/modules/data-stores/inc/block-types/button.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/block-types/button.php) <br>
@@ -57,12 +57,11 @@ add_filter( 'jet-engine/data-stores/store-post-id', function( $post_id, $store_i
 
 ## jet-engine/data-stores/store/data
 
-Дозволяє фільтрувати поточне значення стора, при отриманні його через метод `$store_instance->get_store()`.
-Наприклад, для сумісності з плагінами перекладу.
+Allows filtering the current value of the store when retrieving it through the `$store_instance->get_store()` method. For example, for compatibility with translation plugins.
 
 **Args:**
-- `$store` - array - Значення стора
-- `$store_id` - string - Слаг стора
+- `$store` - array - The store value.
+- `$store_id` - string - The store slug.
 
 **Location:** <br>
 [includes/modules/data-stores/inc/stores/cookies.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/stores/cookies.php) <br>
@@ -101,14 +100,12 @@ add_filter( 'jet-engine/data-stores/store/data', function( $store, $store_id ) {
 
 #jet-engine/data-stores/pre-get-post-count
 
-По дефолту значення лічильника дата стора зберігається в пост меті, цей фільтр дає можливість отримати значення 
-лічильника з іншого кастомного місця, якщо попередньо була додана логіка для зберігання цього значення через екшени
-`jet-engine/data-stores/post-count-increased` та `jet-engine/data-stores/post-count-decreased`
+By default, the data store counter value is stored in post meta. This filter allows getting the counter value from another custom location if logic has been added to store this value using the `jet-engine/data-stores/post-count-increased` and `jet-engine/data-stores/post-count-decreased` actions.
 
 **Args:**
-- `$count` - false|int - Значення лічильника. По дефолту: false.
-- `$item_id` - int - ID об'єкта
-- `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - Інстанс дата стора
+- `$count` - false|int - The counter value. Default: false.
+- `$item_id` - int - The object ID.
+- `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - The data store instance.
 
 **Location:**
 [includes/modules/data-stores/inc/stores/factory.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/stores/factory.php)
@@ -156,12 +153,12 @@ add_filter( 'jet-engine/data-stores/pre-get-post-count', function( $count, $item
 
 #jet-engine/data-stores/ajax-store-fragments
 
-Дозволяє фільтрувати список фрагментів (селекторів) для оновлення лічильників на фронті при додаванні айтема в стор чи видаленні айтема зі стора.
+Allows filtering the list of fragments (selectors) to update counters on the frontend when adding an item to the store or removing an item from the store.
 
 **Args:**
-- `$fragments` - array - Масив фрагментів для оновлення
-- `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - Інстанс дата стора
-- `$item_id` - int - ID об'єкта
+- `$fragments` - array - An array of fragments to update.
+- `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - The data store instance.
+- `$item_id` - int - The object ID.
 
 **Location:**
 [includes/modules/data-stores/inc/stores/factory.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/stores/factory.php)
@@ -183,11 +180,10 @@ add_filter( 'jet-engine/data-stores/ajax-store-fragments', function( $fragments,
 
 #jet-engine/data-stores/get-users-macros/context/{ $context }
 
-Дозволяє фільтрувати ID айтема для макроса `get_users_for_store_item` по динамічній частині фільтра `$context`, що 
-відповідає вибраному контексту.
+Allows filtering the item ID for the `get_users_for_store_item` macro based on the dynamic part of the `$context filter`, which corresponds to the selected context.
 
 **Args:**
-- `$item_id` - int - ID об'єкта
+- `$item_id` - int - ID of the object.
 
 **Location:**
 [includes/modules/data-stores/inc/macros/get-users-for-store-item.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/macros/get-users-for-store-item.php)
@@ -210,11 +206,11 @@ add_filter( 'jet-engine/data-stores/get-users-macros/context/post_author', funct
 
 #jet-engine/data-stores/remove-from-store/settings
 
-Дозволяє фільтрувати налаштування віджета/блока перед рендером посилання для видалення айтема зі стору
+Allows filtering the settings of the widget/block before rendering the link for removing an item from the store.
 
 **Args:**
-- `$settings` - array - налаштування віджета/блока
-- `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - Інстанс дата стора
+- `$settings` - array - The widget/block settings.
+- `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - The data store instance.
 
 **Location:**
 [includes/modules/data-stores/inc/render-links.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/render-links.php)
@@ -232,11 +228,11 @@ add_filter( 'jet-engine/data-stores/remove-from-store/settings', function( $sett
 
 #jet-engine/data-stores/add-to-store/settings
 
-Дозволяє фільтрувати налаштування віджета/блока перед рендером посилання для додавання айтема до стору
+Allows filtering the settings of the widget/block before rendering the link for adding an item to the store.
 
 **Args:**
-- `$settings` - array - налаштування віджета/блока
-- `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - Інстанс дата стора
+- `$settings` - array - The widget/block settings.
+- `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - The data store instance.
 
 **Location:**
 [includes/modules/data-stores/inc/render-links.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/render-links.php)
@@ -254,11 +250,11 @@ add_filter( 'jet-engine/data-stores/add-to-store/settings', function( $settings,
 
 #jet-engine/data-stores/settings/args-to-save
 
-Дозволяє модифікувати налаштування стор айтема, які будуть збереженні в базі даних.
+Allows modifying the settings of the store item that will be saved in the database.
 
 **Args:**
-- `$args` - array - Масив даних, які будуть зберігатися в базі даних
-- `$item` - array - Масив налаштувань стор айтема, який заходить під час збереження
+- `$args` - array - The data array to be saved in the database.
+- `$item` - array - The settings array of the store item that is being saved.
 
 **Location:**
 [includes/modules/data-stores/inc/settings.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/settings.php)
@@ -278,18 +274,16 @@ add_filter( 'jet-engine/data-stores/add-to-store/settings', function( $args, $it
 
 # User IP Schedules Hooks
 
-User IP дата стор зберігає свої дані в окремій таблиці, тому заздалегідь було передбачено можливість цю таблицю 
-періодично очищати. Поки що цю можливість можна включити та налаштувати за допомогою wp фільтрів, можливо в майбутньому 
-додамо опції в налаштуванні дата стора. Для періодичного очищення використовується WP Schedule API.
+User IP data store saves its data in a separate table, so the functionality of cleaning this table from time to time is provided. For now, this feature can be enabled and configured using WP filters; perhaps in the future, we will add options in the data store settings. WP Schedule API is used for periodic cleaning.
 
 ##jet-engine/data-stores/user-ip/schedules/auto-clear-store
 
-Дозволяє увімкнути можливість автоматичного періодичного очищення User IP дата стора.
+Allows enabling the automatic periodic clearing of the User IP data store.
 
 **Args:**
-- `$auto_clear` - boolean - Чи очищати автоматично стор. По дефолту: `false`.
-- `$store_slug` - string - Слаг дата стора
-- `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - Інстанс дата стора
+- `$auto_clear` - boolean - Whether to automatically clear the store. Default: `false`.
+- `$store_slug` - string - The data store slug.
+- `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - The data store instance.
 
 **Location:**
 [includes/modules/data-stores/inc/stores/user-ip-schedules.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/stores/user-ip-schedules.php)
@@ -299,13 +293,12 @@ Global
 
 ##jet-engine/data-stores/user-ip/schedules/clear-expiration
 
-Дозволяє змінити період після якого будуть видалятися записи в базі даних. По дефолту цей період становить 1 рік, тобто
-записи в базі даних, які були додані понад року тому будуть видалені.
+Allows changing the period after which records in the database will be deleted. By default, this period is set to 1 year, meaning records in the database that were added over a year ago will be deleted.
 
 **Args:**
-- `$clear_expiration` - int - Період після якого будуть видалятися записи в базі даних. По дефолту: `YEAR_IN_SECONDS`.
-- `$store_slug` - string - Слаг дата стора
-- `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - Інстанс дата стора
+- `$clear_expiration` - int - The period after which records in the database will be deleted. Default: `YEAR_IN_SECONDS`.
+- `$store_slug` - string - The data store slug.
+- `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - The data store instance.
 
 **Location:**
 [includes/modules/data-stores/inc/stores/user-ip-schedules.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/stores/user-ip-schedules.php)
@@ -315,12 +308,12 @@ Global
 
 ##jet-engine/data-stores/user-ip/schedules/event-timestamp
 
-Дозволяє змінити таймстемп запуску події, для перевірки застарілих записів в базі даних.
+Allows changing the event timestamp for checking outdated records in the database.
 
 **Args:**
-- `$event_timestamp` - int - Таймстемп запуску події.
-- `$store_slug` - string - Слаг дата стора
-- `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - Інстанс дата стора
+- `$event_timestamp` - int - The event timestamp. 
+- `$store_slug` - string - The data store slug.
+- `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - The data store instance.
 
 **Location:**
 [includes/modules/data-stores/inc/stores/user-ip-schedules.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/stores/user-ip-schedules.php)
@@ -330,12 +323,12 @@ Global
 
 ##jet-engine/data-stores/user-ip/schedules/event-interval
 
-Дозволяє змінити інтервал запуску події, для перевірки застарілих записів в базі даних.
+Allows changing the event interval for checking outdated records in the database.
 
 **Args:**
-- `$event_interval` - string - Інтервал запуску події. Доступні значення: `wp_get_schedules()`. По дефолту: `daily`.
-- `$store_slug` - string - Слаг дата стора
-- `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - Інстанс дата стора
+- `$event_interval` - string - The event interval. Available values:  `wp_get_schedules()`. Default: `daily`.
+- `$store_slug` - string - The data store slug.
+- `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - The data store instance.
 
 **Location:**
 [includes/modules/data-stores/inc/stores/user-ip-schedules.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/stores/user-ip-schedules.php)
