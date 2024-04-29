@@ -2,10 +2,10 @@
 
 ## jet-engine/init
 
-Еккшн спрацьовую після ініціалізації всіх частин ДжетЕнжин. В цей момент вже доступні всі компоненти і активні модулі. Сутності ДжетЕнжин, які створені юзером (типи постів, сторінки опцій, релейшени і тп) в цей момент ще не зареєстрвоані.
+Action triggered after the initialization of all JetEngine parts. At that moment, all components and active modules are available. User-created JetEngine entities (post types, option pages, relations, etc.) are not yet registered.
 
 **Args:**
-- `$jet_engine` - Екземпляр класу Jet_Engine, аналогічний тому, який повертає функція jet_engine()
+- `$jet_engine` - Instance of the Jet_Engine class, similar to what the `jet_engine()` function returns. 
 
 **Location:**
 /jet-engine.php
@@ -17,18 +17,18 @@ Global
 
 ```php
 add_action( 'jet-engine/init', function( $jet_engine ) {
-  // Може використовуватись замість перевірки на те встановлений ДжетЕНжин чи ні
-  // Цей хук спрацьовує тільки при ініті Енжина, так що з нього безпечно звертатися до всіх компонентів
+  // Can be used instead of checking if JetEngine is installed or not
+  // This hook only fires on JetEngine init, so it's safe to interact with all components from it
 } );
 ```
 
 ## jet-engine/components/registered
 
-Еккшн спрацьовую після реєстрації компонентів ДжетЕнжин. Може використовуватись для реєстрації своїх компонентів або дереєстрації існуючіх. Дереєстрація в теорії можлива, але з цим треба обережно, бо деякі компоненти занадто інтегровані в ядро і це може призвести до помилок
+Action triggered after the registration of JetEngine components. Can be used to register custom components or deregister existing ones. Deregistration is theoretically possible, but it should be done with caution, as some components are deeply integrated into the core and this can lead to errors.
 
 **Args:**
-- `$components_manager` - Екземпляр класу менеджеру компонентів, з якого можна викликати методи реєстрації і дереєстрації
-- `$jet_engine` - Екземпляр класу JetEngine
+- `$components_manager` - Instance of the components manager class, from which registration and deregistration methods can be called.
+- `$jet_engine` - Instance of the JetEngine class.
 
 **Location:**
 /includes/core/components-manager.php
