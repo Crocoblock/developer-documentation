@@ -1,10 +1,11 @@
 # JetEngine. Register new macros
 
-Макрос - це строка яка згудно свого формату конвертиться в якісь динамічні дані. Макроси викорстовуються в багатьох місцях - як динамиічні дані в деяких полях Елементора, як варіант данмічних тегів для Блочного Редактора, як динамічні параметри квері, тощо. Вкористувуючи метод `jet_engine()->listings->macros->do_macros( $string )` можна додати обробку макросів JetEngine в будь-якому місці. Макроси JetEngine працюють на основі reusable модуля `\Crocoblock\Macros_Handler`. За допомогую цього модуля можна додати вланий механізм роботи за макросами будь де. Докладніше про це можна почитати у відповідному [розділі](/01-jet-engine/03-components/01-macros-handler)
+A macro is a string that, according to its format, is converted into some dynamic data. Macros are used in many places, such as dynamic data in some Elementor fields, as an option for dynamic tags for the Block Editor, as dynamic query parameters, and so on. Using the method 'jet_engine()->listings->macros->do_macros( $string )', you can add processing of JetEngine macros anywhere. JetEngine macros work based on the reusable module '\Crocoblock\Macros_Handler'. With the help of this module, you can add your own mechanism for working with macros anywhere. You can read more about this in the relevant [section](/01-jet-engine/03-components/01-macros-handler).
 
-## Реєстрація власного макроса
 
-У випадку макросів JetEngine ми можемо зареєструвати новий макрос з вланими аргументами для будь-якого ЮІ де використовуються макроси через єдиний АПІ. Ось приклад такої реєстрації
+## Registering a Custom Macro
+
+In the case of JetEngine macros, we can register a new macro with custom arguments for any UI where macros are used via a single API. Here is an example of such registration.
 
 ```php
 add_action( 'jet-engine/register-macros', function() {
@@ -74,5 +75,5 @@ class My_Macros extends \Jet_Engine_Base_Macros {
 ```
 
 Important notes:
-- You need to prefix arg names to avoid the overlaps with other 3rd party or core macros args
+- You need to prefix arg names to avoid the overlaps with other 3rd party or core macro args
 - Make sure you moved all heavy options lists for arguments into callbacks
