@@ -1,12 +1,12 @@
 # JetEngine. New Meta Field Type
 
-**Це заготовка інструкції. Повна інструкція буде після рефакторингу**
+**This is an instruction template. The full instruction will follow after the refactoring**
 
-Даний документ описує механізм реєстрації нових типів мета полів для JetEngine.
+This document describes the mechanism for registering new types of meta fields for JetEngine.
 
-## Додаємо новий тип поля до списку доступних типів
+## Add a new field type to the list of available types
 
-Додаємо новий тип поля через фільтр `jet-engine/meta-fields/config`.:
+Adding a new field type using the `jet-engine/meta-fields/config` filter:
 
 ```php
 /**
