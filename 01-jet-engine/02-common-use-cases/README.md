@@ -1,6 +1,6 @@
 # JetEngine. Common Use Cases
 
-Найбільш поширені і типові приклади використання девелоперського АПІ та логіки ДжетЕнжин
+The most common and typical examples of using the developer API and JetEngine logic
 
 * [Context](/01-jet-engine/02-common-use-cases/01-context)
 * [New Query Type for Query Builder](/01-jet-engine/02-common-use-cases/02-custom-query-for-query-editor)
