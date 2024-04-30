@@ -2,15 +2,16 @@
 
 **Location:** /framework/macros/macros-handler.php
 
-Класс `\Crocoblock\Macros_Handler` фактично є компонентом фреймворка, а не саме JetEngine, тому може бути використаний в будь-якуому іншому плагіні де треба додати врасну обробку макросів
+Class `\Crocoblock\Macros_Handler` is actually a part of the framework, not JetEngine itself, so it can be used in any other plugin where custom macros processing is needed.
 
-Методи класу:
+Class methods:
 
 `__construct( $namespace )`
-Конструктор задає $namespace для поточного екземпляру. Якщо задано $namespace, то на базі нього будуть викликатися хуки для реєстрації валних макросів для поточного екземпляру Macros_Handler. В самому JetEngine на даний момент не використовується на користь власного хука з JetEngine для сумісності з легасі макросами
+The constructor sets the `$namespace` for the current instance. If `$namespace` is specified, hooks will be called based on it to register custom macros for the current instance of `Macros_Handler`. JetEngine itself currently does not use this in favor of its own hook for compatibility with legacy macros.
 
 `register_macros_list( $list = [] )`
-Метод для групової реєстрації макросів для поточного екземпляру Macros_Handler. Кожен екземпляр Macros_Handler може обробляти тільки ті макроси які в ньому зареєстровані. Формат списку для реєстрації
+Method for batch registration of macros for the current instance of `Macros_Handler`. Each instance of `Macros_Handler` can handle only the macros registered in it. The format of the registration list is as follows:
+
 ```php
 [
 	'macros_tag' => [
@@ -30,10 +31,11 @@
 	],
 ]
 ```
-Також, якщо задано неймспейс, цей метод викликає хук `$this->namespace . '/register-macros'`, для реєстрації кастомних макросів саме в цьому єкземплярі Macros_Handler
+Also, if a namespace is specified, this method calls the hook `$this->namespace . '/register-macros'` to register custom macros in this instance of `Macros_Handler`.
 
 `register_macros( $macros_instance )`
-Реєструє окремий макрос через класс макроса. Класс макроса має розширювати базовий класс `\Crocoblock\Base_Macros`. Приклад використання цього методу разом з хуком з попреднього методу:
+Registers a single macro using the macro class. The macro class must extend the base `\Crocoblock\Base_Macros` class. Example of using this method with a hook from the previous method:
+
 ```php
 add_action( 'my-namespace/register-macros', function( $handler ) {
 
@@ -49,55 +51,54 @@ add_action( 'my-namespace/register-macros', function( $handler ) {
 
 } );
 ```
-Цей метод можна використовувати для реєєстрації всіх макросів для вашого середовища, але обов'язково *після цього* викликади метод `register_macros_list()` на поточному екземплярі Macros_Handler, щоб викликати сам хук.
+This method can be used to register all macros for your environment, but after that, you must call the register_macros_list() method on the current instance of `Macros_Handler` to trigger the hook.
 
-Класс `\Crocoblock\Base_Macros` також можна підключити як модуль фреймоврка.
+Class `\Crocoblock\Base_Macros` can also be included as a framework module.
 
 `get_raw_list()`
-Повертає список макросів як є. Цей метод бажано використовувати там, де вам треба отримати список всіх макросів і не додавати ЮІ для них
+Returns the list of macros as is. This method is preferable to use where you need to get a list of all macros without adding UI for them.
 
 `get_escaped_list()`
-Повертає список макросів, у якому опції аргментів підготовленні для використання (для тих випдаків, де в якості опції було передано колбек). Цей метод бажано використовувати там де ви планєте створювати ЮІ для макросів.
+Returns the list of macros with prepared argument options (for cases where a callback was passed as an option). This method is preferable to use where you plan to create UI for macros.
 
 `get_macros_for_js()`
-Повертає список макросів у форматі, підготовленному для використання в ЖС компонентах
+Returns the list of macros in a format prepared for use in JavaScript components.
 
 `set_macros_context( $context )`
-Встановлює контекст макроса. Зі строки макроса можна встановити лише текстовий контекст, такий контекст може обробляти лише JetEngine. Але програмно можна задати будь-який контекст, якщо в якості контексту передати відразу потрібний об'єкт а не назву контексту.
+Sets the context of the macro. Only text context can be set from the macro string, which can only be processed by JetEngine. However, programmatically you can set any context by passing the required object as the context, not just the context name.
 
 `get_macros_context()`
-Повертає поточний контекст - текстову назву контексту, або об'єкт
+Returns the current context - either the textual name of the context or the object.
 
 `set_fallback( $fallback )`
-Задає текст який буде викорситано в якості значення макросу, якщо актуальне занчення порожнє. Фолбек можна передати зі строкою макросу в такому форматі - `%my_macros%{"fallback":"My Fallback"}`
+Sets the text to be used as the macro value if the actual value is empty. The fallback can be passed with the macro string in this format - `%my_macros%{"fallback":"My Fallback"}`.
 
 `get_fallback()`
-Повертає поточний фолбек
+Returns the current fallback.
 
 `set_before( $before )`
-Задає текст який буде додано перед занченням макросу. Це значення можна передати зі строкою макросу в такому форматі - `%my_macros%{"before":"Text before macros value"}`
+Sets the text to be added before the macro value. This value can be passed with the macro string in this format - `%my_macros%{"before":"Text before macros value"}`.
 
 `get_before()`
-Повертає поточне значення before
+Returns the current value of before.
 
 `set_after( $after )`
-Задає текст який буде додано після занчення макросу. Це значення можна передати зі строкою макросу в такому форматі - `%my_macros%{"after":"Text after macros value"}`
-
+Sets the text to be added after the macro value. This value can be passed with the macro string in this format - `%my_macros%{"after":"Text after macros value"}`.
 
 `get_after()`
-Повертає поточне значення after
+Returns the current value of after.
 
 `get_macros_list_for_options()`
-Повертає список макросів для використання в якості опцій у форматі macros_slug => Macros name
+Returns a list of macros for use as options in the format `macros_slug => Macros name`.
 
 `verbose_macros_list()`
-Повертає спсиок назв доступних макросів у вигляді строки, розділеної комами
+Returns a list of available macros as a comma-separated string.
 
 `get_macros_object()`
-Повертає поточний об'єкт для макросу, який визначається за контекстом (або сам контекст, якщо перед цим ми через set_macros_context передали готовий об'єкт)
+Returns the current object for the macro, which is determined by the context (or the context itself if a ready-made object was passed through set_macros_context before this).
 
 `call_macros_func( $macros, $args = array() )`
-Викликає функцію для перданого в 1му аргументі макросу зі списком аргументів, переданим у другому агументі.
+Calls the function for the passed macro in the first argument with the list of arguments passed in the second argument.
 
 `do_macros( $string, $field_value )`
-Виконує всі макроси в переданому аргументі $string. Цей метод необхідно додати всюди де ви бажаєте додати підтримку максроів з поточного екземпляру `\Crocoblock\Macros_Handler`. `$field_value` - це здебільшого легасі параметр, що тягенться с реалізації макросів в JetEngine, але за бажання можно передавати через нього будь-якиі глобальні аргументи котрі потрібні для всіх макросів.
+Executes all macros in the passed argument `$string`. This method must be added wherever you want to add support for macros from the current instance of `\Crocoblock\Macros_Handler`. `$field_value` is mostly a legacy parameter pulled from the implementation of macros in JetEngine, but if desired, you can pass any global arguments through it that are needed for all macros.
