@@ -2,17 +2,16 @@
 
 **Location:** /framework/workflows/workflows.php
 
-Interactive Tutorials - це компонент фреймворку, який відповідає за реєстрацію і обробку інтерактивних туторіалів для певного плагіну. В коді ця функціональність називається workflows - це була робоча назва фічі, але ближче до релізу було вирішено змінити її оскільки термін workflows вже використовуються в Апойнтментах в іншому контексті.
+Interactive Tutorials is a framework component responsible for registering and handling interactive tutorials for a specific plugin. In the code, this functionality is referred to as "workflows," which was a working name for the feature. However, closer to the release, it was decided to change it because the term "workflows" was already being used in Appointments in a different context.
 
-Interactive Tutorials - це уніфікований інструмент запуску в адмінці сайту будь-яких покрокових туторіалів, які окрім безпосередньо текстової інформації, можут також взаємодіяти з сайтом і виконувати певні прості дії замість юзера, або вести його на потрібні сторінки в потрібний момент.
+Interactive Tutorials is a unified tool for launching step-by-step tutorials in the site's admin area, which, in addition to textual information, can also interact with the site and perform certain simple actions instead of the user or lead them to the necessary pages at the right moment.
 
-За замовчанням, всі туторіали для всіх наших плагінів зберігаються на https://api.crocoblock.com/interactive-tutorials/tutorials.json. Але є можливість додати свої до стандартних, або взагалі замінити АПІ сорс для туторіалів та зареєструвати цей модуль окремо від наших основних плагінів. Докладніше про це нижче.
+By default, all tutorials for all our plugins are stored at https://api.crocoblock.com/interactive-tutorials/tutorials.json. But there is the possibility to add your own to the standard ones, or completely replace the API source for tutorials and register this module separately from our main plugins. More details about this below.
 
-### Реєстрація Interactive Tutorials у власному плагіні
+### Registering Interactive Tutorials in your own plugin
+If your plugin already has interactive tutorials at https://api.crocoblock.com/, you can register this module in your plugin to display these tutorials on the general tutorials page. To do this, follow these steps:
 
-Якщо для вашого плагіну вже є інтерактивні туторіали на https://api.crocoblock.com/, ви можете зарєструвати цей моудль у вашому плагіні, щоб вивести ці туторіали на загальну сторінку з туторіалами. Для цього треба виконати наступні кроки:
-
-1. Додати модуль workflows.php у лоадер фреймворка, що використовується у вашому плагіні. На прикладі JetEngine:
+Add the workflows.php module to the framework loader used in your plugin. For example, for JetEngine:
 
 ```php
 ...
@@ -25,7 +24,7 @@ $this->framework = new Jet_Engine_CX_Loader( [
 ...
 ```
 
-2. Створити новий екземпляр класу `\Croblock\Workflows\Manager`. Рекомендовано створювати його разом з ініціалізацією `Jet_Dashboard` у вашому плагіні, т.я. за замовчанням ми додаємо сторінку туторіалів у меню дешборда, і для цього вам потріб слаг батьківської сторінки дешборда:
+2. Create a new instance of the `\Crocblock\Workflows\Manager class`. It is recommended to create it together with the initialization of `Jet_Dashboard` in your plugin, as by default we add a tutorials page to the dashboard menu, and for this, you need to specify the parent page slug:
 
 ```php
 ...
@@ -45,22 +44,26 @@ $workflows->run();
 ...
 ```
 
-Всі можливі аргументи для ініціалізації:
+**All possible arguments for initialization:**
 
-- `prefix` - по дефолту `crocoblock` - базовий префікс, який визначає де зберігаються туторіали і їх стан. За допомогою цього параметра можна відокремлювати ваш набір туторіалів від загального.
-- `namespace` - по дефолту порожній, **обов'язоково передавати** - неймпспейс вашого плагіну. Кожен туторіал має свй неймспейс, цим параметром ви визначаєете, які туторіали з загального списку буде віднесено до вашого плагіну. Всі доступні туторіали виводяться на сторінці туторіалів за списком зареєстрованих неймспейсів.
-- `label` - по дефолту порожній, **обов'язоково передавати** - лейбл вашого неймспейса для візуального відображення на сторінці.
-- `path` - по дефолту порожній, **обов'язоково передавати** - шлях до найсвіжішої версії модуля з усіх встановлених, отримується з екземпляру лоадера.
-- `url` - по дефолту порожній, **обов'язоково передавати** - УРЛ найсвіжішої версії модуля з усіх встановлених, отримується з екземпляру лоадера.
-- `parent_page` - по дефолту порожній, **обов'язоково передавати** - батьківська сторінка
-- `page_slug` - по дефолту `crocoblock-workflows` - слаг поточної сторінки туторіалів, можна змінити і тим сами зареєструвати власну сторінку.
-- `page_name` - по дефолту `Interactive Tutorials` - назва поточної сторінки туторіалів в меню, можна змінити якщо ви змінили саму сторінку, інакше немає сенсу.
+`prefix` - default is `crocoblock` - the base prefix that determines where tutorials and their state are stored. Using this parameter, you can separate your set of tutorials from the general one.
 
-### Кастомні кейси
+`namespace` - default is empty, mandatory to pass - the namespace of your plugin. Each tutorial has its own namespace, and with this parameter, you specify which tutorials from the general list will be assigned to your plugin. All available tutorials are displayed on the tutorials page below the list of registered namespaces.
 
-**Реєстрація нових туторіалів для вашого плагіну з коду**
+`label` - default is empty, **mandatory to pass** - the label of your namespace for visual display on the page.
 
-В цьому випадку туторіали буде додано до вже існуючих
+`path` - default is empty, **mandatory to pass** - the path to the latest version of the module from all installed ones, obtained from the loader instance.
+`url` - default is empty, **mandatory to pass** - the URL of the latest version of the module from all installed ones, obtained from the loader instance.
+
+`parent_page` - default is empty, **mandatory to pass** - the parent page
+
+`page_slug` - default is `crocoblock-workflows` - the slug of the current tutorials page, can be changed, and then you need to register your own page.
+
+### Custom cases
+
+**Registering new tutorials for your plugin from code**
+
+In this case, tutorials will be added to the existing ones.
 
 ```php
 $workflows->storage()->register_workflows( [ [
@@ -96,7 +99,7 @@ $workflows->storage()->register_workflows( [ [
 ] ] );
 ```
 
-**Реєстрація туторіалів на новій сторінці**
+**Registering new tutorials on the new page**
 
 ```php
 $workflows_module_data = $this->module_loader->get_included_module_data( 'workflows.php' );
@@ -111,7 +114,7 @@ $workflows = new \Croblock\Workflows\Manager( [
 ] );
 ```
 
-у цьому випадку додасться нова сторінка з туторіалами, але вона буде намагатись отримати туторіали з того ж місця що й дефолтна, щоб змінити це, треба зараєструвати новий api_url для даного екземпляру `$workflows`:
+In this case, a new page with tutorials will be added, but it will try to get tutorials from the same place as the default one, to change this, you need to register a new `api_url` for this instance of `$workflows`:
 
 ```php
 $workflows->remote_api()->set_api_url( 'https://api.crocoblock.com/interactive-tutorials/tutorials-test.json' );
