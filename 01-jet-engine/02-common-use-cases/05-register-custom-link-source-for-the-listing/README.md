@@ -1,12 +1,13 @@
 # JetEngine. Register new link source for Listing Item link
 
-Цей кейс дозволить додати новий варіант до опції Link source, яка є часиною налаштування УРЛу для лістинг айтему, а також обробку цього сорсу на фронт-енді.
+This case allows you to add a new option to the Link source setting, which is part of the URL configuration for the listing item, as well as handle this source on the frontend.
 
-Для цього на потрібно 2 фільтри
-- <a href="/01-jet-engine/01-hooks/01-listings/filters.md#jet-enginelistingsdynamic-linkfields">jet-engine/listings/dynamic-link/fields</a> - для реєстрації нової опції
-- <a href="/01-jet-engine/01-hooks/01-listings/filters.md#jet-enginelistingsfrontendcustom-listing-url">jet-engine/listings/frontend/custom-listing-url</a> - для обробки нової опції на фронт-енді
+To achieve this, you need 2 filters:
 
-Базовий варіант, на прикладі додавання сорсу Author Archive URL - посилання на дефолтний ВП архів автора (має сенс для лістингів юзерів)
+- <a href="/01-jet-engine/01-hooks/01-listings/filters.md#jet-enginelistingsdynamic-linkfields">jet-engine/listings/dynamic-link/fields</a> - to register a new option
+- <a href="/01-jet-engine/01-hooks/01-listings/filters.md#jet-enginelistingsfrontendcustom-listing-url">jet-engine/listings/frontend/custom-listing-url</a> - to process the new option on the frontend.
+
+Below is the basic scenario, for example, adding the Author Archive URL source - a link to the default WP author archive (makes sense for user listings)
 
 ```php
 /**
@@ -44,7 +45,7 @@ add_filter( 'jet-engine/listings/frontend/custom-listing-url', function( $url, $
 }, 10, 2 );
 ```
 
-Більш адвансед варіант реалізаціїї того ж кейсу, з обгортанням коду в класс. Так його буде легше ре-юзати
+The more advanced version of implementing the same case, with wrapping a code in a class. This way, it's easier to reuse it. 
 
 ```php
 /**
