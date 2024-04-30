@@ -1,10 +1,10 @@
 # JetEngine Custom Query Types For Query Builder
 
-Розберемо реєстрацію нового типу квері на прикладі того як реєструється новий тип квері для CCT в самому JetEngine.
+Let's explore registering a new query type using the example of how a new query type is registered for CCT in JetEngine itself.
 
-## Реєструеємо компонент для редактора
+## Registering a Component for the Editor
 
-Реєструеємо компонент для реадтора на хук <a href="/01-jet-engine/01-hooks/05-query-builder/actions.md#jet-enginequery-builderquery-editorregister" target="_blank">jet-engine/query-builder/query-editor/register</a>:
+Register a component for the editor on the hook <a href="/01-jet-engine/01-hooks/05-query-builder/actions.md#jet-enginequery-builderquery-editorregister" target="_blank">jet-engine/query-builder/query-editor/register</a>:
 
 ```php
 /**
@@ -25,7 +25,7 @@ public function register_editor_component( $manager ) {
 }
 ```
 
-Як виглядає сам класс `CCT_Query_Editor`:
+Here is what the `CCT_Query_Editor` class looks like:
 
 ```php
 /**
@@ -108,18 +108,19 @@ class CCT_Query_Editor extends \Jet_Engine\Query_Builder\Query_Editor\Base_Query
 }
 ```
 
-### Структура классу
+### Class Structure
 
-- `get_id()` - метод який повертає ІД квері. Ви маєте використовувати однаковий ІД для едітора та для самої квері, щоб ці два типа квері потім могли знайти один одного при переході від редактора до квері на фронті
-- `get_name()` - назва даного типу квері
-- `editor_component_name()` - назва Vue компоненту який буде реєструватися в редакторі для даної квері. В самому Vue комопненті вам потрбно буде зареєструвати вручну компонент з такою назвою. На рівні бекенду вона потрібна для того щоб зв'язати вибор типу квері в опціях редактора з увімкненням відповідного компоненту основному тілі редактора.
-- `editor_component_data()` - метод який повертає масив з будь-якими додатковими даними які вам потрібно передати в редактор
-- `editor_component_template()` - Vue-шаблон для компоненту. Опціональний метод, за бажання шаблон компонента мжна задавати будь-яким доступним в Vue способом
-- `editor_component_file()` - УРЛ ЖС файла, який містить безпосередньо код Vue компоненту.
+- `get_id()` - method that returns the query ID. You should use the same ID for the editor and for the query itself so that these two query types can find each other when switching from the editor to the query on the front end.
+- `get_name()` - the name of this query type.
+- `editor_component_name()` - the name of the Vue component that will be registered in the editor for this query. In the Vue component itself, you will need to manually register a component with this name. On the backend, it is needed to link the query type selection in the editor options with enabling the corresponding component in the main editor body.
+- `editor_component_data()` - method that returns an array with any additional data you need to pass to the editor.
+- `editor_component_template()` - Vue template for the component. Optional method, you can specify the component template in any available Vue way.
+- `editor_component_file()` - URL of the JS file that contains the Vue component code.
 
-Класс містить опис частини редактора яка відкривається після вибору нашого типу квері. Безпосередньо сам інтерфейс - це Vue component, який ви маєте описати у файлі `assets/js/admin/query-editor.js` та зареєструвати з ім'ям яке вказано у `editor_component_name()`. Будь-які кастомні данні котрі вам потрібно передати з бекенду в цей Vue компонент ви можете вказати у методі `editor_component_data()`. Далі ці дані будуть доступна у JS в глобальній змінній `window.jet_engine_your_query_slug`, де `your_query_slug` - це актуальній слаг вашого типу квері в якому всі `-` змінено на `_`. На даному прикладі - слаг `custom-content-type`, отже кастомні данні будуть доступні у `window.jet_engine_custom_content_type`.
+The class contains a description of the editor part that opens after selecting our query type. The interface itself is a Vue component, which you need to describe in the file `assets/js/admin/query-editor.js` and register with the name specified in `editor_component_name()`. Any custom data that you need to pass from the backend to this Vue component can be specified in the `editor_component_data()` method. Then this data will be available in JS in the global variable window.`jet_engine_your_query_slug`, where `your_query_slug` is the actual slug of your query type with all `-` replaced with `_`. In this example, the slug is custom-content-type, so the custom data will be available in `window.jet_engine_custom_content_type`.
 
-Приклад Vue компоненту для ССТ
+Example Vue component for CCT:
+
 
 ```js
 Vue.component( 'jet-cct-query', {
@@ -213,11 +214,11 @@ Vue.component( 'jet-cct-query', {
 	}
 } );
 ```
-Мінімальний шаблон файлу компоненту з описом його частин -  <a href="/01-jet-engine/02-common-use-cases/02-custom-query-for-query-editor/vue-component.js" target="_blank">/01-jet-engine/02-common-use-cases/02-custom-query-for-query-editor/vue-component.js</a>
+A minimal template file for the component with a description of its parts -  <a href="/01-jet-engine/02-common-use-cases/02-custom-query-for-query-editor/vue-component.js" target="_blank">/01-jet-engine/02-common-use-cases/02-custom-query-for-query-editor/vue-component.js</a>
 
-## Реєструеємо безпосередньо новий тип квері
+## Registering the New Query Type 
 
-Реєстрація відбувається на хук <a href="/01-jet-engine/01-hooks/05-query-builder/actions.md#jet-enginequery-builderqueriesregister" target="_blank">jet-engine/query-builder/queries/register</a>:
+Registration is done on the hook <a href="/01-jet-engine/01-hooks/05-query-builder/actions.md#jet-enginequery-builderqueriesregister" target="_blank">jet-engine/query-builder/queries/register</a>:
 
 ```php
 /**
@@ -244,7 +245,7 @@ public function register_query( $manager ) {
 }
 ```
 
-Структура класу `CCT_Query`:
+The structure of the `CCT_Query` class:
 
 ```php
 
@@ -661,37 +662,37 @@ class CCT_Query extends \Jet_Engine\Query_Builder\Queries\Base_Query {
 
 ```
 
-### Обов'язкові методи
+### Mandatory Methods
 
-Query в JetEngine реалізує не тільки механізм безпосередньо отримання набору айтемів з бази, а і інтерфейс сумісності з інтсрументами фільтрації та пагінації. Тому кожна квері містить певний набір обов'язкових методів для реалізації цих задач:
+In JetEngine, a Query not only implements the mechanism to directly retrieve a set of items from the database but also provides compatibility with filtering and pagination tools. Therefore, each query contains a set of mandatory methods to implement these tasks:
 
-* `_get_items()` - метод який безпосередньо повертає масив query items, отриманий в залежності від аргументів з `$this->final_query`
+* `_get_items()` - a method that directly returns an array of query items, obtained depending on the arguments in `$this->final_query`
 
-* `get_items_total_count()` - загальна кількість результатів. Якщо квері розбита на сторінки з аргументів, або просто повертає лімітовану кількість результатів - цей метод в будь-якому разі повинен повернути загальну кількість результатів, незалежно від поточного ліміту. Якщо брати за аналог WP_Query, то це параметер WP_Query::$found_posts. Як правило повертає більше число ніж кількість айтемів у `_get_items()`
+* `get_items_total_count()` - total number of results. If the query is paginated with arguments or simply returns a limited number of results, this method should always return the total number of results, regardless of the current limit. If we take WP_Query as an analogy, this is equivalent to the WP_Query::$found_posts parameter. Typically, it returns a number greater than the number of items in `_get_items()`
 
-* `get_items_per_page()` - максимальна кількість айтемів яку може повернути `_get_items()` з один запит. Визначається особливостями конкртетной квері, наприклад у випадку з ССТ, за цей параметер відповідає `$this->final_query['number']`
+* `get_items_per_page()` - the maximum number of items that `_get_items()` can return in one query. It is determined by the specific query, for example, in the case of CCT, this parameter corresponds to `$this->final_query['number']`
 
-* `get_items_page_count()` - кількість айтемів в `_get_items()`, вона може бути рівною `get_items_per_page()`, або меньшою, якщо відображається остання сторінка пагінації.
+* `get_items_page_count()` - the number of items in `_get_items()`, which can be equal to `get_items_per_page()`, or less if displaying the last page of pagination.
 
-* `get_items_pages_count()` - загальна кількість сторінок в результатах квері. Вираховється як похідна від `get_items_total_count()` та `get_items_per_page()`. Наприклад якщо в нас загальна кількість результатів 9, а на строніку ми виводимо 5, то загальна кількість сторінок для ціє квері - 2.
+* `get_items_pages_count()` - the total number of pages in the query results. It is calculated based on `get_items_total_count()` and `get_items_per_page()`. For example, if we have a total of 9 results and display 5 per page, then the total number of pages for this query is 2.
 
-* `get_current_items_page()` - поточна сторінка на якій ми знаходимось. Залежить від квері, може впередаватись як параметер, наприклад як у `WP_Query`, а може вираховуватись на базі інших параметрів, наприклад limit та offset
+* `get_current_items_page()` - the current page we are on. It depends on the query and can be passed as a parameter, for example, as in `WP_Query`, or calculated based on other parameters, such as limit and offset.
 
-## Сумісність з JetSmartFilters
+## Compatibility with JetSmartFilters
 
-Базово сумісність з JetSmartFilters реалізована вище, на рівні Query Builder, сама квері має тільки корректним чином додати аргументи що прийшли з JetSmartFilters до своїх власних. Потрібно реалізувати 3 основні сценарії:
+Basic compatibility with JetSmartFilters is implemented above, at the Query Builder level; the query itself just needs to correctly add the arguments that come from JetSmartFilters to its own arguments. Three main scenarios need to be implemented:
 
-- сумісність безпосередньо з фільтрацією
-- пагінація
-- сортування
+- compatibility with filtering
+- pagination
+- sorting
 
-Для додавання аргументів з фільтра до квері, в классі квері є метод `set_filtered_prop( $prop, $value )` цей метод визивається для кожного аргумента з фільтра та в якості параметрів отримую назву аргумента з фіблта та його значення.
+To add arguments from filters to the query, the query class has a  `set_filtered_prop( $prop, $value )` method, which is called for each filter argument, receiving the name of the argument from the filter and its value as parameters.
 
-Фільтри можуть передавати будь-які аргументи, залежно від налаштувань самих фільтрів на сторінці, але є базові речі які потрібно обробляти однотипно:
+Filters can pass any arguments, depending on the settings of the filters themselves on the page, but there are basic things that need to be processed uniformly:
 
-### Параметри пагінації. `_page`
+### Pagination Parameters. `_page`
 
-Разом з цим параметром завжди приходить номер сторінки, яку потрібно віддати. Далі обробка залежить від особливостей квері. Наприклад у ССТ пагінація реалізується через limit/offset. Тому отримуючі номер сторінки, ми маємо вирахувати відповідний офсет та додати його до аргументів:
+Along with this parameter, the page number to be fetched always comes. Further processing depends on the specifics of the query. For example, in CCT, pagination is implemented using limit/offset. Therefore, upon receiving the page number, we need to calculate the corresponding offset and add it to the arguments:
 
 ```php
 // $value - is second argument for set_filtered_prop() with actual page number
@@ -705,8 +706,9 @@ if ( 0 < $page ) {
 
 ### Кастомні поля. `meta_query`
 
-Базово JetSmartFilters був написаний під `WP_Query` і структура зберігання аргументів залишилась характерна для `WP_Query`. Тому всі кастомні квері параметри збираються в масив `meta_query` у форматі який описано у офіційній документації - https://developer.wordpress.org/reference/classes/wp_meta_query/ Під кастомну квері нам необхідно конвертувати параметри з `meta_query` в формат який потрібен для нашого типу квері.
+Basically, JetSmartFilters was written for `WP_Query`, and the structure of storing arguments remains characteristic of `WP_Query`. Therefore, all custom query parameters are collected into the `meta_query` array in the format described in the official documentation  - https://developer.wordpress.org/reference/classes/wp_meta_query/ For a custom query, we need to convert the parameters from `meta_query` to the format required for our query type.
 
-### Сортування. `orderby`, `order`, `meta_key`
+### Sorting. `orderby`, `order`, `meta_key`
 
-Знову ж таки, базово JetSmartFilters був заточений під пости, тому параметри сортування передаються у форматі характерному для `WP_Query`. В цьому випдаку як варіант ми можемо передати кастомні параметри наприклад через сорутвання по Meta Value або Meta Value Numeric. В такому випадку нам треба обробити ці три параметри які вказано в заголовку. Наприклад для ССТ, в ЮІ філтрів ми вибираємо сортування за Meta Value або Meta Value Numeric і замість назви мета поля вказуємо поле ССТ за яким потрібно зробити сортування. Далі у методі `set_filtered_prop( $prop, $value )` "ловимо"  `orderby`, `order`, `meta_key` і на основі них задаємо праметри сортування для ССТ
+Again, JetSmartFilters was tailored for posts, so the sorting parameters are passed in a format typical for `WP_Query`. In this case, as an option, we can pass custom parameters, for example, for sorting by Meta Value or Meta Value Numeric. In this case, we need to process these three parameters mentioned in the header. For example, for CCT, in the UI of the filters, we select sorting by Meta Value or Meta Value Numeric, and instead of the name of the meta field, we specify the field of the CCT by which the sorting should be done. Then, in the `set_filtered_prop( $prop, $value )` method, we "catch" `orderby`, `order`, `meta_key`, and based on them, we set sorting parameters for CCT.
+
