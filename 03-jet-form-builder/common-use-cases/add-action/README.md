@@ -1,8 +1,9 @@
 # How to add an JetFormBuilder Action?
 
-## Базова реалізація
-1. Релізувати новий клас, що наслідує [\Jet_Form_Builder\Actions\Types\Base](/03-jet-form-builder/modules/actions/reference/types/base.md).
-2. Зареєструвати об'єкт новостворенного класу за цим прикладом:
+## Basic Implementation
+Implement a new class that inherits from[\Jet_Form_Builder\Actions\Types\Base](/03-jet-form-builder/modules/actions/reference/types/base.md).
+2. Register an instance of the newly created class using the following example:
+
 ```php
 // this hook is performed after registration of all actions on hook `init` with priority `99`
 add_action(
@@ -17,18 +18,18 @@ add_action(
 	1
 );
 ```
-### Результат
+### Result
 ![action.png](/03-jet-form-builder/common-use-cases/add-action/assets/action.png)
 
-## Розширена реалізація
-Перед початком вам слід встановити [Node.js](https://nodejs.org/en/download). Щоб перевірити його наявність - в командному терміналі виконайте наступне:
+## Advanced Implementation
+Before starting, you should install [Node.js](https://nodejs.org/en/download). To check its presence, run the following in the command terminal:
 ```
 node -v
 ```
 
-1. Повторюємо 1 крок з Базової реалізації
-2. Повторюємо 2 крок з Базової реалізації
-3. Створюємо наступний файл (в рамках нашого плагіну):
+1. Repeat step 1 from the Basic Implementation.
+2. Repeat step 2 from the Basic Implementation.
+3. Create the following file (within our plugin):
 ### `./assets/package.json`
 ```json
 {
@@ -55,12 +56,12 @@ node -v
 	}
 }
 ```
-4. Виконуємо послідовно такі команди в нашому терміналі:
+4. Execute the following commands in the terminal:
 ```
 cd ./assets
 npm install
 ```
-5. Створюємо наступні файли:
+5. Create the following files:
 
 ### `./assets/src/MyActionRender.jsx`
 ```jsx
@@ -155,12 +156,15 @@ module.exports = {
 	devtool: devMode ? 'inline-cheap-module-source-map' : false,
 };
 ```
-6. Виконуємо команду в терміналі:
+
+6. Run the command in the terminal:
+
 ```
 npm run build
 ```
-7. На цьому кроці ми вже маємо підготовлений білд (скрипт), який залишилось додати в чергу інших
-на сторінці редагування форми
+
+7. At this step, we already have a prepared build script that needs to be added to the queue along with others on the form editing page:
+
 ```php
 add_action(
 	'jet-form-builder/editor-assets/before',
@@ -178,7 +182,7 @@ add_action(
 	}
 );
 ```
-P.S. весь наведений вище код присутній в робочому [прикладі >>>](https://github.com/girafffee/jet-forms-addon-boilerplate-simple/tree/release/1.1.0).
+P.S. All the code above is available in a working [example >>>](https://github.com/girafffee/jet-forms-addon-boilerplate-simple/tree/release/1.1.0).
 
-### Результат
+### The result
 ![advanced-action.png](/03-jet-form-builder/common-use-cases/add-action/assets/advanced-action.png)
