@@ -2,13 +2,12 @@
 
 ## jet-booking/ical/ical-booking-data
 
-Дозволяє контролювати список даних які будуть записані в файл експорту для кожного бронювання. Цей хук працює лише для даних
-які будуть експортуватись за допомогою посилання календарів.
+Allows controlling the list of data that will be written to the export file for each booking. This hook works only for data that will be exported using calendar links.
 
 **Args:**
-* `$data` - _array_ - Список даних який буде записано в файл експорту.
-* `$booking` - _array_ - Список даних бронювання.
-* `$calendar` - _object|ZCiCal_ - Об`єкт класу ZCiCal.
+* `$data` - _array_ - The list of data that will be written to the export file.
+* `$booking` - _array_ - The list of booking data.
+* `$calendar` - _object|ZCiCal_ - An object of the ZCiCal class.
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-booking/blob/master/includes/ical.php">includes/ical.php</a>
