@@ -1,8 +1,7 @@
 # Block parsers related JetFormBuilder Hooks
 
-Ці хуки належать до парсерів полів форми, що ініціалізуються 
-під час сабміту форми, експорту форм-рекордів або виконання інших івентів з екшенами. 
-Серед них можуть бути GATEWAY.SUCCESS, GATEWAY.FAILED, VERIFICATION.SUCCESS та інші.
+These hooks belong to the form field parsers, that are initialized during the form submit, form records submit or other action events execution. 
+There can be GATEWAY.SUCCESS, GATEWAY.FAILED, VERIFICATION.SUCCESS, and others. 
 
 * **<a href="/03-jet-form-builder/modules/block-parsers/hooks/actions.md">Actions</a>**
 * **<a href="/03-jet-form-builder/modules/block-parsers/hooks/filters.md">Filters</a>**
