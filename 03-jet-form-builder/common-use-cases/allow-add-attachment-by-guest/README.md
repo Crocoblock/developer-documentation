@@ -1,17 +1,19 @@
-# JetFormBuilder - Надання дозволу для гостей на додавання аттачментів
+# JetFormBuilder - Allowing adding attachments by guests
 
-Річ в тому, що Media Field неможливо налаштувати так, щоб гість міг завантажити свої файли, кожен з яких збережеться як аттачмент.
+The Media Field cannot be configured to allow guests to upload their files, each of which will be saved as an attachment.
 
-> Трохи про те, [що таке аттачмент](https://developer.wordpress.org/themes/template-files-section/attachment-template-files/#:~:text=Attachments%20are%20a%20special%20post,post%20type%20%E2%80%93%20attachment%20template%20files.)
+> A bit about what an attachment is [here](https://developer.wordpress.org/themes/template-files-section/attachment-template-files/#:~:text=Attachments%20are%20a%20special%20post,post%20type%20%E2%80%93%20attachment%20template%20files.)
 
-## Як подолати це обмеження?
-Для цього потрібно виконати наступні кроки:
-1. До вашого Media Field додаємо клас `allow-insert-attachments`
+## How to Overcome This Limitation
+
+To overcome this limitation, follow these steps:
+
+1. Add the class `allow-insert-attachments` to your Media Field.
 
    ![Image](/03-jet-form-builder/common-use-cases/allow-add-attachment-by-guest/assets/add-class.png)
 
-2. До `functions.php` вашої дочірньої теми додаємо [цей код](#PHP-Code).
-3. На останньому рядку функції-колбеку вам слід змінити другий параметр за необхідності. 
+2. Add [this code](#PHP-Code) to the `functions.php` file of your child theme.
+3. In the callback function, on the last line, change the second parameter if necessary
 (`id`, `url` або `both`)
    
 ## PHP Code
