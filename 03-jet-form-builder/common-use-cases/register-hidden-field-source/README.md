@@ -1,10 +1,10 @@
-# JetFormBuilder - Реєстрація кастомного "сорсу" для Hidden Field.
+# JetFormBuilder - Registering custom "source" for the Hidden Field.
 
-Наведений код нижче дозволяє зареєструвати власний ресурс для отримання значення у формі.
+The following code allows you to register own resource for fetching the form value. 
 
-Перенесіть [цей код](#php-code) у `functions.php` вашої дочірньої теми або у власний плагін.
+Add [this code](#php-code) to `functions.php` of your child theme or to a custom plugin. 
 
-У результаті в редакторі форми при виділенні Hidden Field вам буде доступний новая опція Field Value: 
+As a result, the new `Field Value` option will become available in the form editor:
 
 ![image](/03-jet-form-builder/common-use-cases/register-hidden-field-source/assets/hidden-field.png)
 
