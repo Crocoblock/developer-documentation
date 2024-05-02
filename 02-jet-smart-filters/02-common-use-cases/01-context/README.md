@@ -1,13 +1,13 @@
 # JetEngine Context
 
-## Що означає поняття Context. Як і де використовується
+## What does Context mean. How and where to use it 
 
-За замовчанням динамічні віджети та динамічні теги Енжина працюють з поточним об'єктом. Наприклад в контенті сторінки це буде поточна сторінка, в лістингу - поточний елемент лістингу.
+By default, dynamic widgets and dynamic tags of JetEngine work with the current object. For instance, for the page content it will be a current page, for listing - the current element of the listing. 
 
-## Додавання нового контексту
+## Adding new context
 
-Приклад того як додати новий контекст
+Example
 
-## Пов'язані хуки
+## Related hooks
 
 * <a href="/01-jet-engine/01-hooks/01-listings/filters.md#jet-enginelistingsallowed-context-list">jet-engine/listings/allowed-context-list</a>
