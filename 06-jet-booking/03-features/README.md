@@ -1,6 +1,6 @@
 # JetBooking Features
 
-Нові особливості та функціональності плагіну JetBooking.
+New features and functionality of the JetBooking plugin.
 
 * [Booking List in WooCommerce My Account Page](/06-jet-booking/03-features/01-booking-list-in-wc-my-account-page)
 * [Booking Cancellation](/06-jet-booking/03-features/02-booking-cancellation)
