@@ -2,7 +2,7 @@
 
 ## jet-smart-filters/filters/localized-data
 
-Список всіх локалізованих даних для JavaScript.
+List of all localized data for JavaScript.
 
 **Location:**  
 /includes/filters/manager.php
@@ -14,7 +14,7 @@ Global
 
 ```php
 add_filter( 'jet-smart-filters/filters/localized-data', function( $localized_data ) {
-    // масив даних, що локалізуються
+    // array of localized data
     print_r( $localized_data );
 
     return $localized_data;
@@ -25,7 +25,7 @@ add_filter( 'jet-smart-filters/filters/localized-data', function( $localized_dat
 
 ## jet-smart-filters/filters/valid-url-params
 
-Список дійсних параметрів URL, які вважаються як URL параметри плагіна.
+List of valid URL parameters that are considered as plugin URL parameters.
 
 **Location:**  
 /includes/filters/manager.php
@@ -37,7 +37,7 @@ Global
 
 ```php
 add_filter( 'jet-smart-filters/filters/valid-url-params', function( $valid_url_params ) {
-	// масив дійсних параметрів URL плагіна
+	// array of valid plugin URL parameters
 	print_r( $valid_url_params );
 
 	return $valid_url_params;
@@ -46,7 +46,7 @@ add_filter( 'jet-smart-filters/filters/valid-url-params', function( $valid_url_p
 
 ## jet-smart-filters/range-filter/string-callback-callable
 
-Фільтр, який дозволяє конвертувати текстове ім'я колбеку для Range фільтру у відповідний callable об'єкт, що повертає данні. Це корисно для випадків, коли нам потрібно додати новий колбек для Get min/max dynamically опції, але цей колбек локалізований в класі або може бути лише анонімною функцією.
+Filter that allows converting the string name of a callback for the Range filter into a corresponding callable object that returns data. This is useful for cases where we need to add a new callback for the `Get min/max dynamically` option, but this callback is localized in a class or can only be an anonymous function.
 
 **Location:**  
 /includes/filters/range.php
