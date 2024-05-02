@@ -5,7 +5,8 @@
 * [`jet-form-builder/parsers-request/register`](#jet-form-builderparsers-requestregister)
 
 ## `jet-form-builder/parsers-request/register`
-Використовується для реєстрації власних обробників полів. Можна робити модифікації наявних парсерів.
+
+Used to register custom field handlers. Modifications can be made to existing parsers.
 
 
 ### Parameters
