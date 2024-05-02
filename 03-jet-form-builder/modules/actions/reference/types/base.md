@@ -3,17 +3,16 @@
 This abstract class serves as the base for all action types within the Jet Form Builder plugin. It handles common properties and methods required by all inheriting action classes.
 
 ## Usage
-Використовується для реалізації встаного типу екшена.
-Детальніше про це [тут](/03-jet-form-builder/common-use-cases/add-action/README.md).
+Used for implementing the particular action type. More details [here](/03-jet-form-builder/common-use-cases/add-action/README.md).
 
 ## Methods
 | Name                                                   | Description                                                                                                                                                                                                                                                                    |
 |:-------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| \Jet_Form_Builder\Actions\Types\Base::get_id           | Повертає унікальний слаг. Служить для визначення типу екшена як при виконанні сабміту форми, так і при редагуванні форми в едіторі.                                                                                                                                            |
-| \Jet_Form_Builder\Actions\Types\Base::get_name         | Повертає унікальний слаг. Служить для визначення типу екшена як при виконанні сабміту форми, так і при редагуванні форми в едіторі.                                                                                                                                            |
-| \Jet_Form_Builder\Actions\Types\Base::do_action        | Виконується лише під час сабміту форми                                                                                                                                                                                                                                         |
-| \Jet_Form_Builder\Actions\Types\Base::action_data      | Тут можна повернути асоціативний массив з данними, які потрібні для роботи інтерфейсу на стороні едітора.                                                                                                                                                                      |
-| \Jet_Form_Builder\Actions\Types\Base::self_script_name | Повертає назву глобальної змінної, що буде доступна на сторінці редагуванні форми (`window.[var_name]`).За замовчуванням абстрактний клас вже має реалізацію цього методу і від повертає `JetFormAction_{action_slug}`. Де action_slug - це результат виконання методу `get_id`. |
+| \Jet_Form_Builder\Actions\Types\Base::get_id           | Returns a unique slug. Used to determine the type of action both when submitting a form and when editing a form in the editor.                                                                                                                                            |
+| \Jet_Form_Builder\Actions\Types\Base::get_name         | Пeturns a unique slug. Used to determine the type of action both when submitting a form and when editing a form in the editor                                                                                                                                            |
+| \Jet_Form_Builder\Actions\Types\Base::do_action        |  Executed only during form submission.                                                                                                                                                                                                                                         |
+| \Jet_Form_Builder\Actions\Types\Base::action_data      | Here you can return an associative array with data needed for the interface to work on the editor side.                                                                                                                                                                      |
+| \Jet_Form_Builder\Actions\Types\Base::self_script_name |  Returns the name of the global variable that will be available on the form editing page `(window.[var_name])`. By default, the abstract class already has an implementation of this method and returns `JetFormAction_{action_slug}`, where action_slug is the result of executing the `get_id` method. |
 
 ## Example of extending
 ```php
