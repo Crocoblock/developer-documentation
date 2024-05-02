@@ -2,11 +2,11 @@
 
 ## jet-smart-filters/init
 
-Спрацьовує після ініціалізаціі головного класу Jet_Smart_Filters та усіх модулей. На цей хук потрібно писати власний код, або на дефолтний WordPress екшн ‘init’, щоб уникнути ситуацій коли звертаємося до об'єкта, а він ще непроініціалізований.
+Fires after the initialization of the main class `Jet_Smart_Filters` and all modules. Custom code should be written on this hook or on the default WordPress action `init` to avoid situations where an object is accessed before it is initialized.
 
 **Args:**
 
-- `$jet_smart_filters` - Екземпляр головного класу Jet_Smart_Filters.
+- `$jet_smart_filters` - Instance of the main `Jet_Smart_Filters` class.
 
 **Location:**  
 /jet-smart-filters.php
@@ -18,7 +18,7 @@ Global
 
 ```php
 add_action( 'jet-smart-filters/init', function( $jet_smart_filters ) {
-    // отримати список всіх типів фільтрів
+    // get a list of all filter types
     $filter_types = $jet_smart_filters->data->filter_types();
 } );
 ```
@@ -27,12 +27,12 @@ add_action( 'jet-smart-filters/init', function( $jet_smart_filters ) {
 
 ## jet-smart-filters/query/store-query-props/{$provider_name}
 
-Спрацьовує перед встановленням властивостей запиту. На цей хук можна отримати екземпляр класу Jet_Smart_Filters_Query_Manager для конкретного провайдера.
+Fires before setting the query properties. On this hook, you can get an instance of the class `Jet_Smart_Filters_Query_Manager` for a specific provider.
 
 **Args:**
 
-- `$query` - Екземпляр класу Jet_Smart_Filters_Query_Manager.
-- `$query_id` - id провайдера.
+- `$query` - Instance of the `Jet_Smart_Filters_Query_Manager` class.
+- `$query_id` - Provider ID.
 
 **Location:**  
 /includes/query.php
@@ -44,9 +44,9 @@ Global
 
 ```php
 add_action( 'jet-smart-filters/query/store-query-props/jet-engine', function( $query, $query_id ) {
-    // id провайдера jet-engine
+    // jet-engine provider ID
     print_r( $query_id );
-    // екземпляр класу Jet_Smart_Filters_Query_Manager
+    // instance of class Jet_Smart_Filters_Query_Manager
     print_r( $query );
 }, 10, 2 );
 ```
