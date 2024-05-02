@@ -1,15 +1,17 @@
-# JetFormBuilder - Реєстрація кастомних рендер-стейтів
+# JetFormBuilder - Registering custom render states 
 
-В наведеному прикладі буде реєстрація двух стейтів - для авторизованого користувача та гостя.
+In the example below, you can see a registration of two states: for authorized user and for a guest. 
 
 ## Steps
-Для цього потрібно виконати наступні кроки:
-1. До `functions.php` вашої дочірньої теми додаємо [цей код](#PHP-Code).
-2. Застосовуємо ці стейти в Conditional Block
+
+Follow these steps:
+1. Add [this code](#PHP-Code) to the `functions.php` of your child theme.  
+2. Apply these states in the Conditional Block
    ![image](/03-jet-form-builder/common-use-cases/add-render-states/assets/logged-in-render-state.png)
    ![image](/03-jet-form-builder/common-use-cases/add-render-states/assets/guest-render-state.png)
 
 ## PHP Code
+
 ```php
 <?php
 

@@ -1,15 +1,15 @@
-# JetFormBuilder - Видалення файлів після виконання екшенів
+# JetFormBuilder - Deleting files after executing actions
 
-Це може бути корисно для тих кейсів, коли файли відправляються як аттачменти в поштовому листі і немає сенсу зберігати
-їх на сервері.
+This can be useful for cases where files are sent as attachments in an email and there is no need to keep them on the server.
 
 ## Steps
-Для цього потрібно виконати наступні кроки:
-1. До вашого Media Field додаємо клас `remove-after-execute`
+To achieve this, follow these steps:
+
+1. Add the `remove-after-execute` class to your Media Field.
 
    ![image](/03-jet-form-builder/common-use-cases/delete-uploaded-files-after-actions/assets/add-class.png)
 
-2. До `functions.php` вашої дочірньої теми додаємо [цей код](#PHP-Code).
+2. Add [this code](#PHP-Code) to the `functions.php` of your child theme.
 
 ## PHP Code
 ```php
