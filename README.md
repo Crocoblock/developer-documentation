@@ -1,4 +1,4 @@
-# Crocoblock Plugins Documentation
+# Crocoblock Plugins Documentation for Developers
 
 ### Main Plugins
 
