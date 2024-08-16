@@ -7,7 +7,7 @@ Allows changing the list of sources for the meta box component.
 - `$sources` - list of sources for the meta box component in the format `array( 'value' => 'post', 'label' => 'Post' )`
 
 **Location:**
-[includes/components/meta-boxes/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/manager.php)
+includes/components/meta-boxes/manager.php
 
 **Access:**
 Admin-only
@@ -35,9 +35,9 @@ Allows changing the array of meta box fields before they are processed.
 - `$meta_boxes` - Jet_Engine_Meta_Boxes - Meta box manager object.
 
 **Location:**<br>
-[includes/components/meta-boxes/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/manager.php) <br>
-[includes/components/post-types/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/manager.php) <br>
-[includes/components/taxonomies/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/taxonomies/manager.php)
+includes/components/meta-boxes/manager.php<br>
+includes/components/post-types/manager.php<br>
+includes/components/taxonomies/manager.php
 
 **Access:**
 Global
@@ -69,8 +69,7 @@ Allows changing the format of the field's Name/ID value for the select field. Ty
 - `$object_name` - string - The name of the object to which the field belongs (post, page, category, ...).
 
 **Location:**
-[includes/components/meta-boxes/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/manager.php)
-
+includes/components/meta-boxes/manager.php
 **Access:**
 Admin-only
 
@@ -90,7 +89,7 @@ Allows changing the array of localized data used in JavaScript on the meta box e
 - `$config` - array - The array of localized data.
 
 **Location:**
-[includes/components/meta-boxes/pages/edit.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/pages/edit.php)
+includes/components/meta-boxes/pages/edit.php
 
 **Access:**
 Admin-only
@@ -119,7 +118,7 @@ Allows preparing an array of arguments for a new field to be used later in the b
 - `$meta_instance` - Jet_Engine_CPT_Meta - The CPT meta manager object.
 
 **Location:**
-[includes/components/meta-boxes/post.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/post.php)
+includes/components/meta-boxes/post.php
 
 **Access:**
 Global
@@ -150,7 +149,7 @@ Allows changing the array of field arguments for later use in the builder interf
 - `$meta_instance` - Jet_Engine_CPT_Meta - The CPT meta manager object.
 
 **Location:**
-[includes/components/meta-boxes/post.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/post.php)
+includes/components/meta-boxes/post.php
 
 **Access:**
 Global
@@ -178,7 +177,7 @@ Allows preparing an array of arguments for a new field for the repeater for late
 - `$meta_instance` - Jet_Engine_CPT_Meta - The CPT meta manager object.
 
 **Location:**
-[includes/components/meta-boxes/post.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/post.php)
+includes/components/meta-boxes/post.php
 
 **Access:**
 Global
@@ -209,7 +208,7 @@ Allows changing the array of field arguments for the repeater for later use in t
 - `$meta_instance` - Jet_Engine_CPT_Meta - The CPT meta manager object.
 
 **Location:**
-[includes/components/meta-boxes/post.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/post.php)
+includes/components/meta-boxes/post.php
 
 **Access:**
 Global
@@ -237,7 +236,7 @@ Allows filtering the options array for checkbox, radio, select fields before the
 - `$meta_instance` - Jet_Engine_CPT_Meta - The CPT meta manager object.
 
 **Location:**
-[includes/components/meta-boxes/post.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/post.php)
+includes/components/meta-boxes/post.php
 
 **Access:**
 Global
@@ -270,7 +269,7 @@ Allows filtering the User ID on user-edit, profile pages for later retrieval of 
 - `$meta_instance` - Jet_Engine_CPT_User_Meta - The User meta manager object.
 
 **Location:**
-[includes/components/meta-boxes/user.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/user.php)
+includes/components/meta-boxes/user.php
 
 **Access:**
 Admin-only
@@ -302,7 +301,7 @@ Allows returning the user meta value before it is fetched from the database base
 - `$field` - array - Field arguments.
 
 **Location:**
-[includes/components/meta-boxes/user.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/user.php)
+includes/components/meta-boxes/user.php
 
 **Access:**
 Admin-only
@@ -341,7 +340,7 @@ Allows writing custom logic for saving user field values. The dynamic part of th
 - `$meta_instance` - Jet_Engine_CPT_User_Meta - The User meta manager object.
 
 **Location:**
-[includes/components/meta-boxes/user.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/user.php)
+includes/components/meta-boxes/user.php
 
 **Access:**
 Admin-only
@@ -373,7 +372,7 @@ Allows filtering the date value for display in user meta.
 - `$format` - string - Date format. 
 
 **Location:**
-[includes/components/meta-boxes/user.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/user.php)
+includes/components/meta-boxes/user.php
 
 **Access:**
 Admin-only
@@ -395,7 +394,7 @@ Allows changing the method of converting a date to a time timestamp for later sa
 - `$date` - string - Date.
 
 **Location:**
-[includes/components/meta-boxes/user.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/user.php)
+includes/components/meta-boxes/user.php
 
 **Access:**
 Admin-only
@@ -419,7 +418,7 @@ Allows adding screen names for new sources based on the dynamic part of the `$so
 - `$manager` - Jet_Engine_Meta_Boxes_Conditions - The conditions manager.
 
 **Location:**
-[includes/components/meta-boxes/conditions-manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/conditions-manager.php)
+includes/components/meta-boxes/conditions-manager.php
 
 **Access:**
 Admin-only
@@ -441,7 +440,7 @@ Allows filtering the array of term IDs for checking in the `Post Has Terms` cond
 - `$tax_to_check` - string - Taxonomy slug. 
 
 **Location:**
-[includes/components/meta-boxes/conditions/post-has-terms.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/conditions/post-has-terms.php)
+includes/components/meta-boxes/conditions/post-has-terms.php
 
 **Access:**
 Admin-only
@@ -465,7 +464,7 @@ Allows filtering the field type for the Rest API.
 - `$field` - array - Field arguments. 
 
 **Location:**
-[includes/components/meta-boxes/rest-api/fields/post-meta.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/rest-api/fields/post-meta.php)
+includes/components/meta-boxes/rest-api/fields/post-meta.php
 
 **Access:**
 Rest API
@@ -493,8 +492,8 @@ Allows filtering the field schema for the Rest API.
 - `$field` - array - The field arguments.
 
 **Location:**<br>
-[includes/components/meta-boxes/rest-api/fields/post-meta.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/rest-api/fields/post-meta.php) <br>
-[includes/components/options-pages/rest-api/fields/site-settings.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/options-pages/rest-api/fields/site-settings.php)
+includes/components/meta-boxes/rest-api/fields/post-meta.php<br>
+includes/components/options-pages/rest-api/fields/site-settings.php
 
 **Access:**
 Rest API

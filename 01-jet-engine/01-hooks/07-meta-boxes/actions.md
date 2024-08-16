@@ -8,7 +8,7 @@ This hook fires before meta boxes are registered. Custom meta boxes can be regis
 - `$meta_manager` - Jet_Engine_Meta_Boxes - Meta box manager. 
 
 **Location:**
-[includes/components/meta-boxes/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/manager.php)
+includes/components/meta-boxes/manager.php
 
 **Access:**
 Global
@@ -47,7 +47,8 @@ This hook allows registering meta boxes for a custom source based on the dynamic
 - `$meta_manager` - Jet_Engine_Meta_Boxes - Meta box manager. 
 
 **Location:**
-[includes/components/meta-boxes/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/manager.php)
+includes/components/meta-boxes/manager.php
+
 **Access:**
 Global
 
@@ -79,11 +80,11 @@ This hook fires before custom values for checkbox/radio fields in meta boxes are
 - `$field_args` - array - Field arguments.
 
 **Location:**<br>
-[includes/components/meta-boxes/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/manager.php) <br>
-[includes/components/taxonomies/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/taxonomies/manager.php) <br>
-[includes/components/post-types/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/manager.php) <br>
-[includes/components/options-pages/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/options-pages/manager.php) <br>
-[includes/modules/custom-content-types/inc/factory.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/custom-content-types/inc/factory.php)
+includes/components/meta-boxes/manager.php <br>
+includes/components/taxonomies/manager.php<br>
+includes/components/post-types/manager.php<br>
+includes/components/options-pages/manager.php<br>
+includes/modules/custom-content-types/inc/factory.php
 
 **Access:**
 Admin-only
@@ -151,7 +152,7 @@ Allows adding custom controls to the Vue template `edit.php` in the `General Set
 **Args:**
 
 **Location:**
-[includes/components/meta-boxes/templates/edit.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/templates/edit.php)
+includes/components/meta-boxes/templates/edit.php
 
 **Access:**
 Admin-only
@@ -178,7 +179,7 @@ Allows adding custom controls to the Vue template `edit.php` in the `Visibility 
 **Args:**
 
 **Location:**
-[includes/components/meta-boxes/templates/edit.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/templates/edit.php)
+includes/components/meta-boxes/templates/edit.php
 
 **Access:**
 Admin-only
@@ -205,7 +206,7 @@ Allows adding custom controls for additional meta field settings to the `fields.
 **Args:**
 
 **Location:**
-[includes/components/meta-boxes/templates/fields.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/templates/fields.php)
+includes/components/meta-boxes/templates/fields.php
 
 **Access:**
 Admin-only
@@ -249,8 +250,7 @@ Allows adding custom controls for additional meta field repeater settings in the
 **Args:**
 
 **Location:**
-[includes/components/meta-boxes/templates/fields.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/templates/fields.php)
-
+includes/components/meta-boxes/templates/fields.php
 **Access:**
 Admin-only
 
@@ -289,8 +289,7 @@ This hook fires after all condition classes are registered. You can register you
 - `$condition_manager` - Jet_Engine_Meta_Boxes_Conditions - The condition manager. 
 
 **Location:**
-[includes/components/meta-boxes/conditions-manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/conditions-manager.php)
-
+includes/components/meta-boxes/conditions-manager.php
 **Access:**
 Admin-only
 
@@ -311,7 +310,7 @@ The hook fires before the user's meta will be saved.
 - `$meta_instance` - Jet_Engine_CPT_User_Meta - Object manager of user meta. 
 
 **Location:**
-[includes/components/meta-boxes/user.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/user.php)
+includes/components/meta-boxes/user.php
 
 **Access:**
 Admin-only
@@ -334,7 +333,7 @@ This hook fires before a specific key `$key` of user meta will be deleted.
 - `$meta_instance` - Jet_Engine_CPT_User_Meta - Об'єкт менеджера User мети.
 
 **Location:**
-[includes/components/meta-boxes/user.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/user.php)
+includes/components/meta-boxes/user.php
 
 **Access:**
 Admin-only
@@ -358,7 +357,7 @@ Fires before the particular user meta key `$key` will be saved.
 - `$meta_instance` - Jet_Engine_CPT_User_Meta - User meta manager object.
 
 **Location:**
-[includes/components/meta-boxes/user.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/user.php)
+includes/components/meta-boxes/user.php
 
 **Access:**
 Admin-only
@@ -380,7 +379,7 @@ The hook fires after the user meta was saved.
 - `$meta_instance` - Jet_Engine_CPT_User_Meta - User meta manager object.
 
 **Location:**
-[includes/components/meta-boxes/user.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/meta-boxes/user.php)
+includes/components/meta-boxes/user.php
 
 **Access:**
 Admin-only

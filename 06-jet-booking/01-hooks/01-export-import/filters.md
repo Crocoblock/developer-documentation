@@ -10,7 +10,7 @@ Allows controlling the list of data that will be written to the export file for 
 * `$calendar` - _object|ZCiCal_ - An object of the ZCiCal class.
 
 **Location:**
-<a href="https://github.com/ZemezLab/jet-booking/blob/master/includes/ical.php">includes/ical.php</a>
+includes/ical.php
 
 **Access:** Global
 
