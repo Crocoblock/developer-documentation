@@ -8,7 +8,7 @@ Allows modifying the list of excluded built-in taxonomies that cannot be edited 
 - `$excluded_types` - array - The list of excluded taxonomies.
 
 **Location:**
-[includes/components/taxonomies/pages/list.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/taxonomies/pages/list.php)
+includes/components/taxonomies/pages/list.php
 
 **Access:**
 Admin-only
@@ -30,7 +30,7 @@ Allows registering additional meta fields for dynamic parts of the filter $objec
 - `$fields` - array - The list of meta fields. 
 
 **Location:**
-[includes/components/taxonomies/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/taxonomies/manager.php)
+includes/components/taxonomies/manager.php
 
 **Access:**
 Admin-only

@@ -10,7 +10,7 @@ Allows rendering a custom Admin filter for the dynamic part of the filter `$type
 - `$admin_filters` - Jet_Engine_CPT_Admin_Filters - The admin filter manager. 
 
 **Location:**
-[includes/components/post-types/admin-filters.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/admin-filters.php)
+includes/components/post-types/admin-filters.php
 
 **Access:**
 Admin-only
@@ -74,7 +74,7 @@ Executes after a custom post type is deleted.
 - `$post_type` - string - The slug of the post type being deleted. 
 
 **Location:**
-[includes/components/post-types/rest-api/delete-post-type.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/rest-api/delete-post-type.php)
+includes/components/post-types/rest-api/delete-post-type.php
 
 **Access:**
 Admin-only, Rest API
@@ -96,7 +96,7 @@ Executes after the slug of a custom post type is updated.
 - `$old_slug` - string - The old slug. 
 
 **Location:**
-[includes/components/post-types/rest-api/edit-post-type.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/rest-api/edit-post-type.php)
+includes/components/post-types/rest-api/edit-post-type.php
 
 **Access:**
 Admin-only, Rest API
@@ -115,7 +115,7 @@ Executes before the main scripts are enqueued for the Edit Post Type page.
 Used for enqueuing scripts of custom Vue components.
 
 **Location:**
-[includes/components/post-types/pages/edit.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/pages/edit.php)
+includes/components/post-types/pages/edit.php
 
 **Access:**
 Admin-only
@@ -144,7 +144,7 @@ Executes after rendering the Advanced Settings section on the Edit Post Type pag
 Used for rendering the `jet-meta-fields` Vue component.
 
 **Location:**
-[includes/components/post-types/templates/edit.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/templates/edit.php)
+includes/components/post-types/templates/edit.php
 
 **Access:**
 Admin-only
@@ -162,7 +162,7 @@ add_action( 'jet-engine/post-types/meta-fields', function() {
 Used for rendering custom Vue components in the repeater item of the `jet-engine-admin-filters` component.
 
 **Location:**
-[includes/components/post-types/templates/filters.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/templates/filters.php)
+includes/components/post-types/templates/filters.php
 
 **Access:**
 Admin-only

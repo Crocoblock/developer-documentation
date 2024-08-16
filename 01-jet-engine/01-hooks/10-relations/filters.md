@@ -8,7 +8,7 @@ Allows filtering the array of created relations and their arguments before they 
 - `$relations` - array - List of created relations.
 
 **Location:**
-[includes/components/relations/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/manager.php)
+includes/components/relations/manager.php
 
 **Access:**
 Global
@@ -30,8 +30,8 @@ Allows registering third-party legacy relations.
 - `$relations` - array - List of third-party legacy relations.
 
 **Location:**
-[includes/components/relations/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/manager.php) <br>
-[includes/components/relations/legacy/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/legacy/manager.php)
+includes/components/relations/manager.php <br>
+includes/components/relations/legacy/manager.php
 
 **Access:**
 Global
@@ -71,7 +71,7 @@ Allows filtering the content of a custom column in the relations table https://p
 - `$relation` - object - Relation object.
 
 **Location:**
-[includes/components/relations/ajax-handlers.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/ajax-handlers.php)
+includes/components/relations/ajax-handlers.php
 
 **Access:**
 Admin-only
@@ -94,7 +94,7 @@ Allows changing the alternative text for the relation meta image displayed via D
 - `$current_object` - object - Current object.
 
 **Location:**
-[includes/components/relations/listing.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/listing.php)
+includes/components/relations/listing.php
 
 **Access:**
 Frontend-only
@@ -121,7 +121,7 @@ Allows changing the mechanism of forming a unique cache key for relations query.
 - `$rel` - string - Relation for query arguments. `AND` or `OR`.
 
 **Location:**
-[includes/components/relations/storage/db.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/storage/db.php)
+includes/components/relations/storage/db.php
 
 **Access:**
 Global
@@ -143,7 +143,7 @@ Legacy. Allows changing the list of related posts.
 - `$ids` - array | string - List of related post IDs.
 
 **Location:**
-[includes/components/relations/legacy/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/legacy/manager.php)
+includes/components/relations/legacy/manager.php
 
 **Access:**
 Global
@@ -179,7 +179,7 @@ Allows registering new objects for the Mix type.
   ```
 
 **Location:**
-[includes/components/relations/types/mix.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/mix.php)
+includes/components/relations/types/mix.php
 
 **Access:**
 Admin-only
@@ -209,7 +209,7 @@ Allows determining whether the current user has the rights to edit or delete thi
 - `$item_id` - int|string - ID of the object.
 
 **Location:**
-[includes/components/relations/types/mix.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/mix.php)
+includes/components/relations/types/mix.php
 
 **Access:**
 Admin-only
@@ -238,7 +238,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/types/mix.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/mix.php)
+includes/components/relations/types/mix.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -257,7 +257,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/types/mix.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/mix.php)
+includes/components/relations/types/mix.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -276,7 +276,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/types/mix.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/mix.php)
+includes/components/relations/types/mix.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -295,7 +295,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/types/mix.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/mix.php)
+includes/components/relations/types/mix.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -314,7 +314,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/types/mix.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/mix.php)
+includes/components/relations/types/mix.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -333,7 +333,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/types/mix.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/mix.php)
+includes/components/relations/types/mix.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -352,7 +352,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/types/mix.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/mix.php)
+includes/components/relations/types/mix.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -371,7 +371,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/types/mix.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/mix.php)
+includes/components/relations/types/mix.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -390,7 +390,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/types/mix.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/mix.php)
+includes/components/relations/types/mix.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -409,7 +409,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/types/mix.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/mix.php)
+includes/components/relations/types/mix.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -428,7 +428,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/types/mix.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/mix.php)
+includes/components/relations/types/mix.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -447,7 +447,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/types/posts.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/posts.php)
+includes/components/relations/types/posts.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -466,7 +466,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/types/posts.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/posts.php)
+includes/components/relations/types/posts.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -485,7 +485,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/types/terms.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/terms.php)
+includes/components/relations/types/terms.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -504,7 +504,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/relation.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/relation.php)
+includes/components/relations/relation.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -523,7 +523,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/relation.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/relation.php)
+includes/components/relations/relation.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -542,7 +542,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/relation.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/relation.php)
+includes/components/relations/relation.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -561,7 +561,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/relation.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/relation.php)
+includes/components/relations/relation.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -580,7 +580,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/sources.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/sources.php)
+includes/components/relations/sources.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -599,7 +599,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/sources.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/sources.php)
+includes/components/relations/sources.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -618,7 +618,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/types-helper.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types-helper.php)
+includes/components/relations/types-helper.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -637,7 +637,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/controls/user-meta.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/controls/user-meta.php)
+includes/components/relations/controls/user-meta.php
 
 **Access:**
 Global, frontend-only, admin-only

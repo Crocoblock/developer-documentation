@@ -8,7 +8,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/data.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/data.php)
+includes/components/relations/data.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -27,7 +27,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/pages/edit.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/pages/edit.php)
+includes/components/relations/pages/edit.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -46,7 +46,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/macros/get-related-items.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/macros/get-related-items.php)
+includes/components/relations/macros/get-related-items.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -65,7 +65,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/macros/get-related-siblings.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/macros/get-related-siblings.php)
+includes/components/relations/macros/get-related-siblings.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -84,7 +84,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/types/mix.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/mix.php)
+includes/components/relations/types/mix.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -103,7 +103,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/types/mix.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/mix.php)
+includes/components/relations/types/mix.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -122,7 +122,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/types/posts.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/posts.php)
+includes/components/relations/types/posts.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -141,7 +141,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/types/terms.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/types/terms.php)
+includes/components/relations/types/terms.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -160,7 +160,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/dynamic-tags/related-items.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/dynamic-tags/related-items.php)
+includes/components/relations/dynamic-tags/related-items.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -179,7 +179,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/dynamic-tags/related-siblings.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/dynamic-tags/related-siblings.php)
+includes/components/relations/dynamic-tags/related-siblings.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -198,7 +198,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/relation.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/relation.php)
+includes/components/relations/relation.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -217,7 +217,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/relation.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/relation.php)
+includes/components/relations/relation.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -236,7 +236,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/relation.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/relation.php)
+includes/components/relations/relation.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -255,7 +255,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/relation.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/relation.php)
+includes/components/relations/relation.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -274,7 +274,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/relation.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/relation.php)
+includes/components/relations/relation.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -293,7 +293,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/relation.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/relation.php)
+includes/components/relations/relation.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -312,7 +312,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/relation.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/relation.php)
+includes/components/relations/relation.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -331,7 +331,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/relation.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/relation.php)
+includes/components/relations/relation.php
 
 **Access:**
 Global, frontend-only, admin-only
@@ -350,7 +350,7 @@ General description
 - `$arg_name` - arg description
 
 **Location:**
-[includes/components/relations/templates/relation.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/relations/templates/relation.php)
+includes/components/relations/templates/relation.php
 
 **Access:**
 Global, frontend-only, admin-only

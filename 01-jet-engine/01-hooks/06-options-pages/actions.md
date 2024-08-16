@@ -11,7 +11,7 @@
 - `$page` - Jet_Engine_Options_Page_Factory - Менеджер сторінки опцій
 
 **Location:**
-[includes/components/options-pages/options-page.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/options-pages/options-page.php)
+includes/components/options-pages/options-page.php
 
 
 **Access:**
@@ -35,8 +35,7 @@ add_action( 'jet-engine/options-pages/updated/my-options', function( $page ) {
 - `$page` - Jet_Engine_Options_Page_Factory - Менеджер сторінки опцій
 
 **Location:**
-[includes/components/options-pages/options-page.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/options-pages/options-page.php)
-
+includes/components/options-pages/options-page.php
 
 **Access:**
 Admin-only

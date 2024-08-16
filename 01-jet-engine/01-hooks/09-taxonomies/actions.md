@@ -8,7 +8,7 @@ Executed after a custom taxonomy is deleted.
 - `$taxonomy` - string - The slug of the deleted taxonomy.
 
 **Location:**
-[includes/components/taxonomies/rest-api/delete-taxonomy.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/taxonomies/rest-api/delete-taxonomy.php)
+includes/components/taxonomies/rest-api/delete-taxonomy.php
 
 **Access:**
 Admin-only, Rest API
@@ -30,7 +30,7 @@ Executed after the slug of a custom taxonomy is updated.
 - `$old_slug` - string - old slug
 
 **Location:**
-[includes/components/taxonomies/rest-api/edit-taxonomy.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/taxonomies/rest-api/edit-taxonomy.php)
+includes/components/taxonomies/rest-api/edit-taxonomy.php
 
 **Access:**
 Admin-only, Rest API
@@ -49,7 +49,7 @@ Executed before the main scripts are enqueued for the Edit Taxonomy page.
 Used for enqueuing scripts of custom Vue components.
 
 **Location:**
-[includes/components/taxonomies/pages/edit.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/taxonomies/pages/edit.php)
+includes/components/taxonomies/pages/edit.php
 
 **Access:**
 Admin-only
@@ -78,7 +78,7 @@ Executed after rendering the Advanced Settings section on the Edit Taxonomy page
 Used for rendering the `jet-meta-fields` Vue component.
 
 **Location:**
-[includes/components/taxonomies/templates/edit.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/taxonomies/templates/edit.php)
+includes/components/taxonomies/templates/edit.php
 
 **Access:**
 Admin-only

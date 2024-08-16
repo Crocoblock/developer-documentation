@@ -11,7 +11,7 @@ Allows changing the query for admin filters for the dynamic part of the hook `$t
 - `$admin_filters` - Jet_Engine_CPT_Admin_Filters - Admin filters manager. 
 
 **Location:**
-[includes/components/post-types/admin-filters.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/admin-filters.php)
+includes/components/post-types/admin-filters.php
 
 **Access:**
 Admin-only 
@@ -76,7 +76,7 @@ Allows changing the filter option value during the filter rendering.
 - `$admin_filters` - Jet_Engine_CPT_Admin_Filters - Admin filters manager. 
 
 **Location:**
-[includes/components/post-types/admin-filters.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/admin-filters.php)
+includes/components/post-types/admin-filters.php
 
 **Access:**
 Admin-only
@@ -100,7 +100,7 @@ Allows changing the filter option label during the filter rendering.
 - `$admin_filters` - Jet_Engine_CPT_Admin_Filters - Admin filters manager. 
 
 **Location:**
-[includes/components/post-types/admin-filters.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/admin-filters.php)
+includes/components/post-types/admin-filters.php
 
 **Access:**
 Admin-only
@@ -131,7 +131,7 @@ Allows registering new callbacks for Admin columns https://tppr.me/mNTDN.
                 - `value` - string - Argument value. 
 
 **Location:**
-[includes/components/post-types/pages/edit.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/pages/edit.php)
+includes/components/post-types/pages/edit.php
 
 **Access:**
 Admin-only
@@ -168,7 +168,7 @@ Allows changing the list of excluded built-in post types that cannot be edited i
 - `$post_types` - array - The list of excluded post types.
 
 **Location:**
-[includes/components/post-types/pages/list.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/pages/list.php)
+includes/components/post-types/pages/list.php
 
 **Access:**
 Admin-only
@@ -190,7 +190,7 @@ Allows registering new types of Admin filters https://tppr.me/YYBs6.
 - `$types` - array -  List of Admin filter types in the format `array( 'value' => '', 'label' => '' )`
 
 **Location:**
-[includes/components/post-types/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/manager.php)
+includes/components/post-types/manager.php
 
 **Access:**
 Admin-only
@@ -216,7 +216,7 @@ Allows registering additional meta fields for dynamic parts of the filter `$obje
 - `$fields` - array - The list of meta fields. 
 
 **Location:**
-[includes/components/post-types/manager.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/components/post-types/manager.php)
+includes/components/post-types/manager.php
 
 **Access:**
 Admin-only
