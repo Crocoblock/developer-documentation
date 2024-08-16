@@ -44,6 +44,6 @@ The cancellation link widget will be displayed in all listing items, and in item
 
 The cancellation process itself occurs in the same way as on the account page. That is, a confirmation window will be displayed, and only after confirmation will the cancellation process be initiated.
 
-`> Messages as in the case of a WooCommerce account may not be displayed; this will depend on the activity of the WooCommerce plugin and the redirection after cancellation to the WooCommerce-related page.
+> Messages as in the case of a WooCommerce account may not be displayed; this will depend on the activity of the WooCommerce plugin and the redirection after cancellation to the WooCommerce-related page.
 
 > The second way to get cancellation links and configure dynamic conditions, despite the demonstration in the Elementor editor, can be implemented both using Gutenberg and Bricks.
