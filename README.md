@@ -5,8 +5,8 @@
 * <a href="/01-jet-engine">JetEngine</a>
 * <a href="/02-jet-smart-filters">JetSmartFilters</a>
 * <a href="/03-jet-form-builder">JetFormBuilder</a>
-* <a href="/04-jet-theme-core">JetThemeCore</a>
-* <a href="/05-jet-popup">JetPopup</a>
+* JetThemeCore
+* JetPopup
 * <a href="/06-jet-booking">JetBooking</a>
 * JetAppointmentsBooking
 * JetMenu
