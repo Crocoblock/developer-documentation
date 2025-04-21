@@ -704,7 +704,7 @@ if ( 0 < $page ) {
 }
 ```
 
-### Кастомні поля. `meta_query`
+### Custom fields. `meta_query`
 
 Basically, JetSmartFilters was written for `WP_Query`, and the structure of storing arguments remains characteristic of `WP_Query`. Therefore, all custom query parameters are collected into the `meta_query` array in the format described in the official documentation  - https://developer.wordpress.org/reference/classes/wp_meta_query/ For a custom query, we need to convert the parameters from `meta_query` to the format required for our query type.
 
