@@ -64,10 +64,10 @@ Allows filtering the current value of the store when retrieving it through the `
 - `$store_id` - string - The store slug.
 
 **Location:** <br>
-includes/modules/data-stores/inc/stores/cookies.php <br>
-includes/modules/data-stores/inc/stores/session.php<br>
-includes/modules/data-stores/inc/stores/user-ip.php<br>
-includes/modules/data-stores/inc/stores/user-meta.php
+[includes/modules/data-stores/inc/stores/cookies.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/stores/cookies.php) <br>
+[includes/modules/data-stores/inc/stores/session.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/stores/session.php) <br>
+[includes/modules/data-stores/inc/stores/user-ip.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/stores/user-ip.php) <br>
+[includes/modules/data-stores/inc/stores/user-meta.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/stores/user-meta.php)
 
 **Access:**
 Global
@@ -108,7 +108,7 @@ By default, the data store counter value is stored in post meta. This filter all
 - `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - The data store instance.
 
 **Location:**
-includes/modules/data-stores/inc/stores/factory.php
+[includes/modules/data-stores/inc/stores/factory.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/stores/factory.php)
 
 **Access:**
 Global
@@ -161,7 +161,7 @@ Allows filtering the list of fragments (selectors) to update counters on the fro
 - `$item_id` - int - The object ID.
 
 **Location:**
-includes/modules/data-stores/inc/stores/factory.php
+[includes/modules/data-stores/inc/stores/factory.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/stores/factory.php)
 
 **Access:**
 Global
@@ -186,7 +186,7 @@ Allows filtering the item ID for the `get_users_for_store_item` macro based on t
 - `$item_id` - int - ID of the object.
 
 **Location:**
-includes/modules/data-stores/inc/macros/get-users-for-store-item.php
+[includes/modules/data-stores/inc/macros/get-users-for-store-item.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/macros/get-users-for-store-item.php)
 
 **Access:**
 Global
@@ -213,7 +213,7 @@ Allows filtering the settings of the widget/block before rendering the link for 
 - `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - The data store instance.
 
 **Location:**
-includes/modules/data-stores/inc/render-links.php
+[includes/modules/data-stores/inc/render-links.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/render-links.php)
 
 **Access:**
 Global
@@ -235,8 +235,7 @@ Allows filtering the settings of the widget/block before rendering the link for 
 - `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - The data store instance.
 
 **Location:**
-includes/modules/data-stores/inc/render-links.php
-
+[includes/modules/data-stores/inc/render-links.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/render-links.php)
 **Access:**
 Global
 
@@ -257,7 +256,7 @@ Allows modifying the settings of the store item that will be saved in the databa
 - `$item` - array - The settings array of the store item that is being saved.
 
 **Location:**
-includes/modules/data-stores/inc/settings.php
+[includes/modules/data-stores/inc/settings.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/settings.php)
 
 **Access:**
 Global
@@ -301,7 +300,7 @@ Allows changing the period after which records in the database will be deleted. 
 - `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - The data store instance.
 
 **Location:**
-includes/modules/data-stores/inc/stores/user-ip-schedules.php
+[includes/modules/data-stores/inc/stores/user-ip-schedules.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/stores/user-ip-schedules.php)
 
 **Access:**
 Global
@@ -316,7 +315,7 @@ Allows changing the event timestamp for checking outdated records in the databas
 - `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - The data store instance.
 
 **Location:**
-includes/modules/data-stores/inc/stores/user-ip-schedules.php
+[includes/modules/data-stores/inc/stores/user-ip-schedules.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/stores/user-ip-schedules.php)
 
 **Access:**
 Global
@@ -331,7 +330,7 @@ Allows changing the event interval for checking outdated records in the database
 - `$store` - Jet_Engine\Modules\Data_Stores\Stores\Factory - The data store instance.
 
 **Location:**
-includes/modules/data-stores/inc/stores/user-ip-schedules.php
+[includes/modules/data-stores/inc/stores/user-ip-schedules.php](https://github.com/ZemezLab/jet-engine/blob/master/includes/modules/data-stores/inc/stores/user-ip-schedules.php)
 
 **Access:**
 Global
