@@ -11,7 +11,7 @@ Have arguments common to all:
             cct_created          item creation date, in the format Y-m-d H:i:s
             cct_modified         item modification date, in the format Y-m-d H:i:s
 
-            optionalо, if the ССТ has the `Has single post` option on
+            optional, if the ССТ has the `Has single post` option is on
             cct_single_post_id   ID of the post that works as a Single for the CCT item 
 
 - `$prev_item` - an array of previous item field values in the format 'field name' => 'value';  
