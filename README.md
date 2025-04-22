@@ -6,7 +6,7 @@
 * <a href="/02-jet-smart-filters">JetSmartFilters</a>
 * <a href="/03-jet-form-builder">JetFormBuilder</a>
 * JetThemeCore
-* JetPopup
+* <a href="05-jet-popup">JetPopup</a>
 * <a href="/06-jet-booking">JetBooking</a>
 * JetAppointmentsBooking
 * JetMenu
@@ -20,8 +20,8 @@
 
 ### WooCommerce-related Plugins
 * JetWooBuilder
-* JetProductGallery
-* JetCompareWishlist
+* <a href="/17-jet-woo-product-gallery">JetProductGallery</a>
+* <a href="/18-jet-compare-wishlist">JetCompareWishlist</a>
 
 ### Additional Plugins
 * JetStyleManager
