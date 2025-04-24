@@ -49,7 +49,7 @@ class My_Macros extends \Jet_Engine_Base_Macros {
 					unset( $meta_fields[''] );
 					return array_values( $meta_fields );
 				], // could be plain array of value => label format or callback which returns the same formatted aray only when needed. For heavy options list callback method is better to use.
-			),
+			],
 			'my_arg_2' => [
 				'label'   => __( 'Return', 'jet-engine' ),
 				'type'    => 'select',
@@ -58,7 +58,8 @@ class My_Macros extends \Jet_Engine_Base_Macros {
 					'field_value' => __( 'Field value', 'jet-engine' ),
 				],
 			],
-		);
+		];
+	}
 
 	/**
 	 * Required method. It's main function which returns macros value by arguments
