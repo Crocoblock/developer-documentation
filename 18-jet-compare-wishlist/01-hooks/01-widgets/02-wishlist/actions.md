@@ -2,13 +2,12 @@
 
 ## jet-cw/wishlist/render/get-content/{$widget_type}
 
-Спрацьовує в момент оновлення списку бажаного. Призначений для рендеру контенту віджета пов'язаного зі списком бажаного,
-обробка якого не передбачено логікою плагіну.
+Fires when the wishlist list is updated. It is designed for rendering content of the widget related to the wishlist, the processing of which is not covered by the plugin's logic.
 
 **Args:**
 
-- `$widget_setting` - array - список налаштувань віджета
-- `$product_id` - string|int - ID продукту
+- `$widget_setting` - array - list of widget settings
+- `$product_id` - string|int - product ID
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/wishlist/class-jet-cw-wishlist-render.php">
@@ -21,7 +20,7 @@ Frontend only
 
 ```php
 add_action( 'jet-cw/wishlist/render/get-content/{$widget_type}', function( $widget_setting, $product_id ) {
-    // обробка параметрів переданих хуком.
+    // Processing parameters passed by the hook.
     ?>
     <div class="...">
         <!-- структура віджета, основана на оброблених параметрах. -->
@@ -32,13 +31,13 @@ add_action( 'jet-cw/wishlist/render/get-content/{$widget_type}', function( $widg
 
 ## jet-cw/wishlist/render/before-add-to-wishlist
 
-Спрацьовує в момент перед оновленням списку бажаного. Призначений для додаткової обробки даних та введення нової логіки.
+Fires right before the wishlist list is updated. It is designed for additional data processing and introducing new logic.
 
 **Args:**
 
-- `$product_id` - string|int - ID продукту
-- `$context` - string - Контекст типу оновлення списку (додавання або видалення)
-- `$render` - Jet_CW_Wishlist_Render - екземпляр класу Jet_CW_Wishlist_Render
+- `$product_id` - string|int - product ID
+- `$context` - string - context of the update type (addition or removal)
+- `$render` - Jet_CW_Wishlist_Render - instance of the Jet_CW_Wishlist_Render class
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/wishlist/class-jet-cw-wishlist-render.php">
@@ -51,10 +50,10 @@ Frontend only
 
 ```php
 add_action( 'jet-cw/wishlist/render/before-add-to-wishlist', function( $product_id, $context, $render ) {
-    // Перевірити, чи користувач увійшов в систему.
+    // Checks if the user logged in.
     if ( ! is_user_logged_in() ) {
-        wp_redirect( 'https://example.com/new-page' ); // Перенаправлення на іншу сторінку за допомогою функції WordPress.
-        exit; // Переконайтеся, що після `wp_redirect` вказано вихід.
+        wp_redirect( 'https://example.com/new-page' ); // Redirect to another page using the WordPress function.
+    exit; // Make sure `exit` is called after `wp_redirect`.
     }
 }, 10, 3 );
 ```

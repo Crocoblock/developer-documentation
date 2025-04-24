@@ -20,7 +20,7 @@ Frontend only
 
 ```php
 add_action( 'jet-cw/compare/render/get-content/{$widget_type}', function( $widget_setting, $product_id ) {
-    // обробка параметрів переданих хуком.
+  // processing parameters passed via the hook.
     ?>
     <div class="...">
         <!-- структура віджета, основана на оброблених параметрах. -->
@@ -31,13 +31,13 @@ add_action( 'jet-cw/compare/render/get-content/{$widget_type}', function( $widge
 
 ## jet-cw/compare/render/before-add-to-compare
 
-Спрацьовує в момент перед оновленням списку порівняння. Призначений для додаткової обробки даних та введення нової логіки.
+Triggered right before the comparison list is updated. Intended for additional data processing or injecting custom logic.
 
 **Args:**
 
-- `$product_id` - string|int - ID продукту
-- `$context` - string - Контекст типу оновлення списку (додавання або видалення)
-- `$render` - Jet_CW_Compare_Render - екземпляр класу Jet_CW_Compare_Render
+- `$product_id` - string|int - Product ID  
+- `$context` - string - The context of the list update (add or remove)  
+- `$render` - Jet_CW_Compare_Render - Instance of the Jet_CW_Compare_Render class
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/compare/class-jet-cw-compare-render.php">
@@ -50,10 +50,11 @@ Frontend only
 
 ```php
 add_action( 'jet-cw/compare/render/before-add-to-compare', function( $product_id, $context, $render ) {
-    // Перевірити, чи користувач увійшов в систему.
+    // Check if the user logged in
     if ( ! is_user_logged_in() ) {
-        wp_redirect( 'https://example.com/new-page' ); // Перенаправлення на іншу сторінку за допомогою функції WordPress.
-        exit; // Переконайтеся, що після `wp_redirect` вказано вихід.
+        wp_redirect( 'https://example.com/new-page' ); // Redirect to another page using the WordPress function.
+    exit; // Make sure `exit` is called after `wp_redirect`.
+
     }
 }, 10, 3 );
 ```

@@ -2,12 +2,12 @@
 
 ## jet-compare-button/compare-button/css-scheme
 
-Дозволяє зареєструвати додаткові або модифікувати вже наявні селектори віджета Compare Button, які використовуються в
-контролах редактору Elementor для стилізації різних елементів віджета.
+Allows you to register additional or modify existing selectors of the Compare Button widget, which are used in  
+Elementor editor controls to style various elements of the widget.
 
 **Args:**
 
-- `$selectors` - array - список селекторів
+- `$selectors` - array - list of selectors
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/compare/class-jet-cw-compare-integration.php">
@@ -27,12 +27,12 @@ add_filter( 'jet-compare-button/compare-button/css-scheme', function( $selectors
 
 ## jet-compare-button/compare-count-button/css-scheme
 
-Дозволяє зареєструвати додаткові або модифікувати вже наявні селектори віджета Compare Count Button, які
-використовуються в контролах редактору Elementor для стилізації різних елементів віджета.
+Allows you to register additional or modify existing selectors of the Compare Count Button widget, which  
+are used in the Elementor editor controls to style various elements of the widget.
 
 **Args:**
 
-- `$selectors` - array - список селекторів
+- `$selectors` - array - list of selectors
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/widgets/compare/jet-compare-count-button.php">
@@ -52,12 +52,11 @@ add_filter( 'jet-compare-button/compare-count-button/css-scheme', function( $sel
 
 ## jet-compare-wishlist/jet-compare/css-scheme
 
-Дозволяє зареєструвати додаткові або модифікувати вже наявні селектори віджета Compare, які використовуються в контролах
-редактору Elementor для стилізації різних елементів віджета.
+Allows you to register additional or modify existing selectors of the Compare widget, which are used in the Elementor editor controls to style various elements of the widget.
 
 **Args:**
 
-- `$selectors` - array - список селекторів
+- `$selectors` - array - list of selectors
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/widgets/compare/jet-compare-widget.php">
@@ -77,12 +76,11 @@ add_filter( 'jet-compare-wishlist/jet-compare/css-scheme', function( $selectors 
 
 ## jet-cw/compare/empty_text
 
-Дозволяє редагувати повідомлення про відсутність продуктів в списку порівняння. Повідомлення зображатися в віджеті
-таблиці порівняння, якщо в список порівняння не було додано жодного продукту.
+Allows you to edit the message about the absence of products in the comparison list. The message is displayed in the comparison table widget if no products have been added to the comparison list.
 
 **Args:**
 
-- `$empty_text` - string - повідомлення про порожній список
+- `$empty_text` - string - empty list message
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-widgets-functions.php">
@@ -104,13 +102,13 @@ add_filter( 'jet-cw/compare/empty_text', function( $empty_text ) {
 
 ## jet-cw/compare/in-compare
 
-Дозволяє перевірити та модифікувати статус продукту в списку порівняння.
+Allows you to check and modify the product status in the comparison list.
 
 **Args:**
 
-- `$status` - boolean - статус продукту відповідно списку порівняння
-- `$product_id` - string/id - ідентифікатор продукту
-- `$compare_products` - array - список продуктів для порівняння
+- `$status` - boolean - product status according to the comparison list  
+- `$product_id` - string/id - product identifier  
+- `$compare_products` - array - list of products for comparison
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-widgets-functions.php">
@@ -139,11 +137,11 @@ add_filter( 'jet-cw/compare/in-compare', function( $status, $product_id, $compar
 
 ## jet-cw/compare/localized-data
 
-Дозволяє зареєструвати власні, а також модифікувати вже наявні дані для JavaScript змінних у локалізованому скрипті.
+Allows you to register your own data and modify existing ones for JavaScript variables in the localized script.
 
 **Args:**
 
-- `$localized_data` - array - список даних
+- `$localized_data` - array - list of data
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/compare/class-jet-cw-compare-data.php">
@@ -166,11 +164,11 @@ add_filter( 'jet-cw/compare/localized-data', function( $localized_data ) {
 
 ## jet-cw/compare/product-id
 
-Дозволяє модифікувати ідентифікатор продукту зі списку порівняння перед тим як отримати повний список продуктів порівняння.
+Allows modifying the product ID from the comparison list before retrieving the full comparison list of products.
 
 **Args:**
 
-- `$product_id` - string/id - ідентифікатор продукту
+- `$product_id` - string/id - product identifier
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-widgets-functions.php">
@@ -189,12 +187,12 @@ add_filter( 'jet-cw/compare/product-id', function( $product_id ) {
 
 ## jet-cw/widgets/compare/empty-item-fallback
 
-Дозволяє модифікувати запасний варіант того, що буде виведено при відсутності у продукту атрибутів в таблиці порівняння.
+Allows modifying the fallback value for what will be displayed when a product has no attributes in the comparison table.
 
 **Args:**
 
-- `$fallback` - string - рядок запасного варіанту виводу
-- `$product` - WC_Product - екземпляр продукту порівняння
+- `$fallback` - string - fallback output string
+- `$product` - WC_Product - product instance in the comparison
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-widgets-functions.php">
