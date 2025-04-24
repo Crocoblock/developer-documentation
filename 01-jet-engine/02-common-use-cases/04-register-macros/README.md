@@ -48,7 +48,7 @@ class My_Macros extends \Jet_Engine_Base_Macros {
 					$meta_fields = jet_engine()->meta_boxes->get_fields_for_select( 'plain' );
 					unset( $meta_fields[''] );
 					return array_values( $meta_fields );
-				], // could be plain array of value => label format or callback which returns the same formatted aray only when needed. For heavy options list callback method is better to use.
+				}, // could be plain array of value => label format or callback which returns the same formatted aray only when needed. For heavy options list callback method is better to use.
 			],
 			'my_arg_2' => [
 				'label'   => __( 'Return', 'jet-engine' ),
