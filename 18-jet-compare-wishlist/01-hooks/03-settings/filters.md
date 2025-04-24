@@ -2,12 +2,11 @@
 
 ## jet-cw/admin/settings-page/localized-config
 
-Дозволяє зареєструвати власні, а також модифікувати вже наявні дані налаштувань плагіну для JavaScript змінних у
-локалізованому скрипті.
+Allows registering custom data and modifying existing plugin settings for JavaScript variables in the localized script.
 
 **Args:**
 
-- `$localized_data` - array - список даних
+- `$localized_data` - array - list of data
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/settings/subpage-modules/avaliable-addons.php">
@@ -33,12 +32,11 @@ add_filter( 'jet-cw/admin/settings-page/localized-config', function( $localized_
 
 ## jet-cw/dashboard/settings/ . $setting
 
-Дозволяє отримати доступ для зображення та модифікації сторінки налаштувань прикладової панелі за ключем
-сторінки `$setting`.
+Allows access to view and modify the settings page for the example panel by the page key `$setting`.
 
 **Args:**
 
-- `$page_id` - string - ключ сторінки налаштувань
+- `$page_id` - string - the settings page key
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-settings.php">
@@ -71,11 +69,11 @@ add_filter( 'jet-cw/dashboard/settings/compare_page', function( $page_id ) {
 
 ## jet-cw/rest/frontend/url
 
-Дозволяє модифікувати URL-адресу кінцевої точки REST на сайті.
+Allows modifying the REST endpoint URL on the site.
 
 **Args:**
 
-- `$url` - string - повна URL-адреса кінцевої точки
+- `$url` - string - the full URL of the endpoint
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-settings.php">
@@ -98,12 +96,11 @@ add_filter( 'jet-cw/rest/frontend/url', function( $url ) {
 
 ## jet-cw/settings/registered-subpage-modules
 
-Дозволяє зареєструвати власні модулі підсторінок для розділу налаштувань в адміністративній панелі, а також видозмінити
-вже наявні модулі підсторінок.
+Allows registering custom subpage modules for the settings section in the admin panel, as well as modifying existing subpage modules.
 
 **Args:**
 
-- `$subpage_modules` - array - список модулів підсторінок
+- `$subpage_modules` - array - list of subpage modules
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/settings/manager.php">

@@ -1,10 +1,10 @@
 ## jet-cw/in-elementor
 
-Дозволяє модифікувати статус находження в редакторі Elementor.
+Allows modifying the status of being in the Elementor editor.
 
 **Args:**
 
-- `$result` - bool - статус находження в редакторі
+- `$result` - bool - status of being in the editor
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-integration.php">
@@ -27,11 +27,11 @@ add_filter( 'jet-cw/in-elementor', function( $result ) {
 
 ## jet-cw/localized-data
 
-Дозволяє зареєструвати власні, а також модифікувати вже наявні дані для JavaScript змінних у локалізованому скрипті.
+Allows registering custom, as well as modifying existing data for JavaScript variables in the localized script.
 
 **Args:**
 
-- `$localized_data` - array - список даних
+- `$localized_data` - array - list of data
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-widgets-store.php">
@@ -52,11 +52,11 @@ add_filter( 'jet-cw/localized-data', function( $localized_data ) {
 
 ## jet-cw/tools/rating/available-icons
 
-Дозволяє модифікувати список наявних іконок для рейтингу.
+Allows modifying the list of available icons for the rating.
 
 **Args:**
 
-- `$available_icons` - array - список іконок
+- `$available_icons` - array - list of icons
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-tools.php">
@@ -77,11 +77,11 @@ add_filter( 'jet-cw/tools/rating/available-icons', function( $available_icons ) 
 
 ## jet-cw/tools/compare-table/data-list
 
-Дозволяє модифікувати список доступних даних, що виводяться у віджеті Compare Table.
+Allows modifying the list of available data displayed in the Compare Table widget.
 
 **Args:**
 
-- `$data_list` - array - список даних
+- `$data_list` - array - list of data
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-tools.php">

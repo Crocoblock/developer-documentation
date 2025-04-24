@@ -2,11 +2,11 @@
 
 ## jet-cw/template-functions/add-to-cart-settings
 
-Дозволяє модифікувати аргументи для кнопки додавання в кошик яка використовується в віджетах.
+Allows modifying the arguments for the add to cart button used in widgets.
 
 **Args:**
 
-- `$settings` - object - список налаштувань
+- `$settings` - object - list of settings
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-functions.php">
@@ -26,11 +26,11 @@ add_filter( 'jet-cw/template-functions/add-to-cart-settings', function( $setting
 
 ## jet-cw/template-functions/categories
 
-Дозволяє модифікувати розмітку та зовнішній вигляд категорій продуктів у віджетах.
+Allows modifying the markup and appearance of product categories in widgets.
 
 **Args:**
 
-- `$categories` - string - розмітка категорій
+- `$categories` - string - categories markup
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-functions.php">
@@ -50,12 +50,11 @@ add_filter( 'jet-cw/template-functions/categories', function( $categories ) {
 
 ## jet-cw/template-functions/compare-custom-field/ . $field_key
 
-Дозволяє модифікувати значення поля по заданому ідентифікатору поля `$field_key`, а також змінювати зовнішній вигляд та
-спосіб виводу.
+Allows modifying the field value by the specified field identifier `$field_key`, as well as changing the appearance and output method.
 
 **Args:**
 
-- `$field_value` - mixed - значення поля
+- `$field_value` - mixed - field value
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-functions.php">
@@ -75,11 +74,11 @@ add_filter( 'jet-cw/template-functions/compare-custom-field/__additional_params'
 
 ## jet-cw/template-functions/compare-remove
 
-Дозволяє модифікувати розмітку та зовнішній вигляд кнопки видалення зі списку порівняння.
+Allows modifying the markup and appearance of the remove button from the comparison list.
 
 **Args:**
 
-- `$button` - string - розмітка кнопки
+- `$button` - string - button markup
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-functions.php">
@@ -99,11 +98,11 @@ add_filter( 'jet-cw/template-functions/compare-remove', function( $button ) {
 
 ## jet-cw/template-functions/description
 
-Дозволяє модифікувати розмітку та зовнішній вигляд опису продуктів у віджетах.
+Allows modifying the markup and appearance of product descriptions in widgets.
 
 **Args:**
 
-- `$description` - string - розмітка опису
+- `$description` - string - description markup
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-functions.php">
@@ -123,11 +122,11 @@ add_filter( 'jet-cw/template-functions/description', function( $description ) {
 
 ## jet-cw/template-functions/dimension
 
-Дозволяє модифікувати розмітку та зовнішній вигляд вимірів продуктів у віджетах.
+Allows modifying the markup and appearance of product dimensions in widgets.
 
 **Args:**
 
-- `$dimensions` - string - розмітка вимірів
+- `$dimensions` - string - dimensions markup
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-functions.php">
@@ -147,11 +146,11 @@ add_filter( 'jet-cw/template-functions/dimension', function( $dimensions ) {
 
 ## jet-cw/template-functions/excerpt
 
-Дозволяє модифікувати розмітку та зовнішній вигляд короткого опису продуктів у віджетах.
+Allows modifying the markup and appearance of product short descriptions in widgets.
 
 **Args:**
 
-- `$excerpt` - string - розмітка короткого опису
+- `$excerpt` - string - short description markup
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-functions.php">
@@ -171,12 +170,12 @@ add_filter( 'jet-cw/template-functions/excerpt', function( $excerpt ) {
 
 ## jet-cw/template-functions/exclude-attributes
 
-Дозволяє модифікувати список виключених атрибутів продукту які зображаються в віджетах.
+Allows modifying the list of excluded product attributes displayed in widgets.
 
 **Args:**
 
-- `$exclude_attributes` - array - список виключених атрибутів
-- `$products` - array - список продуктів
+- `$exclude_attributes` - array - list of excluded attributes
+- `$products` - array - list of products
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-widgets-functions.php">
@@ -201,11 +200,11 @@ add_filter( 'jet-cw/template-functions/exclude-attributes', function( $exclude_a
 
 ## jet-cw/template-functions/price
 
-Дозволяє модифікувати розмітку та зовнішній вигляд ціни продуктів у віджетах.
+Allows modifying the markup and appearance of product prices in widgets.
 
 **Args:**
 
-- `$price` - string - розмітка ціни
+- `$price` - string - price markup
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-functions.php">
@@ -225,11 +224,11 @@ add_filter( 'jet-cw/template-functions/price', function( $price ) {
 
 ## jet-cw/template-functions/rating
 
-Дозволяє модифікувати розмітку та зовнішній вигляд рейтингу продуктів у віджетах.
+Allows modifying the markup and appearance of product ratings in widgets.
 
 **Args:**
 
-- `$rating` - string - розмітка рейтингу
+- `$rating` - string - rating markup
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-functions.php">
@@ -249,11 +248,11 @@ add_filter( 'jet-cw/template-functions/rating', function( $rating ) {
 
 ## jet-cw/template-functions/sku
 
-Дозволяє модифікувати розмітку та зовнішній вигляд ідентифікатору товарної позиції продуктів у віджетах.
+Allows modifying the markup and appearance of the product SKU (Stock Keeping Unit) in widgets.
 
 **Args:**
 
-- `$sku` - string - розмітка ідентифікатору товарної позиції
+- `$sku` - string - SKU markup
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-functions.php">
@@ -273,11 +272,11 @@ add_filter( 'jet-cw/template-functions/sku', function( $sku ) {
 
 ## jet-cw/template-functions/stock-status
 
-Дозволяє модифікувати розмітку та зовнішній вигляд стану запасів продуктів у віджетах.
+Allows modifying the markup and appearance of the stock status of products in widgets.
 
 **Args:**
 
-- `$stock_status` - string - розмітка стану запасів
+- `$stock_status` - string - stock status markup
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-functions.php">
@@ -297,11 +296,11 @@ add_filter( 'jet-cw/template-functions/stock-status', function( $stock_status ) 
 
 ## jet-cw/template-functions/tags
 
-Дозволяє модифікувати розмітку та зовнішній вигляд тегів продуктів у віджетах.
+Allows modifying the markup and appearance of product tags in widgets.
 
 **Args:**
 
-- `$tags` - string - розмітка тегів
+- `$tags` - string - tags markup
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-functions.php">
@@ -321,11 +320,11 @@ add_filter( 'jet-cw/template-functions/tags', function( $tags ) {
 
 ## jet-cw/template-functions/thumbnail
 
-Дозволяє модифікувати розмітку та зовнішній вигляд мініатюр продуктів у віджетах.
+Allows modifying the markup and appearance of product thumbnails in widgets.
 
 **Args:**
 
-- `$thumbnail` - string - розмітка мініатюр
+- `$thumbnail` - string - thumbnail markup
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-functions.php">
@@ -345,11 +344,11 @@ add_filter( 'jet-cw/template-functions/thumbnail', function( $thumbnail ) {
 
 ## jet-cw/template-functions/title
 
-Дозволяє модифікувати розмітку та зовнішній вигляд назви продуктів у віджетах.
+Allows modifying the markup and appearance of product titles in widgets.
 
 **Args:**
 
-- `$title` - string - розмітка назви
+- `$title` - string - title markup
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-functions.php">
@@ -369,12 +368,12 @@ add_filter( 'jet-cw/template-functions/title', function( $title ) {
 
 ## jet-cw/template-functions/visible-attributes
 
-Дозволяє модифікувати список видимих атрибутів продукту які зображаються в віджетах.
+Allows modifying the list of visible product attributes displayed in widgets.
 
 **Args:**
 
-- `$visible_attributes` - array - список видимих атрибутів
-- `$products` - array - список продуктів
+- `$visible_attributes` - array - list of visible attributes
+- `$products` - array - list of products
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-functions.php">
@@ -399,11 +398,11 @@ add_filter( 'jet-cw/template-functions/visible-attributes', function( $visible_a
 
 ## jet-cw/template-functions/weight
 
-Дозволяє модифікувати розмітку та зовнішній вигляд ваги продуктів у віджетах.
+Allows modifying the markup and appearance of product weights in widgets.
 
 **Args:**
 
-- `$weight` - string - розмітка ваги
+- `$weight` - string - weight markup
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-functions.php">
@@ -423,11 +422,11 @@ add_filter( 'jet-cw/template-functions/weight', function( $weight ) {
 
 ## jet-cw/template-functions/wishlist-remove
 
-Дозволяє модифікувати розмітку та зовнішній вигляд кнопки видалення продуктів зі списку бажаного.
+Allows modifying the markup and appearance of the product removal button from the wishlist.
 
 **Args:**
 
-- `$button` - string - розмітка кнопки
+- `$button` - string - button markup
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-functions.php">
@@ -447,11 +446,11 @@ add_filter( 'jet-cw/template-functions/wishlist-remove', function( $button ) {
 
 ## jet-cw/template-path
 
-Дозволяє модифікувати шлях до темплейтів плагіну.
+Allows modifying the path to the plugin's templates.
 
 **Args:**
 
-- `$template_path` - string - шлях до темплейтів
+- `$template_path` - string - path to the templates
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/jet-cw.php">jet-cw.php</a>

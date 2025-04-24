@@ -2,12 +2,11 @@
 
 ## jet-compare-wishlist/jet-wishlist/css-scheme
 
-Дозволяє зареєструвати додаткові або модифікувати вже наявні селектори віджета Wishlist, які використовуються в
-контролах редактору Elementor для стилізації різних елементів віджета.
+Allows you to register additional or modify existing selectors of the Wishlist widget, which are used in the Elementor editor controls for styling various elements of the widget.
 
 **Args:**
 
-- `$selectors` - array - список селекторів
+- `$selectors` - array - list of selectors
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/widgets/wishlist/jet-wishlist-widget.php">
@@ -27,12 +26,11 @@ add_filter( 'jet-compare-wishlist/jet-wishlist/css-scheme', function( $selectors
 
 ## jet-wishlist-button/wishlist-button/css-scheme
 
-Дозволяє зареєструвати додаткові або модифікувати вже наявні селектори віджета Wishlist Button, які використовуються в
-контролах редактору Elementor для стилізації різних елементів віджета.
+Allows you to register additional or modify existing selectors of the Wishlist Button widget, which are used in the Elementor editor controls for styling various elements of the widget.
 
 **Args:**
 
-- `$selectors` - array - список селекторів
+- `$selectors` - array - list of selectors
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/wishlist/class-jet-cw-wishlist-integration.php">
@@ -52,12 +50,11 @@ add_filter( 'jet-wishlist-button/wishlist-button/css-scheme', function( $selecto
 
 ## jet-wishlist-button/wishlist-count-button/css-scheme
 
-Дозволяє зареєструвати додаткові або модифікувати вже наявні селектори віджета Wishlist Count Button, які
-використовуються в контролах редактору Elementor для стилізації різних елементів віджета.
+Allows you to register additional or modify existing selectors of the Wishlist Count Button widget, which are used in the Elementor editor controls for styling various elements of the widget.
 
 **Args:**
 
-- `$selectors` - array - список селекторів
+- `$selectors` - array - list of selectors
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/widgets/wishlist/jet-wishlist-count-button.php">
@@ -77,12 +74,12 @@ add_filter( 'jet-wishlist-button/wishlist-count-button/css-scheme', function( $s
 
 ## jet-compare-wishlist/wishlist-template/template-content
 
-Дозволяє встановлювати кастомні темплейти для контенту карток продуктів у віджеті списку бажаного. 
+Allows you to set custom templates for product card content in the wishlist widget.
 
 **Args:**
 
-- `$content` - string - контент картки продукту
-- `$product` - object - екземпляр продукту
+- `$content` - string - product card content
+- `$product` - object - product instance
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-widgets-functions.php">
@@ -121,12 +118,11 @@ add_filter( 'jet-compare-wishlist/wishlist-template/template-content', function(
 
 ## jet-cw/wishlist/empty_text
 
-Дозволяє редагувати повідомлення про відсутність продуктів в списку бажаного. Повідомлення зображатися в віджеті
-бажаного, якщо в список бажаного не було додано жодного продукту.
+Allows you to edit the message shown when there are no products in the wishlist. The message is displayed in the wishlist widget if no products have been added to the wishlist.
 
 **Args:**
 
-- `$empty_text` - string - повідомлення про порожній список
+- `$empty_text` - string - message for an empty list
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-widgets-functions.php">
@@ -148,13 +144,13 @@ add_filter( 'jet-cw/wishlist/empty_text', function( $empty_text ) {
 
 ## jet-cw/wishlist/in-wishlist
 
-Дозволяє перевірити та модифікувати статус продукту в списку бажаного.
+Allows checking and modifying the status of a product in the wishlist.
 
 **Args:**
 
-- `$status` - boolean - статус продукту відповідно списку порівняння
-- `$product_id` - string/id - ідентифікатор продукту
-- `$compare_products` - array - список продуктів для порівняння
+- `$status` - boolean - product status according to the wishlist
+- `$product_id` - string/id - product identifier
+- `$compare_products` - array - list of products for comparison
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-widgets-functions.php">
@@ -183,11 +179,11 @@ add_filter( 'jet-cw/wishlist/in-wishlist', function( $status, $product_id, $comp
 
 ## jet-cw/wishlist/localized-data
 
-Дозволяє зареєструвати власні, а також модифікувати вже наявні дані для JavaScript змінних у локалізованому скрипті.
+Allows registering custom and modifying existing data for JavaScript variables in the localized script.
 
 **Args:**
 
-- `$localized_data` - array - список даних
+- `$localized_data` - array - list of data
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/wishlist/class-jet-cw-wishlist-data.php">
@@ -210,11 +206,11 @@ add_filter( 'jet-cw/wishlist/localized-data', function( $localized_data ) {
 
 ## jet-cw/wishlist/product-id
 
-Дозволяє модифікувати ідентифікатор продукту зі списку бажаного перед тим як отримати повний список бажаних продуктів.
+Allows modifying the product ID from the wishlist before retrieving the full list of wishlist products.
 
 **Args:**
 
-- `$product_id` - string/id - ідентифікатор продукту
+- `$product_id` - string/id - product identifier
 
 **Location:**
 <a href="https://github.com/ZemezLab/jet-compare-wishlist/blob/master/includes/class-jet-cw-widgets-functions.php">
