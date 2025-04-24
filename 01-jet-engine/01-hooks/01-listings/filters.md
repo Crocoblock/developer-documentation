@@ -943,3 +943,99 @@ add_filter( 'jet-engine/listings/frontend/custom-listing-url', function( $url, $
 
 }, 10, 2 );
 ```
+## jet-engine/listing/container-classes
+
+This filter allows you to add custom CSS classes to the listing container.
+
+**Args:**
+* `$classes` - array — An array of CSS class names to be applied to the listing container.
+* `$settings`- array — Listing settings.
+
+* `$render` - Jet_Engine_Render_Listing_Grid — The instance of the listing render class.
+
+**Location:**
+includes/components/listings/render/listing-grid.php
+
+**Access:**
+Global
+
+**Example:**
+
+```php
+add_filter( 'jet-engine/listing/container-classes', function( $classes, $settings, $render ) {
+
+    $add_woo_class = false;
+
+    if ( $render->listing_query_id ) {
+        $query = \Jet_Engine\Query_Builder\Manager::instance()->get_query_by_id( $render->listing_query_id );
+
+        if ( $query && 'wc-product-query' === $query->query_type ) {
+            $add_woo_class = true;
+        }
+    }
+
+    if ( $render->posts_query ) {
+
+        $post_types = $render->posts_query->get( 'post_type' );
+
+        if ( ! empty( $post_types ) ) {
+
+            if ( ! is_array( $post_types ) ) {
+                $post_types = array( $post_types );
+            }
+
+            if ( in_array( 'product', $post_types ) ) {
+                $add_woo_class = true;
+            }
+        }
+    }
+
+    if ( $add_woo_class ) {
+        $classes[] = 'woocommerce';
+    }
+
+    return $classes;
+}, 10, 3 );
+```
+
+## jet-engine/listing/container-atts
+
+Цей фільтр дозволяє додавати додаткові дата атрибути для контейнера лістингу.
+
+**Args:**
+* `$attr` - array - An array of data attributes for the listing container.
+* `$settings` - array - Listing settings.
+* `$render` - Jet_Engine_Render_Listing_Grid - The instance of the listing render class.
+
+**Location:**
+includes/components/listings/render/listing-grid.php
+
+**Access:**
+Global
+
+**Example:**
+
+```php
+add_filter( 'jet-engine/listing/container-atts', function( $attr, $settings, $render ) {
+
+    $type = null;
+
+    if ( $render->listing_query_id ) {
+        $query = \Jet_Engine\Query_Builder\Manager::instance()->get_query_by_id( $render->listing_query_id );
+
+        if ( ! empty( $query->query_type ) && 'custom-content-type' === $query->query_type ) {
+            $query->setup_query();
+            $type = ! empty( $query->final_query['content_type'] ) ? $query->final_query['content_type'] : false;
+        }
+
+    } elseif ( 'custom_content_type' === jet_engine()->listings->data->get_listing_source() ) {
+        $type = jet_engine()->listings->data->get_listing_post_type();
+    }
+
+    if ( ! empty( $type ) ) {
+        $attr[] = 'data-cct-slug="' . esc_attr( $type ) . '"';
+    }
+
+    return $attr;
+}, 10, 3 );
+```

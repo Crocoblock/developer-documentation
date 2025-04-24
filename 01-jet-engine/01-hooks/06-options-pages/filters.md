@@ -2,11 +2,11 @@
 
 ## jet-engine/options-pages/raw-fields
 
-Дозволяє змінювати масив полів сторінки опцій, перед тим як вони будуть оброблені.
+Allows modifying the array of option page fields before they are processed.
 
 **Args:**
-- `$fields` - array - Масив полів
-- `$page` - Jet_Engine_Options_Page_Factory - Об'єкт сторінки опцій
+- `$fields` - array - Array of fields
+- `$page` - Jet_Engine_Options_Page_Factory - Options page object
 
 **Location:**
 /includes/components/options-pages/options-page.php
@@ -37,10 +37,10 @@ add_filter( 'jet-engine/options-pages/raw-fields', function( $fields, $page ) {
 
 ## jet-engine/options-pages/available-capabilities
 
-Дозволяє змінювати список доступних capabilities для опції `Access capability` https://tppr.me/W9BMl на сторінці опцій.
+Allows modifying the list of available capabilities for the `Access capability` option https://tppr.me/W9BMl on the options page.
 
 **Args:**
-- `$caps_list` - array - Список capabilities в форматі `array( 'value' => '', 'label' => '' )`
+- `$caps_list` - array - List of capabilities in the format `array( 'value' => '', 'label' => '' )`
 
 **Location:**
 /includes/components/options-pages/pages/edit.php
@@ -64,10 +64,10 @@ add_filter( 'jet-engine/options-pages/available-capabilities', function( $caps_l
 
 ## jet-engine/options-pages/available-positions
 
-Дозволяє змінювати список доступних позицій для опції `Menu position` https://tppr.me/OcN9H на сторінці опцій.
+Allows modifying the list of available positions for the `Menu position` option https://tppr.me/OcN9H on the options page.
 
 **Args:**
-- `$positions` - array - Список доступних позицій в форматі `array( 'value' => 3, 'label' => 'Dashboard' )`
+- `$positions` - array - List of available positions in the format `array( 'value' => 3, 'label' => 'Dashboard' )`
 
 **Location:**
 /includes/components/options-pages/pages/edit.php
@@ -91,11 +91,11 @@ add_filter( 'jet-engine/options-pages/available-positions', function( $positions
 
 ## jet-engine/options-pages/rest-api/fields/value
 
-Дозволяє змінювати значення опції, яке отримується через Rest API.
+Allows modifying the option value retrieved via the Rest API.
 
 **Args:**
-- `$value` - mixed - Значення опції.
-- `$field` - array - Массив аргументів поля.
+- `$value` - mixed - Option value
+- `$field` - array - Array of field arguments.
 
 **Location:**
 /includes/components/options-pages/rest-api/fields/pages/site-settings.php
