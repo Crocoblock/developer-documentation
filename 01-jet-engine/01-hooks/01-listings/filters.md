@@ -1000,7 +1000,7 @@ add_filter( 'jet-engine/listing/container-classes', function( $classes, $setting
 
 ## jet-engine/listing/container-atts
 
-Цей фільтр дозволяє додавати додаткові дата атрибути для контейнера лістингу.
+This filter allows you to add additional data attributes for the listing container. 
 
 **Args:**
 * `$attr` - array - An array of data attributes for the listing container.
@@ -1038,4 +1038,167 @@ add_filter( 'jet-engine/listing/container-atts', function( $attr, $settings, $re
 
     return $attr;
 }, 10, 3 );
+```
+
+## jet-engine/listings/ajax/force-valid-query
+
+Allows disabling the signature verification for AJAX requests related to listing rendering, primarily `load more` and `lazy load`. This can be useful in certain edge cases where a correct signature cannot be generated for a request due to a non-standard set of parameters, causing the request to always return an error. Using this filter, all requests can be forcibly marked as valid to avoid errors, but this carries certain security risks.
+
+**Args:**
+* `$result` - bool - The result we return. If `true` is returned, the request will always be considered valid.
+* `$query`  - array - The query parameters for which the signature is generated.
+
+**Location:**
+includes/components/listings/ajax-handlers.php
+
+**Access:**
+Global
+
+**Example:**
+
+```php
+add_filter( 'jet-engine/listings/ajax/force-valid-query', '__return_true' );
+```
+## jet-engine/listing/grid/lazy-load/ensure-assets
+
+This filter allows determining whether a listing item will be rendered in the listing grid with lazy load, so that all necessary scripts are properly loaded.
+
+**Args:**
+* `$ensure` - bool - Whether the render will take place, `true` by default.
+* `$listing_id` - int - Listing item ID.
+* `$settings` - array - Listing grid settings.
+
+**Location:**
+includes/components/listings/render/listing-grid.php
+
+**Access:**
+Global
+
+**Example:**
+
+```php
+add_filter( 'jet-engine/listing/grid/lazy-load/ensure-assets', '__return_false');
+```
+
+## jet-engine/listing/grid/posts-query-args
+
+Allows filtering the arguments for `WP_Query` in a listing without using the Query Builder query.
+
+**Args:**
+* `$args` - array - An array of arguments for WP_Query.
+* `$listing_instance` - \Jet_Engine_Render_Listing_Grid - An instance of the \Jet_Engine_Render_Listing_Grid class.
+* `$settings` - array - Listing Grid settings. 
+
+**Location:**
+includes/components/listings/render/listing-grid.php
+
+**Access:**
+Global
+
+**Example:**
+
+```php
+add_filter( 'jet-engine/listing/grid/lazy-load/ensure-assets', function( $args, $listing_instance, $settings ) {
+	//modify $args
+	return $args;
+}, 10, 3 );
+```
+
+## jet-engine/listing/grid/widget-visibility
+
+Allows filtering the visibility of a listing grid.
+
+**Args:**
+* `$is_visible` - bool - Whether the listing grid will be rendered.
+* `$query` - array - The array of items to be displayed in the listing (e.g., \WP_Post[])
+* `$settings` - array - The listing grid settings.
+
+**Location:**
+includes/components/listings/render/listing-grid.php
+
+**Access:**
+Global
+
+**Example:**
+
+```php
+add_filter( 'jet-engine/listing/grid/widget-visibility', function( $is_visible, $query, $settings ) {
+	//chaeck if listing grid should be visible
+	return $is_visible;
+}, 10, 3 );
+```
+
+## jet-engine/listing/render/{$render_name}/settings
+
+Allows filtering the settings of an instance of a class that inherits \Jet_Engine_Render_Base.
+
+**Args:**
+* `$settings` - bool - The settings. 
+* `$render_instance` - An instance of an instance of a class that inherits \Jet_Engine_Render_Base.
+
+**Location:**
+includes/components/listings/render/base.php
+
+**Access:**
+Global
+
+**Example:**
+**<a href="/01-jet-engine/02-common-use-cases/06-register-new-render-settings/README.md">Register new render settings</a>**
+
+## jet-engine/listings/dynamic-field/custom-value
+
+Allows filtering the value that will be returned by a Dynamic Field. If the filtered value is not empty, it will replace the value that would have been retrieved from the Dynamic Field.
+
+**Args:**
+* `$custom_value` - mixed - Filtered value.
+* `$settings` - array - Dynamic Field settings. 
+* `$render_instance` - \Jet_Engine_Render_Dynamic_Field - An instance of the \Jet_Engine_Render_Dynamic_Field class.
+
+**Location:**
+includes/components/listings/render/dynamic-field.php
+
+**Access:**
+Global
+
+**Example:**
+
+```php
+add_filter( 'jet-engine/listings/dynamic-field/custom-value', function( $custom_value, $settings, $render_instance ) {
+	/**
+	 * filter value
+	 * 
+	 * $render_instance->get( $setting = null, $default = false ) may be used to retrieve Dynamic Field settings
+	 * */
+	return $custom_value;
+}, 10, 3 );
+```
+
+## jet-engine/listings/dynamic-field/sanitize-output
+
+Determines whether the value retrieved during Dynamic Field rendering will be passed through wp_kses_post().
+
+**Args:**
+* `$need_sanitize` - bool - Whether to sanitize the value. 
+* `$render_instance` - \Jet_Engine_Render_Dynamic_Field - An instance of the \Jet_Engine_Render_Dynamic_Field class.
+
+**Location:**
+includes/components/listings/render/dynamic-field.php
+
+**Access:**
+Global
+
+**Example:**
+
+Disable sanitization in Elementor Dynamic Field widget if it has 'disable-sanitize' class:
+
+```php
+add_filter( 'jet-engine/listings/dynamic-field/sanitize-output', function( $need_sanitize, $render_instance ) {
+
+	if ( false !== strpos( $render_instance->get( '_css_classes' ), 'disable-sanitize' ) ) {
+		$need_sanitize = false;
+	}
+	
+	return $need_sanitize;
+	
+}, 0, 2 );
 ```
