@@ -1,6 +1,6 @@
 # JetEngine. Data Stores. Filters.
 
-#jet-engine/blocks-views/data-store-button/attributes
+## jet-engine/blocks-views/data-store-button/attributes
 
 Allows registering additional attributes for the `Data Store Button` block.
 
@@ -26,7 +26,7 @@ add_filter( 'jet-engine/blocks-views/data-store-button/attributes', function( $a
  } );
 ```
 
-#jet-engine/data-stores/store-post-id
+## jet-engine/data-stores/store-post-id
 
 Allows filtering the ID of the current object that will be added to the data store.
 
@@ -98,7 +98,7 @@ add_filter( 'jet-engine/data-stores/store/data', function( $store, $store_id ) {
 }, 10, 2 );
 ```
 
-#jet-engine/data-stores/pre-get-post-count
+## jet-engine/data-stores/pre-get-post-count
 
 By default, the data store counter value is stored in post meta. This filter allows getting the counter value from another custom location if logic has been added to store this value using the `jet-engine/data-stores/post-count-increased` and `jet-engine/data-stores/post-count-decreased` actions.
 
@@ -151,7 +151,7 @@ add_filter( 'jet-engine/data-stores/pre-get-post-count', function( $count, $item
 }, 10, 3 );
 ```
 
-#jet-engine/data-stores/ajax-store-fragments
+## jet-engine/data-stores/ajax-store-fragments
 
 Allows filtering the list of fragments (selectors) to update counters on the frontend when adding an item to the store or removing an item from the store.
 
@@ -178,7 +178,7 @@ add_filter( 'jet-engine/data-stores/ajax-store-fragments', function( $fragments,
 }, 10, 3 );
 ```
 
-#jet-engine/data-stores/get-users-macros/context/{ $context }
+## jet-engine/data-stores/get-users-macros/context/{ $context }
 
 Allows filtering the item ID for the `get_users_for_store_item` macro based on the dynamic part of the `$context filter`, which corresponds to the selected context.
 
@@ -204,7 +204,7 @@ add_filter( 'jet-engine/data-stores/get-users-macros/context/post_author', funct
 } );
 ```
 
-#jet-engine/data-stores/remove-from-store/settings
+## jet-engine/data-stores/remove-from-store/settings
 
 Allows filtering the settings of the widget/block before rendering the link for removing an item from the store.
 
@@ -226,7 +226,7 @@ add_filter( 'jet-engine/data-stores/remove-from-store/settings', function( $sett
 }, 10, 2 );
 ```
 
-#jet-engine/data-stores/add-to-store/settings
+## jet-engine/data-stores/add-to-store/settings
 
 Allows filtering the settings of the widget/block before rendering the link for adding an item to the store.
 
@@ -247,7 +247,7 @@ add_filter( 'jet-engine/data-stores/add-to-store/settings', function( $settings,
 }, 10, 2 );
 ```
 
-#jet-engine/data-stores/settings/args-to-save
+## jet-engine/data-stores/settings/args-to-save
 
 Allows modifying the settings of the store item that will be saved in the database.
 
@@ -275,7 +275,7 @@ add_filter( 'jet-engine/data-stores/add-to-store/settings', function( $args, $it
 
 User IP data store saves its data in a separate table, so the functionality of cleaning this table from time to time is provided. For now, this feature can be enabled and configured using WP filters; perhaps in the future, we will add options in the data store settings. WP Schedule API is used for periodic cleaning.
 
-##jet-engine/data-stores/user-ip/schedules/auto-clear-store
+## jet-engine/data-stores/user-ip/schedules/auto-clear-store
 
 Allows enabling the automatic periodic clearing of the User IP data store.
 
@@ -290,7 +290,7 @@ includes/modules/data-stores/inc/stores/user-ip-schedules.php
 **Access:**
 Global
 
-##jet-engine/data-stores/user-ip/schedules/clear-expiration
+## jet-engine/data-stores/user-ip/schedules/clear-expiration
 
 Allows changing the period after which records in the database will be deleted. By default, this period is set to 1 year, meaning records in the database that were added over a year ago will be deleted.
 
@@ -305,7 +305,7 @@ Allows changing the period after which records in the database will be deleted. 
 **Access:**
 Global
 
-##jet-engine/data-stores/user-ip/schedules/event-timestamp
+## jet-engine/data-stores/user-ip/schedules/event-timestamp
 
 Allows changing the event timestamp for checking outdated records in the database.
 
@@ -320,7 +320,7 @@ Allows changing the event timestamp for checking outdated records in the databas
 **Access:**
 Global
 
-##jet-engine/data-stores/user-ip/schedules/event-interval
+## jet-engine/data-stores/user-ip/schedules/event-interval
 
 Allows changing the event interval for checking outdated records in the database.
 
