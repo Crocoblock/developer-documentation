@@ -23,6 +23,29 @@ add_filter( 'jet-engine/maps-listings/autocomplete-url-args/google', function( $
 } );
 ```
 
+## jet-engine/maps-listings/autocomplete-request-body/google
+
+Allows modifying the request body when using the new Google provider's autocomplete API.
+
+**Args:**
+
+- `$body` - the request body. [List of available parameters](https://developers.google.com/maps/documentation/places/web-service/place-autocomplete#supported-parameters)
+
+**Location:**
+includes/modules/maps-listings/inc/geocode-providers/google.php
+
+**Access:**
+Global
+
+**Example:**
+
+```php
+add_filter( 'jet-engine/maps-listings/autocomplete-request-body/google', function( $body ) {
+	$body['includedRegionCodes'] = [ 'au' ];
+	return $body;
+} );
+```
+
 ## jet-engine/maps-listings/autocomplete-url-args/openstreetmap
 
 Allows changing the request parameters when using the OpenStreetMap provider autocomplete
@@ -46,3 +69,4 @@ add_filter( 'jet-engine/maps-listings/autocomplete-url-args/openstreetmap', func
 	return $args;
 } );
 ```
+

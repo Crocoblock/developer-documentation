@@ -14,3 +14,6 @@
 * <a href="/01-jet-engine/01-hooks/12-tools">Tools</a>
 * <a href="/01-jet-engine/01-hooks/13-dashboard">Dashboard</a>
 * <a href="/01-jet-engine/01-hooks/14-global">Global</a>
+* <a href="/01-jet-engine/01-hooks/15-modules">Modules</a>
+* <a href="/01-jet-engine/01-hooks/16-compatibility">Compatibility</a>
+* <a href="/01-jet-engine/01-hooks/17-twig-views">Twig Views</a>
