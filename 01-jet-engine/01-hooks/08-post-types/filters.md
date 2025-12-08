@@ -243,3 +243,53 @@ add_filter( 'jet-engine/post-type/product/meta-fields', function ( $fields ) {
     return $fields;
 } );
 ```
+
+## jet-engine/custom-meta-tables/storage/merged-meta-as-arrays
+
+This filter was added to ensure that for posts with Custom Meta Storage enabled, 'get_post_meta( $post_id )' returns results in the same format as for posts without Custom Meta Storage.
+
+For example:
+In a custom table, for a post with 'ID 123', the field 'p1' stores the string 'test'.
+After the fix, 'get_post_meta( 123 )' will return:
+```
+[
+    //...
+    'p1' => [ 'test' ],
+    //...
+]
+```
+which matches the format that would be returned for a standard post
+instead of
+
+```
+[
+    //...
+    'p1' => 'test',
+    //...
+]
+```
+as it was before the fix.
+
+**Args:**
+- `$as_arrays` - bool - Whether to convert the custom column value to the standard function output format `get_post_meta()`, `true` by default
+- `$object_id` - int - Object ID
+- `$meta_type` - string - Meta type, e.g., `'post'`
+- `$meta_storage` - \Jet_Engine\CPT\Custom_Tables\Meta_Storage
+
+**Location:**
+includes/components/post-types/custom-tables/meta-storage.php
+
+**Access:**
+Global
+
+**Example:**
+
+```php
+add_filter( 'jet-engine/custom-meta-tables/storage/merged-meta-as-arrays', function ( $as_arrays, $object_id, $meta_type, $meta_storage ) {
+    if ( $meta_storage->object_slug === 'post_type_slug' ) {
+        $as_arrays = false;
+    }
+
+    return $as_arrays;
+}, 10, 4 );
+```
