@@ -15,6 +15,9 @@ Official developer documentation for JetEngine, JetSmartFilters, JetFormBuilder 
 * <a href="/03-jet-form-builder">JetFormBuilder</a>
 * <a href="05-jet-popup">JetPopup</a>
 * <a href="/06-jet-booking">JetBooking</a>
+  - <a href="/06-jet-booking/01-hooks">Hooks</a>
+  - <a href="/06-jet-booking/02-common-use-cases">Common Use Cases</a>
+  - <a href="/06-jet-booking/03-features">Features</a>
 
 ### WooCommerce-related Plugins
 * <a href="/17-jet-woo-product-gallery">JetProductGallery</a>
