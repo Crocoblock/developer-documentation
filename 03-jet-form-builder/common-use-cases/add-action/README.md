@@ -1,7 +1,7 @@
 # How to add an JetFormBuilder Action?
 
 ## Basic Implementation
-Implement a new class that inherits from[\Jet_Form_Builder\Actions\Types\Base](/03-jet-form-builder/modules/actions/reference/types/base.md).
+Implement a new class that inherits from[\Jet_Form_Builder\Actions\Types\Base](../../modules/actions/reference/types/base.md).
 2. Register an instance of the newly created class using the following example:
 
 ```php
@@ -19,7 +19,7 @@ add_action(
 );
 ```
 ### Result
-![action.png](/03-jet-form-builder/common-use-cases/add-action/assets/action.png)
+![action.png](assets/action.png)
 
 ## Advanced Implementation
 Before starting, you should install [Node.js](https://nodejs.org/en/download). To check its presence, run the following in the command terminal:
@@ -185,4 +185,4 @@ add_action(
 P.S. All the code above is available in a working [example >>>](https://github.com/girafffee/jet-forms-addon-boilerplate-simple/tree/release/1.1.0).
 
 ### The result
-![advanced-action.png](/03-jet-form-builder/common-use-cases/add-action/assets/advanced-action.png)
+![advanced-action.png](assets/advanced-action.png)

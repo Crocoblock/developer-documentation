@@ -2,5 +2,5 @@
 
 Hooks used only with Elementor
 
-* **<a href="/01-jet-engine/01-hooks/02-elementor-views/actions.md">Actions</a>**
-* **<a href="/01-jet-engine/01-hooks/02-elementor-views/filters.md">Filters</a>**
+* **<a href="./actions.md">Actions</a>**
+* **<a href="./filters.md">Filters</a>**

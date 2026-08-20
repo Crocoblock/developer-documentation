@@ -3,7 +3,7 @@
 This abstract class serves as the base for all action types within the Jet Form Builder plugin. It handles common properties and methods required by all inheriting action classes.
 
 ## Usage
-Used for implementing the particular action type. More details [here](/03-jet-form-builder/common-use-cases/add-action/README.md).
+Used for implementing the particular action type. More details [here](../../../../common-use-cases/add-action/README.md).
 
 ## Methods
 | Name                                                   | Description                                                                                                                                                                                                                                                                    |

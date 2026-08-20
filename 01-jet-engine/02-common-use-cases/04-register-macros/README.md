@@ -1,6 +1,6 @@
 # JetEngine. Register new macros
 
-A macro is a string that, according to its format, is converted into some dynamic data. Macros are used in many places, such as dynamic data in some Elementor fields, as an option for dynamic tags for the Block Editor, as dynamic query parameters, and so on. Using the method 'jet_engine()->listings->macros->do_macros( $string )', you can add processing of JetEngine macros anywhere. JetEngine macros work based on the reusable module '\Crocoblock\Macros_Handler'. With the help of this module, you can add your own mechanism for working with macros anywhere. You can read more about this in the relevant [section](/01-jet-engine/03-components/01-macros-handler).
+A macro is a string that, according to its format, is converted into some dynamic data. Macros are used in many places, such as dynamic data in some Elementor fields, as an option for dynamic tags for the Block Editor, as dynamic query parameters, and so on. Using the method 'jet_engine()->listings->macros->do_macros( $string )', you can add processing of JetEngine macros anywhere. JetEngine macros work based on the reusable module '\Crocoblock\Macros_Handler'. With the help of this module, you can add your own mechanism for working with macros anywhere. You can read more about this in the relevant [section](../../03-components/01-macros-handler).
 
 
 ## Registering a Custom Macro

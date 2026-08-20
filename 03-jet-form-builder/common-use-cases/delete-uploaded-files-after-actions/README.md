@@ -7,7 +7,7 @@ To achieve this, follow these steps:
 
 1. Add the `remove-after-execute` class to your Media Field.
 
-   ![image](/03-jet-form-builder/common-use-cases/delete-uploaded-files-after-actions/assets/add-class.png)
+   ![image](assets/add-class.png)
 
 2. Add [this code](#PHP-Code) to the `functions.php` of your child theme.
 

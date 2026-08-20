@@ -2,5 +2,5 @@
 
 Hooks inside the JetEngineTools class
 
-* **<a href="/01-jet-engine/01-hooks/12-tools/actions.md">Actions</a>**
-* **<a href="/01-jet-engine/01-hooks/12-tools/filters.md">Filters</a>**
+* **<a href="./actions.md">Actions</a>**
+* **<a href="./filters.md">Filters</a>**

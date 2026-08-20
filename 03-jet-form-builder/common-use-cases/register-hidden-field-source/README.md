@@ -6,7 +6,7 @@ Add [this code](#php-code) to `functions.php` of your child theme or to a custom
 
 As a result, the new `Field Value` option will become available in the form editor:
 
-![image](/03-jet-form-builder/common-use-cases/register-hidden-field-source/assets/hidden-field.png)
+![image](assets/hidden-field.png)
 
 ### PHP Code
 ```php

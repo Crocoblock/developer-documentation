@@ -49,7 +49,7 @@ add_action( 'jet-engine/query-builder/query-editor/register', function( $manager
 } );
 ```
 
-<a href="/01-jet-engine/02-common-use-cases/02-custom-query-for-query-editor/">Full example of new query type registration</a>
+<a href="../../02-common-use-cases/02-custom-query-for-query-editor/">Full example of new query type registration</a>
 
 ## jet-engine/query-builder/query/after-query-setup
 

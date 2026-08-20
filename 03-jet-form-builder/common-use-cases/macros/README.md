@@ -123,4 +123,4 @@ Formatted date field: 2024/07/16
 | `user`                | Retrieves a specific property of a WordPress user based on their user ID. It takes the user ID as the input value and an optional property name as an argument, defaulting to "user_login". It fetches the user object using the provided user ID and returns the specified property. If the user is not found, it returns the original value. Uses the [WP_User::get](https://developer.wordpress.org/reference/classes/wp_user/get/) method.  
 
 ## Register custom filter for macros
-[Go to the article](/03-jet-form-builder/common-use-cases/macros/register-filters.md).
+[Go to the article](./register-filters.md).

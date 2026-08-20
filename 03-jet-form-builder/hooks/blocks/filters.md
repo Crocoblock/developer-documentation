@@ -2,7 +2,7 @@
 
 ## Table of contents
 * [`jet-form-builder/editor/hidden-field/config`](#jet-form-buildereditorhidden-fieldconfig)
-* [`jet-form-builder/fields/hidden-field/value-cb`](jet-form-builderfieldshidden-fieldvalue-cb)
+* [`jet-form-builder/fields/hidden-field/value-cb`](#jet-form-builderfieldshidden-fieldvalue-cb)
 * [`jet-form-builder/fields/wysiwyg-field/config`](#jet-form-builderfieldswysiwyg-fieldconfig)
 
 
@@ -88,7 +88,7 @@ add_filter(
 
 		$config['tinymce']['plugins']  .= ',' . implode( ',', $plugins );
 		$config['tinymce']['toolbar1'] .= ',' . implode( ',', $toolbar_buttons );
-		
+
 		// add button for upload images
 		$config['media_buttons']       = true;
 

@@ -4,7 +4,7 @@ Let's explore registering a new query type using the example of how a new query 
 
 ## Registering a Component for the Editor
 
-Register a component for the editor on the hook <a href="/01-jet-engine/01-hooks/05-query-builder/actions.md#jet-enginequery-builderquery-editorregister" target="_blank">jet-engine/query-builder/query-editor/register</a>:
+Register a component for the editor on the hook <a href="../../01-hooks/05-query-builder/actions.md#jet-enginequery-builderquery-editorregister" target="_blank">jet-engine/query-builder/query-editor/register</a>:
 
 ```php
 /**
@@ -214,11 +214,11 @@ Vue.component( 'jet-cct-query', {
 	}
 } );
 ```
-A minimal template file for the component with a description of its parts -  <a href="/01-jet-engine/02-common-use-cases/02-custom-query-for-query-editor/vue-component.js" target="_blank">/01-jet-engine/02-common-use-cases/02-custom-query-for-query-editor/vue-component.js</a>
+A minimal template file for the component with a description of its parts -  <a href="./vue-component.js" target="_blank">/01-jet-engine/02-common-use-cases/02-custom-query-for-query-editor/vue-component.js</a>
 
 ## Registering the New Query Type 
 
-Registration is done on the hook <a href="/01-jet-engine/01-hooks/05-query-builder/actions.md#jet-enginequery-builderqueriesregister" target="_blank">jet-engine/query-builder/queries/register</a>:
+Registration is done on the hook <a href="../../01-hooks/05-query-builder/actions.md#jet-enginequery-builderqueriesregister" target="_blank">jet-engine/query-builder/queries/register</a>:
 
 ```php
 /**

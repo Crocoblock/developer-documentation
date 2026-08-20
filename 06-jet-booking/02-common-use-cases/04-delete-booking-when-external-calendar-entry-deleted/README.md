@@ -5,7 +5,7 @@ To delete or update the booking status to allow the selected dates to be reused,
 
 Go to the plugin settings to create an additional custom column in `Bookings > Settings > Tools` and create it with a unique name for saving external calendar information and using it in queries.
 
-![External Calendar Table Column Creation](/06-jet-booking/02-common-use-cases/04-delete-booking-when-external-calendar-entry-deleted/assets/external-calendar-table-column-creation.png "External calendar table column creation")
+![External Calendar Table Column Creation](assets/external-calendar-table-column-creation.png "External calendar table column creation")
 
 After creating the column to store the calendar information, use the `jet-booking/ical/import/node` hook, which is triggered for each booking entry in the calendar during synchronization. This hook allows us to add the calendar identifier to booking entries that are synchronized with the current calendar.
 

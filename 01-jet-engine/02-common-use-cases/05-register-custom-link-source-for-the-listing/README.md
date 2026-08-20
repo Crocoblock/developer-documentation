@@ -4,8 +4,8 @@ This case allows you to add a new option to the Link source setting, which is pa
 
 To achieve this, you need 2 filters:
 
-- <a href="/01-jet-engine/01-hooks/01-listings/filters.md#jet-enginelistingsdynamic-linkfields">jet-engine/listings/dynamic-link/fields</a> - to register a new option
-- <a href="/01-jet-engine/01-hooks/01-listings/filters.md#jet-enginelistingsfrontendcustom-listing-url">jet-engine/listings/frontend/custom-listing-url</a> - to process the new option on the frontend.
+- <a href="../../01-hooks/01-listings/filters.md#jet-enginelistingsdynamic-linkfields">jet-engine/listings/dynamic-link/fields</a> - to register a new option
+- <a href="../../01-hooks/01-listings/filters.md#jet-enginelistingsfrontendcustom-listing-url">jet-engine/listings/frontend/custom-listing-url</a> - to process the new option on the frontend.
 
 Below is the basic scenario, for example, adding the Author Archive URL source - a link to the default WP author archive (makes sense for user listings)
 

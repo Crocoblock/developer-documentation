@@ -7,8 +7,8 @@ In the example below, you can see a registration of two states: for authorized u
 Follow these steps:
 1. Add [this code](#PHP-Code) to the `functions.php` of your child theme.  
 2. Apply these states in the Conditional Block
-   ![image](/03-jet-form-builder/common-use-cases/add-render-states/assets/logged-in-render-state.png)
-   ![image](/03-jet-form-builder/common-use-cases/add-render-states/assets/guest-render-state.png)
+   ![image](assets/logged-in-render-state.png)
+   ![image](assets/guest-render-state.png)
 
 ## PHP Code
 

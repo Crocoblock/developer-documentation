@@ -2,5 +2,5 @@
 
 Hooks related to additional plugin tools of the plugin 
 
-* **<a href="/17-jet-woo-product-gallery/01-hooks/03-tools/actions.md">Actions</a>**
-* **<a href="/17-jet-woo-product-gallery/01-hooks/03-tools/filters.md">Filters</a>**
+* **<a href="./actions.md">Actions</a>**
+* **<a href="./filters.md">Filters</a>**

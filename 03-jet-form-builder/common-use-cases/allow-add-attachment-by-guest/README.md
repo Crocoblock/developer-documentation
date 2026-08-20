@@ -10,7 +10,7 @@ To overcome this limitation, follow these steps:
 
 1. Add the class `allow-insert-attachments` to your Media Field.
 
-   ![Image](/03-jet-form-builder/common-use-cases/allow-add-attachment-by-guest/assets/add-class.png)
+   ![Image](assets/add-class.png)
 
 2. Add [this code](#PHP-Code) to the `functions.php` file of your child theme.
 3. In the callback function, on the last line, change the second parameter if necessary

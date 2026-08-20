@@ -2,9 +2,9 @@
 
 ## jet-engine/listings/allowed-context-list
 
-Allows registering a custom context (an object that will be used as the current one when retrieving data). This filter only adds the context to all lists of available contexts wherever they are used. Next, you need to return an object that corresponds to this context through the filter <a href="/01-jet-engine/01-hooks/01-listings/filters.md#jet-enginelistingsdataobject-by-context">'jet-engine/listings/data/object-by-context/{$context}'</a>.
+Allows registering a custom context (an object that will be used as the current one when retrieving data). This filter only adds the context to all lists of available contexts wherever they are used. Next, you need to return an object that corresponds to this context through the filter <a href="./filters.md#jet-enginelistingsdataobject-by-context">'jet-engine/listings/data/object-by-context/{$context}'</a>.
 
-For more details, see the section <a href="/01-jet-engine/02-common-use-cases/01-context/">jet-engine/usage-cases/context</a>.
+For more details, see the section <a href="../../02-common-use-cases/01-context/">jet-engine/usage-cases/context</a>.
 
 **Args:**
 
@@ -344,7 +344,7 @@ add_filter( 'jet-engine/listings/ajax/settings-by-id/bricks', ( $settings = [], 
 
 ## jet-engine/listings/allowed-callbacks
 
-Allows changing and adding new callbacks to the list of allowed Engine callbacks. Currently, it is better to use the unified API for adding new callbacks through the action [jet-engine/callbacks/register](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginecallbacksregister)
+Allows changing and adding new callbacks to the list of allowed Engine callbacks. Currently, it is better to use the unified API for adding new callbacks through the action [jet-engine/callbacks/register](./actions.md#jet-enginecallbacksregister)
 
 **Args:**
 
@@ -358,11 +358,11 @@ Global
 
 **Example:**
 
-As of now, it is better to use the unified API for adding new callbacks through the action [jet-engine/callbacks/register](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginecallbacksregister)
+As of now, it is better to use the unified API for adding new callbacks through the action [jet-engine/callbacks/register](./actions.md#jet-enginecallbacksregister)
 
 ## jet-engine/listings/allowed-callbacks-args
 
-Allows you to modify and add new arguments for existing JetEngine callbacks. These arguments will be registered as controls for corresponding interfaces. Currently, it is better to use the unified API to add new callbacks via the action [jet-engine/callbacks/register](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginecallbacksregister)
+Allows you to modify and add new arguments for existing JetEngine callbacks. These arguments will be registered as controls for corresponding interfaces. Currently, it is better to use the unified API to add new callbacks via the action [jet-engine/callbacks/register](./actions.md#jet-enginecallbacksregister)
 
 **Args:**
 
@@ -376,11 +376,11 @@ Global
 
 **Example:**
 
-Currently, it is better to use the unified API to add new callbacks via the action [jet-engine/callbacks/register](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginecallbacksregister)
+Currently, it is better to use the unified API to add new callbacks via the action [jet-engine/callbacks/register](./actions.md#jet-enginecallbacksregister)
 
 ## jet-engine/listing/dynamic-field/callback-args
 
-Allows you to apply custom arguments for the current callback. Currently, it is better to use the unified API to add new callbacks via the action [jet-engine/callbacks/register](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginecallbacksregister)
+Allows you to apply custom arguments for the current callback. Currently, it is better to use the unified API to add new callbacks via the action [jet-engine/callbacks/register](./actions.md#jet-enginecallbacksregister)
 
 **Args:**
 
@@ -394,7 +394,7 @@ Global
 
 **Example:**
 
-Currently, it is better to use the unified API to add new callbacks via the action [jet-engine/callbacks/register](/01-jet-engine/01-hooks/01-listings/actions.md#jet-enginecallbacksregister)
+Currently, it is better to use the unified API to add new callbacks via the action [jet-engine/callbacks/register](./actions.md#jet-enginecallbacksregister)
 
 ## jet-engine/data/listing-type
 
@@ -824,7 +824,7 @@ add_filter( 'jet-engine/listings/data/default-object', function( $default_object
 
 Used to replace the current object with a new one, obtained according to the dynamic part of the hook - {$context}. This functionality is useful for simplifying work with different objects within the same listing or post. Without context, you would have to use nested listings. With context, you can simply use dynamic widgets with a changed context.
 
-Докладніше в розділі <a href="/01-jet-engine/02-common-use-cases/01-context/">jet-engine/usage-cases/context</a>
+Докладніше в розділі <a href="../../02-common-use-cases/01-context/">jet-engine/usage-cases/context</a>
 
 **Args:**
 
@@ -835,7 +835,7 @@ Used to replace the current object with a new one, obtained according to the dyn
 **Access:** Global
 
 **Example**
-In the <a href="/01-jet-engine/02-common-use-cases/01-context/">jet-engine/usage-cases/context</a> section
+In the <a href="../../02-common-use-cases/01-context/">jet-engine/usage-cases/context</a> section
 
 ## jet-engine/listings/data/object-vars
 
@@ -909,7 +909,7 @@ add_filter( 'jet-engine/listing/grid/lazy-load/post-id', function( $post_id ) {
 
 ## jet-engine/listings/frontend/custom-listing-url
 
-This filter allows you to return a custom URL for a listing item. Used in combination with adding a new source for listing item URLs. More about this case <a href="/01-jet-engine/02-common-use-cases/05-register-custom-link-source-for-the-listing">here</a>.
+This filter allows you to return a custom URL for a listing item. Used in combination with adding a new source for listing item URLs. More about this case <a href="../../02-common-use-cases/05-register-custom-link-source-for-the-listing">here</a>.
 
 **Args:**
 * `$url` - string - By default, an empty string. If you return your value instead of an empty string, it will be used as the URL for the current listing item.
@@ -1143,7 +1143,7 @@ includes/components/listings/render/base.php
 Global
 
 **Example:**
-**<a href="/01-jet-engine/02-common-use-cases/06-register-new-render-settings/README.md">Register new render settings</a>**
+**<a href="../../02-common-use-cases/06-register-new-render-settings/README.md">Register new render settings</a>**
 
 ## jet-engine/listings/dynamic-field/custom-value
 

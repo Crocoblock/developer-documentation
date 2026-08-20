@@ -54,5 +54,5 @@ A template plugin for quickly starting work with custom contexts - https://githu
 
 ## Related hooks
 
-* <a href="/01-jet-engine/01-hooks/01-listings/filters.md#jet-enginelistingsallowed-context-list">jet-engine/listings/allowed-context-list</a>
-* <a href="/01-jet-engine/01-hooks/01-listings/filters.md#jet-enginelistingsdataobject-by-context">jet-engine/listings/data/object-by-context/</a>
+* <a href="../../01-hooks/01-listings/filters.md#jet-enginelistingsallowed-context-list">jet-engine/listings/allowed-context-list</a>
+* <a href="../../01-hooks/01-listings/filters.md#jet-enginelistingsdataobject-by-context">jet-engine/listings/data/object-by-context/</a>

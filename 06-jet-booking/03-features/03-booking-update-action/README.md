@@ -4,11 +4,11 @@ Using JetFormBuilder, you can easily create a form that allows users to update e
 
 To implement the booking update functionality, a new event responsible for this was created:
 
-![Booking Update Action](/06-jet-booking/03-features/03-booking-update-action/assets/booking-update-action.png "Booking update action")
+![Booking Update Action](assets/booking-update-action.png "Booking update action")
 
 The event contains settings. `Booking ID` is a required field necessary for identifying the corresponding booking and comparing it with other bookings.
 
-![Booking Update Action Settings](/06-jet-booking/03-features/03-booking-update-action/assets/booking-update-action-settings.png "Booking Update Action Settings")
+![Booking Update Action Settings](assets/booking-update-action-settings.png "Booking Update Action Settings")
 
 All options in the event settings contain a selection of form fields that are associated with booking parameters.
 
@@ -22,7 +22,7 @@ Adding other fields is optional and depends on what the site owner wants to allo
 
 To get booking values into the corresponding fields before editing, presets are used.
 
-![Booking Default Value Presets](/06-jet-booking/03-features/03-booking-update-action/assets/default-value-presets.png "Booking Default Value Presets")
+![Booking Default Value Presets](assets/default-value-presets.png "Booking Default Value Presets")
 
 In the presets, a new data source has been created specifically for editing bookings, regarding which the data fields for booking information will be displayed. In this case, you need to choose where the booking identifier will be taken from and also configure which data will be set.
 
@@ -42,7 +42,7 @@ In this case, they are configured differently. In the field for obtaining the bo
 
 If you are creating a form with the ability to update the booking status, a special dynamic generator has been created for this case to obtain all possible booking statuses.
 
-![Booking Get Status List](/06-jet-booking/03-features/03-booking-update-action/assets/generate-dynamically-bookings-status-list.png "Booking Get Status List")
+![Booking Get Status List](assets/generate-dynamically-bookings-status-list.png "Booking Get Status List")
 
 Using the generator, you can get a formatted list with the value and name of all possible statuses. As shown in the image above, you can also specify the field name, but this is a specific parameter and must be set correctly to get more specific statuses. If it is empty, we will get all possible statuses.
 

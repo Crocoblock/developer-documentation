@@ -6,7 +6,7 @@ the days of the week selected, as well as the specific period (season), which ma
 Creating a filter based on the apartment price is not a problem by itself, but the result of such filtering will not be accurate  
 in cases where advanced pricing configurations are used.
 
-![Default Apartment Price Option](/06-jet-booking/02-common-use-cases/05-price-filter-based-on-selected-date-range/assets/default-apartment-price-option.png "Default apartment price setting")
+![Default Apartment Price Option](assets/default-apartment-price-option.png "Default apartment price setting")
 
 To begin with, we need to create a date range filter. This can be done using [this article](https://crocoblock.com/knowledge-base/jetsmartfilters/how-to-apply-jetsmartfilters-to-your-booking-website/).
 
@@ -17,7 +17,7 @@ However, for further processing and proper functionality, it is necessary to set
 In this parameter, you can specify any unique key. This key will be required to intercept the filtering request and modify it.  
 For example, the `_seasonal_price` key will be used.
 
-![Query Variable Option Value Kay](/06-jet-booking/02-common-use-cases/05-price-filter-based-on-selected-date-range/assets/query-variable-option-value-key.png "Query Variable Option Key")
+![Query Variable Option Value Kay](assets/query-variable-option-value-key.png "Query Variable Option Key")
 
 Add the implemented filtering logic to the `functions.php` file of your child theme, or use any other convenient method.
 

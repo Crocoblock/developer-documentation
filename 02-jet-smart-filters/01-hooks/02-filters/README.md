@@ -1,9 +1,9 @@
 # JetSmartFilters filters
 Reference documentation for JetSmartFilters filter hooks and related filter groups.
 
-* [Filters](/02-jet-smart-filters/01-hooks/02-filters/filters.md)
-* [Indexer](/02-jet-smart-filters/01-hooks/02-filters/indexer.md)
-* [Query](/02-jet-smart-filters/01-hooks/02-filters/query.md)
+* [Filters](./filters.md)
+* [Indexer](./indexer.md)
+* [Query](./query.md)
 
 ## jet-smart-filters/filters/localized-data
 

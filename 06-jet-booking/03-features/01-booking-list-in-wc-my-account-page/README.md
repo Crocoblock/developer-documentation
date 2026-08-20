@@ -4,7 +4,7 @@ This section provides an overview of the functionality available for displaying 
 
 This functionality will work regardless of the booking method (Booking Mode - WooCommerce Based) and the enabled integration (Booking Mode - Plain and WooCommerce Integration). That is, if the WooCommerce and JetBooking plugins are activated on the site, an additional menu item will be displayed on the account page, which can be used to access the bookings list endpoint.
 
-![WooCommerce my account booking lists](/06-jet-booking/03-features/01-booking-list-in-wc-my-account-page/assets/wc-my-account-booking-lists.png "Booking listings on WooCommerce account page")
+![WooCommerce my account booking lists](assets/wc-my-account-booking-lists.png "Booking listings on WooCommerce account page")
 
 The endpoint will be named `jet-bookings`, but if necessary, it can be changed using a hook to something else depending on the requirements:
 
@@ -44,6 +44,6 @@ The `Order` column will contain the order identifier. If this order was created 
 
 For the check-in and check-out date columns, the date formatting specified in the site settings **`Settings -> General -> Date Format`** is used.
 
-The last column is reserved for the booking cancellation button, which will be available if the corresponding setting is enabled and the booking meets all the conditions for cancellation, along with the corresponding button image. More details about this functionality can be found [here](/06-jet-booking/03-features/02-booking-cancellation).
+The last column is reserved for the booking cancellation button, which will be available if the corresponding setting is enabled and the booking meets all the conditions for cancellation, along with the corresponding button image. More details about this functionality can be found [here](../02-booking-cancellation).
 
 
