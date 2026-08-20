@@ -1,13 +1,18 @@
 # JetSmartFilters filters
+Reference documentation for JetSmartFilters filter hooks and related filter groups.
+
+* [Filters](/02-jet-smart-filters/01-hooks/02-filters/filters.md)
+* [Indexer](/02-jet-smart-filters/01-hooks/02-filters/indexer.md)
+* [Query](/02-jet-smart-filters/01-hooks/02-filters/query.md)
 
 ## jet-smart-filters/filters/localized-data
 
 List of all localized data for JavaScript.
 
-**Location:**  
+**Location:**
 /includes/filters/manager.php
 
-**Access:**  
+**Access:**
 Global
 
 **Example:**
@@ -27,10 +32,10 @@ add_filter( 'jet-smart-filters/filters/localized-data', function( $localized_dat
 
 List of valid URL parameters that are considered as plugin URL parameters.
 
-**Location:**  
+**Location:**
 /includes/filters/manager.php
 
-**Access:**  
+**Access:**
 Global
 
 **Example:**
@@ -48,17 +53,17 @@ add_filter( 'jet-smart-filters/filters/valid-url-params', function( $valid_url_p
 
 Filter that allows converting the string name of a callback for the Range filter into a corresponding callable object that returns data. This is useful for cases where we need to add a new callback for the `Get min/max dynamically` option, but this callback is localized in a class or can only be an anonymous function.
 
-**Location:**  
+**Location:**
 /includes/filters/range.php
 
-**Access:**  
+**Access:**
 Global
 
 **Example:**
 
 ```php
 add_filter( 'jet-smart-filters/range-filter/string-callback-callable', function( $callback ) {
-	
+
 	if ( 'test_callback' === $callback ) {
 		$callback = function( $args ) {
 			return [

@@ -1,4 +1,5 @@
 # JetEngine Hooks
+Developer hooks organized by the JetEngine feature or integration they extend.
 
 * <a href="/01-jet-engine/01-hooks/01-listings">Listings</a>
 * <a href="/01-jet-engine/01-hooks/02-elementor-views">Elementor Views</a>

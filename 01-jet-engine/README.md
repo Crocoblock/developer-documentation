@@ -1,5 +1,6 @@
 # JetEngine Docs
 
+Developer documentation for extending JetEngine with hooks, common integration patterns, components, and modules.
 
 * **<a href="/01-jet-engine/01-hooks">Hooks</a>**
 * **<a href="/01-jet-engine/02-common-use-cases">Common Use Cases</a>**

@@ -1,4 +1,5 @@
 # JetEngine. Internal modules
+Hooks for JetEngine modules that are included with the plugin.
 
 * **<a href="/01-jet-engine/01-hooks/15-modules/01-internal/01-maps-listings">Maps Listings</a>**
 * **<a href="/01-jet-engine/01-hooks/15-modules/01-internal/02-data-stores">Data Stores</a>**
